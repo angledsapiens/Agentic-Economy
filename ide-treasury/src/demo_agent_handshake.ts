@@ -16,6 +16,7 @@ async function runDemo() {
   // Simulate handshake delay
   await new Promise(resolve => setTimeout(resolve, 3000));
 
+  // --- REAL MODE ---
   try {
     const txId = await executePayment(PAYMENT_AMOUNT, AUDITOR_ADDRESS, 'demo-handshake');
     console.log(`[SUCCESS] ${PAYMENT_AMOUNT} USDC transferred via ${txId}`);

@@ -149,7 +149,7 @@ ${transactionHistory.length > 0 ? transactionHistory.map(tx => `| ${tx.date} | $
 export async function updateTreasuryDashboard(taskId: string = 'security-scan-mission') {
   const dashboard = await generateTreasuryDashboard(taskId);
   const artifactPath = path.join(
-    process.env.USERPROFILE || '',
+    process.env.USERPROFILE || process.env.HOME || '.',
     '.gemini',
     'antigravity',
     'brain',
