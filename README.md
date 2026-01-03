@@ -1,5 +1,7 @@
 # Agentic Economy (Liquidity Intents) 🤖💸
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/angledsapiens/Agentic-Economy)
+
 ## Vision
 The **Agentic Economy** is a future where autonomous AI agents can transact, hire one another, and exchange value natively on-chain without human intervention.
 This repository serves as the foundational monorepo for tools, frameworks, and protocols that power this vision—specifically forcing on **Liquidity Intents** (the ability for agents to express financial will).

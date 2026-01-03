@@ -1,0 +1,17 @@
+{
+	"name": "Agentic Economy (IDE Treasury)",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-18-bullseye",
+	"features": {
+		"ghcr.io/devcontainers/features/node:1": {},
+		"ghcr.io/devcontainers/features/git:1": {}
+	},
+	"postCreateCommand": "npm install && cd ide-treasury/mission-control && npm install",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"dbaeumer.vscode-eslint",
+				"esbenp.prettier-vscode"
+			]
+		}
+	}
+}
