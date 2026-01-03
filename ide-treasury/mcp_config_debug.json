@@ -1,0 +1,14 @@
+﻿{
+  "mcpServers": {
+    "antigravity-treasury": {
+      "command": "node",
+      "args": [
+        "F:/Projects/antigravity-treasury/build/index.js"
+      ],
+      "env": {
+        "CIRCLE_API_KEY": "44dcc3886d51f7107907d65660c6da10:620da0876200bb90d13a6c8997e65f3f",
+        "BASE_RPC_URL": "https://sepolia.base.org"
+      }
+    }
+  }
+}

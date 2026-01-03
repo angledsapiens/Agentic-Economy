@@ -1,0 +1,10 @@
+node_modules
+.env
+.env.example
+.DS_Store
+dist
+out
+coverage
+recovery.json
+STOP.LOCK
+.vscode-test
