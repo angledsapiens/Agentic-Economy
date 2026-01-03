@@ -15,7 +15,7 @@ async function findWallets() {
         // Fetch balance for each wallet
         const balanceResponse = await circleClient.getWalletTokenBalance({
           id: wallet.id || '',
-          tokenAddress: '0x036CbD53842c5426634e7929541eC2318f3dCF7e' // USDC on Base Sepolia
+          tokenAddress: process.env.USDC_TOKEN_ADDRESS! // USDC on Base Sepolia
         });
         console.log(`  Balance: ${balanceResponse.data?.tokenBalance?.amount || '0'} USDC`);
       }

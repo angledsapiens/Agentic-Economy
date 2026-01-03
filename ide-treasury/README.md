@@ -18,12 +18,17 @@ We have built a **VS Code Extension** that acts as a cockpit for AI Agents. It a
 - **Node.js** (v18+) installed.
 
 ### 2. Setup
-Open this folder in VS Code and run:
-```bash
-npm install
-cd mission-control
-npm install
-```
+1.  Open this folder in VS Code.
+2.  Install dependencies:
+    ```bash
+    npm install
+    cd mission-control
+    npm install
+    ```
+3.  **Authentication**:
+    *   Copy `.env.example` to `.env`.
+    *   Fill in your `CIRCLE_API_KEY` and `ENTITY_SECRET`.
+    *   (Optional) If you don't have a wallet, run `npx tsx src/initialize.ts` to generate one.
 
 ### 3. Launch "Mission Control"
 1.  Open the `mission-control` folder in VS Code.

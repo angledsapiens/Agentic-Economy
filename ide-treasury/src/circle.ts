@@ -18,7 +18,7 @@ export async function getAgentBalance(): Promise<string> {
 
     const response = await circleClient.getWalletTokenBalance({
       id: walletId,
-      tokenAddresses: [process.env.USDC_TOKEN_ADDRESS || '0x036CbD53842c5426634e7929541eC2318f3dCF7e']
+      tokenAddresses: [process.env.USDC_TOKEN_ADDRESS!]
     });
 
     // Handle tokenBalances array response
@@ -48,7 +48,7 @@ export async function executePayment(amount: string, recipient: string, taskId: 
 
     const response = await circleClient.createTransaction({
       walletId,
-      tokenAddress: process.env.USDC_TOKEN_ADDRESS || '0x036CbD53842c5426634e7929541eC2318f3dCF7e',
+      tokenAddress: process.env.USDC_TOKEN_ADDRESS!,
       blockchain: 'BASE-SEPOLIA' as any,
       amounts: [amount],
       destinationAddress: recipient,
