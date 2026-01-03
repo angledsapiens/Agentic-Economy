@@ -33,13 +33,20 @@ We have built a **VS Code Extension** that acts as a cockpit for AI Agents. It a
 
 ---
 
-## ⚡ Quick Start (The "Golden Path")
+## ⚡ Quick Start
 
-### 1. Prerequisites
-- **VS Code** installed.
-- **Node.js** (v18+) installed.
+### Option A: GitHub Codespaces (One-Click) ☁️
+1.  Click the **"Open in GitHub Codespaces"** badge above.
+2.  The environment will launch directly into the `mission-control` extension.
+3.  **Authentication**:
+    *   To enable **Real Transactions**, create a `.env` file in the `ide-treasury` folder (Level up from root) with your keys (see below).
+    *   *Without keys, the demo will fail safely.*
+4.  **Launch**: Press **`F5`**. That's it!
 
-### 2. Setup
+### Option B: Local Setup 💻
+1.  Prerequisites: VS Code, Node.js (v18+).
+2.  Setup:
+    ```bash
 1.  Open this folder in VS Code.
 2.  Install dependencies:
     ```bash

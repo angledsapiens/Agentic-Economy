@@ -5,7 +5,8 @@
 		"ghcr.io/devcontainers/features/node:1": {},
 		"ghcr.io/devcontainers/features/git:1": {}
 	},
-	"postCreateCommand": "npm install && cd ide-treasury/mission-control && npm install",
+	"postCreateCommand": "npm install && cd .. && npm install",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}/ide-treasury/mission-control",
 	"customizations": {
 		"vscode": {
 			"extensions": [
