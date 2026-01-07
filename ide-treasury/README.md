@@ -32,10 +32,10 @@ We have built a **VS Code Extension** that acts as a cockpit for AI Agents. It a
         *   Fill in your `CIRCLE_API_KEY` and `ENTITY_SECRET`.
         *   Run `npx tsx src/initialize.ts` to generate your wallet.
 
-3.  **Launch "Mission Control"**:
-    *   Press **`F5`** to launch the Extension Host.
-    *   **Wait** for the new window to load.
-    *   Click the **Circle Icon** in the left sidebar.
+### 3. Launch "Mission Control"
+1.  Press **`F5`** to launch the Extension Host.
+2.  **Wait** for the new window to load.
+3.  Click the **Circle Icon** in the left sidebar.
     *   *Result:* The Dashboard appears with your balance.
 
 ### 4. Running the Interactive Demo
