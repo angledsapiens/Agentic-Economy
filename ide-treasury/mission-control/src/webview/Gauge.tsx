@@ -7,8 +7,9 @@ interface GaugeProps {
 }
 
 export const Gauge: React.FC<GaugeProps> = ({ value, max, isLoading = false }) => {
+  const safeValue = value || 0;
   // Clamp percentage between 0 and 1
-  const percentage = Math.min(Math.max(value / max, 0), 1);
+  const percentage = Math.min(Math.max(safeValue / max, 0), 1);
 
   // SVG Geometry
   const radius = 40;
@@ -22,11 +23,11 @@ export const Gauge: React.FC<GaugeProps> = ({ value, max, isLoading = false }) =
 
   // Color logic
   let color = '#4caf50'; // Green
-  if (value < 1.0) color = '#ffeb3b'; // Yellow
-  if (value < 0.2) color = '#f44336'; // Red
+  if (safeValue < 1.0) color = '#ffeb3b'; // Yellow
+  if (safeValue < 0.2) color = '#f44336'; // Red
 
   // Loading State Overrides
-  const displayValue = isLoading ? "..." : `${value.toFixed(2)} USDC`;
+  const displayValue = isLoading ? "..." : `${safeValue.toFixed(2)} USDC`;
   const displayColor = isLoading ? 'var(--vscode-descriptionForeground)' : color;
   const displayOffset = isLoading ? arcLength : dashOffset; // Empty arc when loading
 
