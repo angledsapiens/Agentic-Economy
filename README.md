@@ -39,8 +39,9 @@ We have built a **VS Code Extension** that acts as a cockpit for AI Agents. It a
 1.  Click the **"Open in GitHub Codespaces"** badge above.
 2.  The environment will launch directly into the `mission-control` extension.
 3.  **Authentication**:
-    *   To enable **Real Transactions**, create a `.env` file in the `ide-treasury` folder (Level up from root) with your keys (see below).
-    *   *Without keys, the demo will fail safely.*
+    *   The environment is **Pre-Configured** with Public Verification Keys (`.env.test`).
+    *   **Real Transactions** will work immediately.
+    *   Nothing to configure.
 4.  **Launch**: Press **`F5`**. That's it!
 
 ### Option B: Docker (Headless Demo) 🐳
@@ -66,9 +67,11 @@ We have built a **VS Code Extension** that acts as a cockpit for AI Agents. It a
     npm install
     ```
 3.  **Authentication**:
-    *   Copy `.env.example` to `.env`.
-    *   Fill in your `CIRCLE_API_KEY` and `ENTITY_SECRET`.
-    *   (Optional) If you don't have a wallet, run `npx tsx src/initialize.ts` to generate one.
+    *   **Zero-Config (Default)**: The repo comes with `.env.test` pre-loaded with Public Verification Keys. **It Just Works™**.
+    *   **Private Setup (Optional)**: To use *your own* wallet:
+        *   Copy `.env.example` to `.env`.
+        *   Fill in your `CIRCLE_API_KEY` and `ENTITY_SECRET`.
+        *   Run `npx tsx src/initialize.ts` to generate your wallet.
 
 ### 3. Launch "Mission Control"
 1.  Open the `mission-control` folder in VS Code.

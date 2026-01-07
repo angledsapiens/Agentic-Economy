@@ -26,9 +26,11 @@ We have built a **VS Code Extension** that acts as a cockpit for AI Agents. It a
     npm install
     ```
 3.  **Authentication**:
-    *   Copy `.env.example` to `.env`.
-    *   Fill in your `CIRCLE_API_KEY` and `ENTITY_SECRET`.
-    *   (Optional) If you don't have a wallet, run `npx tsx src/initialize.ts` to generate one.
+    *   **Zero-Config (Default)**: The repo comes with `.env.test` pre-loaded with Public Verification Keys. **It Just Works™**.
+    *   **Private Setup (Optional)**: To use *your own* wallet:
+        *   Copy `.env.example` to `.env`.
+        *   Fill in your `CIRCLE_API_KEY` and `ENTITY_SECRET`.
+        *   Run `npx tsx src/initialize.ts` to generate your wallet.
 
 ### 3. Launch "Mission Control"
 1.  Open the `mission-control` folder in VS Code.
