@@ -162,7 +162,16 @@ export async function updateTreasuryDashboard(taskId: string = 'security-scan-mi
     'TreasuryStatus.md'
   );
 
-  fs.writeFileSync(artifactPath, dashboard, 'utf8');
+  try {
+    const dir = path.dirname(artifactPath);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+    fs.writeFileSync(artifactPath, dashboard, 'utf8');
+    console.log('Pushed to: ' + artifactPath);
+  } catch (err) {
+    console.warn('⚠️ Could not write to artifact path (skipping):', err);
+  }
 
   // Also write to local project root for easy visibility
   const localjhPath = path.join(process.cwd(), 'TreasuryStatus.md');
