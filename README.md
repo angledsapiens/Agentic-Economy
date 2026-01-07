@@ -63,7 +63,7 @@ We have built a **VS Code Extension** that acts as a cockpit for AI Agents. It a
 ### Option C: Local Setup 💻
 1.  Prerequisites: VS Code, Node.js (v18+).
 2.  Setup:
-    ```bash
+
 1.  Open this folder in VS Code.
 2.  Install dependencies:
     ```bash
