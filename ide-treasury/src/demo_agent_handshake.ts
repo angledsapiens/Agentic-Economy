@@ -7,6 +7,11 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+// Fallback to .env.test for Codespaces/Testing
+if (!process.env.CIRCLE_API_KEY) {
+  dotenv.config({ path: '.env.test' });
+}
+
 const AUDITOR_ADDRESS = process.env.DEMO_AUDITOR_ADDRESS || '0xe7410170f6645ad9069552154693952787c1691a'; // Fallback for safety, but intended to be overrideable
 const PAYMENT_AMOUNT = '0.01';
 

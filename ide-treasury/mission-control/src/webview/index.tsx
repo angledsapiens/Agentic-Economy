@@ -156,8 +156,17 @@ const App = () => {
       <h2 style={{ textTransform: 'uppercase', fontSize: '12px', letterSpacing: '1px', opacity: 0.8 }}>Mission Control</h2>
 
       <div className="card" style={{ marginTop: '20px', marginBottom: '20px' }}>
-        <Gauge value={status.balance} max={5.0} isLoading={isLoading || demoState === 'simulating'} />
-        {demoState === 'simulating' && <p style={{ textAlign: 'center', fontSize: '10px', marginTop: '5px' }}>Simulating Traffic...</p>}
+        {status.balance === -1 ? (
+          <div style={{ textAlign: 'center', color: '#f44336', padding: '10px' }}>
+            <p style={{ fontWeight: 'bold' }}>⚠️ AUTH FAILED</p>
+            <p style={{ fontSize: '10px' }}>Missing .env Credentials</p>
+          </div>
+        ) : (
+          <>
+            <Gauge value={status.balance} max={5.0} isLoading={isLoading || demoState === 'simulating'} />
+            {demoState === 'simulating' && <p style={{ textAlign: 'center', fontSize: '10px', marginTop: '5px' }}>Simulating Traffic...</p>}
+          </>
+        )}
       </div>
 
       <div className="grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>

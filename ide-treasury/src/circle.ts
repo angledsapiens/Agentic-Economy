@@ -4,6 +4,11 @@ import { validateSpend, recordSpend } from './guardrails.js';
 
 dotenv.config();
 
+// Fallback to .env.test for Codespaces/Testing
+if (!process.env.CIRCLE_API_KEY) {
+  dotenv.config({ path: '.env.test' });
+}
+
 const circleClient = initiateDeveloperControlledWalletsClient({
   apiKey: process.env.CIRCLE_API_KEY || '',
   entitySecret: process.env.ENTITY_SECRET || '' // Used for signing
@@ -50,7 +55,7 @@ export async function executePayment(amount: string, recipient: string, taskId: 
       walletId,
       tokenAddress: process.env.USDC_TOKEN_ADDRESS!,
       blockchain: 'BASE-SEPOLIA' as any,
-      amounts: [amount],
+      amount: [amount],
       destinationAddress: recipient,
       fee: {
         type: 'level',

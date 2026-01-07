@@ -14,6 +14,11 @@ import { fileURLToPath } from 'url';
 
 dotenv.config();
 
+// Fallback to .env.test for Codespaces/Testing
+if (!process.env.CIRCLE_API_KEY) {
+  dotenv.config({ path: '.env.test' });
+}
+
 interface Transaction {
   date: string;
   type: string;

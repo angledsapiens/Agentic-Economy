@@ -9,13 +9,18 @@ import path from 'path';
 
 dotenv.config();
 
+// Fallback to .env.test for Codespaces/Testing
+if (!process.env.CIRCLE_API_KEY) {
+  dotenv.config({ path: '.env.test' });
+}
+
 async function getStatus() {
   let balance = "0.00";
   try {
     const balanceStr = await getAgentBalance();
     balance = balanceStr.replace(' USDC', '');
   } catch (e) {
-    balance = "Error";
+    balance = "-1"; // Signal error state
   }
 
   const mission = getMissionConfig('security-scan-mission');
