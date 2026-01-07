@@ -43,7 +43,18 @@ We have built a **VS Code Extension** that acts as a cockpit for AI Agents. It a
     *   *Without keys, the demo will fail safely.*
 4.  **Launch**: Press **`F5`**. That's it!
 
-### Option B: Local Setup 💻
+### Option B: Docker (Headless Demo) 🐳
+1.  Build the image (include your keys if sharing securely):
+    ```bash
+    # Run from repository root
+    docker build -t agentic-treasury-demo ide-treasury
+    ```
+2.  Run checks:
+    ```bash
+    docker run --env-file ide-treasury/.env agentic-treasury-demo
+    ```
+
+### Option C: Local Setup 💻
 1.  Prerequisites: VS Code, Node.js (v18+).
 2.  Setup:
     ```bash

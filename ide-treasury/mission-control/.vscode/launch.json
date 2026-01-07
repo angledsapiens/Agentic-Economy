@@ -1,0 +1,26 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Run Mission Control",
+			"type": "extensionHost",
+			"request": "launch",
+			"args": [
+				"--extensionDevelopmentPath=${workspaceFolder}"
+			],
+			"outFiles": [
+				"${workspaceFolder}/dist/**/*.js"
+			],
+			"preLaunchTask": "${defaultBuildTask}"
+		},
+		{
+			"name": "Debug Demo Script",
+			"type": "node",
+			"request": "launch",
+			"program": "${workspaceFolder}/../src/demo_agent_handshake.ts",
+			"runtimeArgs": ["-r", "ts-node/register"],
+			"cwd": "${workspaceFolder}/..",
+			"envFile": "${workspaceFolder}/../.env"
+		}
+	]
+}
