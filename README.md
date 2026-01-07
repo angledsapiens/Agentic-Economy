@@ -42,7 +42,12 @@ We have built a **VS Code Extension** that acts as a cockpit for AI Agents. It a
     *   The environment is **Pre-Configured** with Public Verification Keys (`.env.test`).
     *   **Real Transactions** will work immediately.
     *   Nothing to configure.
-4.  **Launch**: Press **`F5`**. That's it!
+4.  **Launch**: Press **`F5`**.
+    *   A new browser tab (Extension Host) will open.
+    *   **Wait** for compilation to finish.
+    *   Click the **Circle Icon** in the left sidebar.
+    *   The **IDE Treasury** dashboard will appear.
+    *   *Action:* Check your balance, click **"⚡ Simulate Agent Request"**, and watch the autonomous flow!
 
 ### Option B: Docker (Headless Demo) 🐳
 1.  Build the image (include your keys if sharing securely):
