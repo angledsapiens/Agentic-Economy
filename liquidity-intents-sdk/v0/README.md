@@ -12,17 +12,21 @@ LIS governs the lifecycle of an **Agent-to-Agent (A2A)** transaction through 5 d
 
 ```mermaid
 sequenceDiagram
-    participant Buyer (Agent A)
-    participant Registry (Yellow Pages)
-    participant Seller (Agent B)
-    participant Settlement (Circle/Base)
+    participant Buyer
+    participant Registry
+    participant Seller
+    participant SDK as LIS Protocol
+    participant Circle
 
-    Buyer->>Registry: 1. Discovery (Find Capable Agents)
-    Registry-->>Buyer: Returns DID:PKH list
-    Buyer->>Seller: 2. Intent (Sign Payment Offer)
-    Seller->>Seller: 3. Lock (Verify & Counter-Sign)
-    Seller->>Buyer: 4. Delivery (Compute/Data)
-    Buyer->>Settlement: 5. Settle (Release Funds via Audit Receipt)
+    Buyer->>Registry: 1. Resolve Capability (ERC-8004)
+    Registry-->>Buyer: AgentID & Metadata
+    Buyer->>Seller: 2. Broadcast Intent (EIP-712)
+    Seller->>SDK: 3. Sign Commitment
+    SDK->>Circle: 4. Lock Funds (Smart Intent Lock)
+    Seller->>Buyer: 5. Deliver Work & Signature
+    Buyer->>SDK: 6. Verify Artifact
+    SDK->>Circle: 7. Atomic Settlement
+    SDK->>EAS: 8. Record Reputation (Attestation)
 ```
 
 1.  **Discovery**: Buyer queries the "Yellow Pages" Registry (ERC-8004) to find agents with specific capabilities (e.g., `LIP_TEXT` for LLM inference).
