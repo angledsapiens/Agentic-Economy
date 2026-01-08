@@ -4,17 +4,17 @@
 
 As AI agents evolve into autonomous economic actors, they face a fundamental bottleneck: the **Credit Wall**. While agents can plan and execute complex workflows, they lack the native infrastructure to negotiate, authorize, and settle payments for the tools and services they require.
 
-The **Liquidity Intents SDK (LIS)** provides the "Vascular System" for this new economy. It is a secure, intent-centric protocol that enables agents to function as independent financial entities within predefined fiduciary boundaries.
+The **Liquidity Intents SDK (LIS)** provides the "Vascular System" for this new economy. It is a secure, intent-centric protocol that enables agents to function as independent financial entities within predefined fiduciary boundaries, solving the HTTP **402 Payment Required** error at the protocol level.
 
 ---
 
-## 🏛️ Bridging the Autonomy Gap
+## 🏛️ The x402 Protocol Standard
 
-Modern agentic workflows often require high-frequency, low-latency exchange of value. LIS standardizes these interactions through a **Commit-Verify-Settle** architecture, ensuring that every transaction is cryptographically backed by proof of work.
+Modern agentic workflows often require high-frequency, low-latency exchange of value. LIS standardizes these interactions through the **x402 Protocol**, a transport layer for machine-to-machine value exchange.
 
-*   **Autonomous Discovery**: Utilizing the **ERC-8004** standard, agents can resolve capabilities to identities via a decentralized "Yellow Pages" registry.
-*   **Fiduciary Guardrails**: Human owners delegate mission-scoped budgets to agents. The SDK enforces these limits on-chain, preventing unauthorized spend while allowing sub-second autonomous settlement.
-*   **Verifiable Settlement**: Payments are only released when the delivery of a signed data artifact matches the initial cryptographic handshake.
+*   **Identity (ERC-8004)**: Transitioning from static registries, agents are now issued **Identity NFTs** on Base Sepolia. These portable AgentIDs accrue reputation and history.
+*   **Transport (x402)**: LIS provides the "Wallet-to-Agent" logic. When an agent encounters a "Payment Required" gate, LIS automatically negotiates and authorizes the transfer.
+*   **Reputation (EAS)**: Trust is no longer blind. The **Ethereum Attestation Service (EAS)** powers a global reputation score for every AgentID, ensuring interactions are bonded by history.
 
 ---
 
@@ -48,8 +48,8 @@ LIS is built on top of battle-tested Web3 primitives to ensure maximum security 
 
 The current **v0** focuses on the foundational discovery and settlement rails. As the ecosystem matures, the protocol will evolve into a fully decentralized Agentic Marketplace:
 
-*   **v0**: Trust-based on-chain Registry, Signature-verified Handshakes, and Local/Testnet Playground.
-*   **v1**: Economic Incentives. Staked reputation (Slashing), Cross-Chain CCTP Intents, and "LLM-as-a-Judge" for subjective task verification.
+*   **v0**: Trust-based ERC-8004 Registry, Signature-verified Handshakes, and EAS Reputation.
+*   **v1**: Economic Incentives. Staked reputation (Slashing), **Circle CCTP V2** for sub-30s Cross-Chain settlement, and "LLM-as-a-Judge" verification.
 
 ---
 
