@@ -2,27 +2,21 @@
   "name": "@agentic-economy/liquidity-intents-sdk-v0",
   "version": "0.0.1",
   "description": "Liquidity Intents SDK v0 - Binary Data-as-Work",
-  "bin": {
-    "lis-node": "dist/server.js"
-  },
-  "pkg": {
-    "scripts": "dist/**/*.js",
-    "assets": [
-      "Policy.json",
-      ".env",
-      ".env.example"
-    ],
-    "targets": [
-      "node18-linux-x64",
-      "node18-macos-x64",
-      "node18-win-x64"
-    ],
-    "outputPath": "bin"
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "Policy.json",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "build": "tsc",
     "build-dist": "ts-node src/scripts/build-dist.ts",
     "bundle": "pkg .",
+    "prepublishOnly": "npm run build-dist",
     "test": "jest"
   },
   "dependencies": {
