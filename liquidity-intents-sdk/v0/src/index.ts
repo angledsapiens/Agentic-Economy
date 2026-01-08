@@ -15,3 +15,6 @@ export * from './audit/receipt';
 export * from './audit/exporter';
 export * from './config/env';
 export * from './fiduciary/policy';
+
+// Server is likely a standalone entry point, but we can export the app if needed
+// export * from './server';

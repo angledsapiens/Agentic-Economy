@@ -13,9 +13,10 @@ export class SettlementEngine {
   private fiduciary: FiduciaryGuardian;
   private lifecycle: LifecycleController;
 
-  constructor() {
-    this.fiduciary = new FiduciaryGuardian();
+  constructor(config?: any) {
+    this.fiduciary = new FiduciaryGuardian(config?.policy);
     this.lifecycle = new LifecycleController();
+    // TODO: Use config for Circle/RPC if provided
   }
 
   async preFlightReputationCheck(providerDID: string): Promise<boolean> {
@@ -87,7 +88,7 @@ export class SettlementEngine {
               address: intent.seller,
               chain: 'ETH' // Sandbox defaults to Sepolia for ETH
             },
-            amount: { amount: '1.00', currency: 'USD' }
+            amount: { amount: intent.amount || '1.00', currency: 'USD' }
           })
         });
         const data = await response.json();
