@@ -11,12 +11,7 @@ RUN npm ci
 # Copy source code
 COPY . .
 
-# Build TS
-RUN npm run build
-# Compile server (if not part of build script, manual compile for safety)
-RUN npx tsc
+# Binary Distribution - No Build Required
+# dist/ is already compiled and obfuscated
 
-EXPOSE 3000
-
-# Start server
-CMD ["node", "dist/src/server.js"]
+CMD ["node", "dist/server.js"]

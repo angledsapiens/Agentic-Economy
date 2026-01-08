@@ -43,9 +43,12 @@ Get a fully functional, funded, and registered agent running on Base Sepolia in 
 
 ### Quick Start
 
+### Quick Start
+
+**Note**: This SDK is distributed as a compiled binary for security. Source code is not required.
+
 ```bash
-# 1. Clone the repo (if you haven't)
-git clone https://github.com/agentic-economy/monorepo.git
+# 1. Download/Unzip the Distribution (or cd into the package)
 cd liquidity-intents-sdk/v0
 
 # 2. Run the Bootstrap Script
