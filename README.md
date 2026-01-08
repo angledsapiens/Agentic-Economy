@@ -70,7 +70,7 @@ This repository is a Monorepo containing the core protocol and reference impleme
 
 ### One-Click Deployment
 
-Start with the [Liquidity Intents SDK](./liquidity-intents-sdk/v0) to integrate payments into your agents today.
+Start with the [Liquidity Intents SDK](./liquidity-intents-sdk/v0). No compilation required—run the pre-compiled binary instantly.
 
 ```bash
 cd liquidity-intents-sdk/v0
