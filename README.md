@@ -4,6 +4,8 @@
 
 > **[!IMPORTANT] Mission**
 > To unblock the Agentic Economy by building the standard fiduciary rails for autonomous machine commerce.
+>
+> *The LIS SDK is distributed as a compiled, high-performance binary/library to ensure protocol integrity and security.*
 
 **The Project**: Agentic Economy is the developer’s toolkit for building and deploying financially autonomous AI agents. At its core is the **Liquidity Intents SDK (LIS)**—a protocol that provides the "Vascular System" for agents to discover, negotiate, and settle payments securely within human-defined guardrails.
 

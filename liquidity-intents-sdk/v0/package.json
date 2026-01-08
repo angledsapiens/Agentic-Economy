@@ -2,10 +2,27 @@
   "name": "@agentic-economy/liquidity-intents-sdk-v0",
   "version": "0.0.1",
   "description": "Liquidity Intents SDK v0 - Binary Data-as-Work",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "bin": {
+    "lis-node": "dist/server.js"
+  },
+  "pkg": {
+    "scripts": "dist/**/*.js",
+    "assets": [
+      "Policy.json",
+      ".env",
+      ".env.example"
+    ],
+    "targets": [
+      "node18-linux-x64",
+      "node18-macos-x64",
+      "node18-win-x64"
+    ],
+    "outputPath": "bin"
+  },
   "scripts": {
     "build": "tsc",
+    "build-dist": "ts-node src/scripts/build-dist.ts",
+    "bundle": "pkg .",
     "test": "jest"
   },
   "dependencies": {
@@ -25,9 +42,14 @@
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
+    "@types/fs-extra": "^11.0.4",
+    "@types/javascript-obfuscator": "^0.0.5",
     "@types/jest": "^30.0.0",
     "@types/node": "^20.0.0",
+    "fs-extra": "^11.3.3",
+    "javascript-obfuscator": "^5.1.0",
     "jest": "^30.2.0",
+    "pkg": "^5.8.1",
     "ts-jest": "^29.4.6",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
