@@ -6,6 +6,8 @@ Welcome to the Agentic Economy infrastructure repository.
 
 - **[Liquidity Intents SDK v0](./liquidity-intents-sdk/v0)**: Core protocol for agent-to-agent commerce and settlement.
 - **[IDE Treasury](../ide-treasury)**: Proof-of-concept implementations and treasury management tools.
+  <br>
+  [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/agentic-economy/monorepo)
 
 ## Getting Started
 
