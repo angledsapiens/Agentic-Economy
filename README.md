@@ -1,43 +1,50 @@
-# Agentic Economy Monorepo
+# Agentic Economy: The Autonomous Settlement Layer
 
-Welcome to the Agentic Economy infrastructure repository.
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg) ![Network: Base](https://img.shields.io/badge/Network-Base%20Sepolia-blueviolet) ![Standard: ERC-8004](https://img.shields.io/badge/Standard-ERC--8004-orange) ![Standard: x402](https://img.shields.io/badge/Standard-x402-yellow)
 
-## Workspaces
+> **[!IMPORTANT] Mission**
+> To unblock the Agentic Economy by building the standard fiduciary rails for autonomous machine commerce.
 
-- **[Liquidity Intents SDK v0](./liquidity-intents-sdk/v0)**: Core protocol for agent-to-agent commerce and settlement.
-- **[IDE Treasury](./ide-treasury)**: Proof-of-concept implementations and treasury management tools.
-  <br>
-  [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/agentic-economy/monorepo)
+**The Project**: Agentic Economy is the developer’s toolkit for building and deploying financially autonomous AI agents. At its core is the **Liquidity Intents SDK (LIS)**—a protocol that provides the "Vascular System" for agents to discover, negotiate, and settle payments securely within human-defined guardrails.
 
-## Getting Started
+**Current Status**: We have completed the **v0 Discovery Phase**, featuring an ERC-8004 compliant on-chain registry (the "Yellow Pages"), EIP-712 cryptographic handshakes, and production-ready audit logs. Our local playground is live, enabling sub-second autonomous settlement using Circle’s programmable USDC on the Base Sepolia testnet.
 
-This repository uses `pnpm` workspaces.
-
-```bash
-pnpm install
-```
+**Where We Are Going**: We are evolving into the **v1 Agentic Marketplace**, introducing decentralized trust through staked reputation (slashing), cross-chain intent settlement via Circle CCTP, and cryptographic proof-of-work verification to enable a truly global, trustless machine economy.
 
 ---
 
-# Liquidity Intents SDK (LIS)
-
-> **The Fiduciary Rail for the Agentic Economy.**
+## 🏗️ The Problem: The "Credit Wall"
 
 As AI agents evolve into autonomous economic actors, they face a fundamental bottleneck: the **Credit Wall**. While agents can plan and execute complex workflows, they lack the native infrastructure to negotiate, authorize, and settle payments for the tools and services they require.
 
 The **Liquidity Intents SDK (LIS)** provides the "Vascular System" for this new economy. It is a secure, intent-centric protocol that enables agents to function as independent financial entities within predefined fiduciary boundaries, solving the HTTP **402 Payment Required** error at the protocol level.
 
-## 🏛️ The x402 Protocol Standard
+## 🔄 The Protocol Lifecycle
 
-Modern agentic workflows often require high-frequency, low-latency exchange of value. LIS standardizes these interactions through the **x402 Protocol**, a transport layer for machine-to-machine value exchange.
+LIS standardizes high-frequency agent interaction through a **Commit-Verify-Settle** architecture.
 
-*   **Identity (ERC-8004)**: Transitioning from static registries, agents are now issued **Identity NFTs** on Base Sepolia. These portable AgentIDs accrue reputation and history.
-*   **Transport (x402)**: LIS provides the "Wallet-to-Agent" logic. When an agent encounters a "Payment Required" gate, LIS automatically negotiates and authorizes the transfer.
-*   **Reputation (EAS)**: Trust is no longer blind. The **Ethereum Attestation Service (EAS)** powers a global reputation score for every AgentID, ensuring interactions are bonded by history.
+```mermaid
+sequenceDiagram
+    participant Buyer
+    participant Registry
+    participant Seller
+    participant SDK as LIS Protocol
+    participant Circle
+
+    Buyer->>Registry: 1. Resolve Capability (ERC-8004)
+    Registry-->>Buyer: AgentID & Metadata
+    Buyer->>Seller: 2. Broadcast Intent (EIP-712)
+    Seller->>SDK: 3. Sign Commitment
+    SDK->>Circle: 4. Lock Funds (Smart Intent Lock)
+    Seller->>Buyer: 5. Deliver Work & Signature
+    Buyer->>SDK: 6. Verify Artifact
+    SDK->>Circle: 7. Atomic Settlement
+    SDK->>EAS: 8. Record Reputation (Attestation)
+```
 
 ## 🛠️ The Protocol Stack
 
-LIS is built on top of battle-tested Web3 primitives to ensure maximum security and interoperability across the **Base** and **Avalanche** ecosystems.
+LIS is built on top of battle-tested Web3 primitives to ensure maximum security and interoperability.
 
 | Layer | Component | Function |
 | :--- | :--- | :--- |
@@ -45,28 +52,23 @@ LIS is built on top of battle-tested Web3 primitives to ensure maximum security 
 | **Messaging** | **EIP-712** | Structured, machine-readable "Intents" for transparent negotiation. |
 | **Liquidity** | **Circle SDK** | Smart Intent Locks (Escrow) for programmable USDC settlement. |
 | **Reputation** | **EAS** | On-chain attestations to track agent reliability globally. |
-| **Compliance** | **Zk-Receipts** | Non-repudiable JSON-LD artifacts for automated accounting (QuickBooks/Xero). |
+| **Compliance** | **Zk-Receipts** | Non-repudiable JSON-LD artifacts for automated accounting. |
 
-> [!IMPORTANT]
-> **Fiduciary Safety First**: Unlike traditional wallets, LIS agents operate under strict policy logic defined in `Policy.json`. This ensures that even if an agent hallucinates, it cannot drain treasury funds or sign unauthorized contracts.
+---
 
-## 🔄 The Lifecycle of an Intent
+## ⚡ Getting Started
 
-1.  **Intent Broadcast**: A **Buyer** agent generates a signed request specifying the task, budget, and required data schema.
-2.  **Handshake Agreement**: A **Seller** agent signs a commitment to perform the work, triggering a **Smart Intent Lock**.
-3.  **Execution & Delivery**: The Seller delivers the signed work artifact (JSON, URL, or Hash) to the SDK.
-4.  **Atomic Payout**: The Settlement Engine validates the signature and releases funds from the vault instantly.
+This repository is a Monorepo containing the core protocol and reference implementations.
 
-## 🚀 Future Roadmap: Toward a Global Marketplace
+### Workspaces
 
-The current **v0** focuses on the foundational discovery and settlement rails. As the ecosystem matures, the protocol will evolve into a fully decentralized Agentic Marketplace:
+*   **[Liquidity Intents SDK v0](./liquidity-intents-sdk/v0)**: Core protocol for agent-to-agent commerce and settlement.
+*   **[IDE Treasury](./ide-treasury)**: Proof-of-concept implementations and treasury management tools.
+    <br>[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/agentic-economy/monorepo)
 
-*   **v0**: Trust-based ERC-8004 Registry, Signature-verified Handshakes, and EAS Reputation.
-*   **v1**: Economic Incentives. Staked reputation (Slashing), **Circle CCTP V2** for sub-30s Cross-Chain settlement, and "LLM-as-a-Judge" verification.
+### One-Click Deployment
 
-## Getting Started
-
-Start with the [Liquidity Intents SDK v0](./liquidity-intents-sdk/v0) to integrate payments into your agents today.
+Start with the [Liquidity Intents SDK](./liquidity-intents-sdk/v0) to integrate payments into your agents today.
 
 ```bash
 cd liquidity-intents-sdk/v0
