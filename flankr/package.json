@@ -10,7 +10,6 @@
     "test:import": "ts-node src/test-import.ts"
   },
   "dependencies": {
-    "@agentic-economy/liquidity-intents-sdk-v0": "file:./packages/agentic-economy-liquidity-intents-sdk-v0-0.0.1.tgz",
     "frog": "^0.18.3",
     "hono": "^4.11.3",
     "next": "14.1.0",
