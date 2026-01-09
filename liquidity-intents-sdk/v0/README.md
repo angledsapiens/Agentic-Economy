@@ -49,14 +49,27 @@ Get a fully functional, funded, and registered agent running on Base Sepolia in 
 
 ### Quick Start
 
-**Note**: This SDK is distributed as a compiled binary for security. Source code is not required.
+**Note**: This SDK is distributed as a compiled binary (`dist/`) for security. Source code is not required.
 
+**1. Build the Image**
 ```bash
-# 1. Download/Unzip the Distribution (or cd into the package)
 cd liquidity-intents-sdk/v0
+docker build -t lis-sdk:v0 .
+```
 
-# 2. Run the Bootstrap Script
-./scripts/bootstrap.sh
+**2. Run (Local Mode)**
+```bash
+docker run -p 3000:3000 lis-sdk:v0
+```
+
+**3. Run (Testnet Mode)**
+```bash
+docker run -p 3000:3000 \
+  -e LIS_MODE=TESTNET \
+  -e CIRCLE_API_KEY="YOUR_API_KEY" \
+  -e SELLER_PRIVATE_KEY="YOUR_KEY" \
+  -e BASE_SEPOLIA_RPC="https://sepolia.base.org" \
+  lis-sdk:v0
 ```
 
 **What this does:**

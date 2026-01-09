@@ -70,9 +70,21 @@ This repository is a Monorepo containing the core protocol and reference impleme
 
 ### One-Click Deployment
 
-Start with the [Liquidity Intents SDK](./liquidity-intents-sdk/v0). No compilation required—run the pre-compiled binary instantly.
+Run the SDK instantly using Docker (pre-compiled binary, no setup required).
 
+**Option 1: Quick Start (Local Mode)**
 ```bash
 cd liquidity-intents-sdk/v0
-./scripts/bootstrap.sh
+docker build -t lis-sdk:v0 .
+docker run -p 3000:3000 lis-sdk:v0
+```
+
+**Option 2: Testnet Mode (Base Sepolia)**
+```bash
+docker run -p 3000:3000 \
+  -e LIS_MODE=TESTNET \
+  -e CIRCLE_API_KEY="YOUR_API_KEY" \
+  -e SELLER_PRIVATE_KEY="YOUR_KEY" \
+  -e BASE_SEPOLIA_RPC="https://sepolia.base.org" \
+  lis-sdk:v0
 ```
