@@ -85,7 +85,7 @@ docker-compose up --build
 ```
 
 **What you get:**
-*   **SDK Node**: `http://localhost:3000`
+*   **SDK Node**: `http://localhost:3000/agents`
 *   **Playground UI**: `http://localhost:5173`
 
 ---
