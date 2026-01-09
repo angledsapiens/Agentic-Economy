@@ -16,6 +16,8 @@ const app = new Frog<{ State: State }>({
   }
 });
 
+console.log('🐸 Flankr Frame Initialized');
+
 // 1. Initial Frame
 app.frame('/', (c) => {
   return c.res({
