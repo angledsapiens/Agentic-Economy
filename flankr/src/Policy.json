@@ -1,8 +1,0 @@
-{
-  "maxMissionBudget": {
-    "USDC": "5000000",
-    "ETH": "100000000000000000"
-  },
-  "blockedProviders": [],
-  "requireReputationCheck": true
-}
