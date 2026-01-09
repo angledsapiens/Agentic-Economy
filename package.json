@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "test": "pnpm -r test"
+    "test": "pnpm -r test",
+    "vercel-build": "ls -R && cd flankr && npm install && npm run build"
   },
   "devDependencies": {
     "typescript": "^5.0.0"
