@@ -30,7 +30,7 @@ app.use(express.json());
 // Initialize SDK Components
 const settlement = new SettlementEngine();
 const resolver = new CapabilityResolver(
-  process.env.TESTNET_RPC_URL || 'https://sepolia.base.org',
+  process.env.BASE_SEPOLIA_RPC || 'https://sepolia.base.org',
   process.env.REGISTRY_ADDRESS // Optional: Set in .env if deployed
 );
 
@@ -125,7 +125,7 @@ app.listen(PORT, async () => {
 
   // Automated Initialization
   if (process.env.LIS_MODE !== 'LOCAL') {
-    const provider = new ethers.JsonRpcProvider(process.env.TESTNET_RPC_URL);
+    const provider = new ethers.JsonRpcProvider(process.env.BASE_SEPOLIA_RPC);
     // Assuming single wallet from env or derived
     if (process.env.SELLER_PRIVATE_KEY) {
       const wallet = new ethers.Wallet(process.env.SELLER_PRIVATE_KEY, provider);
