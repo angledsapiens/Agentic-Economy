@@ -70,20 +70,36 @@ This repository is a Monorepo containing the core protocol and reference impleme
 
 ### One-Click Deployment
 
-Run the SDK instantly using Docker (pre-compiled binary, no setup required).
+Start the full stack (SDK Node + Playground UI) instantly using Docker Compose.
 
-**Option 1: Quick Start (Local Mode)**
+**1. Configure Environment**
+```bash
+# Copy example env if you haven't already
+cp liquidity-intents-sdk/v0/.env.example liquidity-intents-sdk/v0/.env
+# Edit .env to add your keys (CIRCLE_API_KEY, SELLER_PRIVATE_KEY) if running in TESTNET
+```
+
+**2. Launch**
+```bash
+docker-compose up --build
+```
+
+**What you get:**
+*   **SDK Node**: `http://localhost:3000`
+*   **Playground UI**: `http://localhost:5173`
+
+---
+
+### Manual / Headless Mode
+To run *only* the SDK in isolation:
 ```bash
 cd liquidity-intents-sdk/v0
 docker build -t lis-sdk:v0 .
-docker run -p 3000:3000 lis-sdk:v0
-```
 
-**Option 2: Testnet Mode (Base Sepolia)**
-```bash
+# Example: Testnet Mode
 docker run -p 3000:3000 \
   -e LIS_MODE=TESTNET \
-  -e CIRCLE_API_KEY="YOUR_API_KEY" \
+  -e CIRCLE_API_KEY="YOUR_KEY" \
   -e SELLER_PRIVATE_KEY="YOUR_KEY" \
   -e BASE_SEPOLIA_RPC="https://sepolia.base.org" \
   lis-sdk:v0
