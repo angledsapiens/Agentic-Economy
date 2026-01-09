@@ -12,15 +12,34 @@ const engine = new SettlementEngine({
   circleApiKey: process.env.CIRCLE_API_KEY
 });
 
-export async function executeStrategyAction() {
+export async function executeStrategyAction(formData?: FormData | { targetPrice: string; slippage: string }) {
   console.log("🚀 Executing Strategy via Server Action...");
 
   try {
+    let targetPrice = "0";
+    let slippage = "0";
+
+    if (formData instanceof FormData) {
+      targetPrice = formData.get('targetPrice') as string || "0";
+      slippage = formData.get('slippage') as string || "0";
+    } else if (formData) {
+      targetPrice = formData.targetPrice;
+      slippage = formData.slippage;
+    }
+
+    // Fiduciary Guardrails: Strict Validation
+    if (isNaN(parseFloat(targetPrice)) || parseFloat(targetPrice) <= 0) {
+      throw new Error("Invalid Target Price. Must be > 0.");
+    }
+    if (isNaN(parseFloat(slippage)) || parseFloat(slippage) < 0) {
+      throw new Error("Invalid Slippage. Must be >= 0.");
+    }
+
     const intent = {
       id: uuidv4(),
       buyer: "0x0000000000000000000000000000000000000000", // Treasury
       seller: "0xTargetAgent",
-      amount: "1000000", // 1.00 USDC (Safe < 5.00 limit)
+      amount: "1000000", // 1.00 USDC (Fixed for POC)
       asset: {
         symbol: "USDC",
         address: "0x036CbD53842c5426634e7929541eC2318f3dCF7e", // Base Sepolia USDC
@@ -28,11 +47,16 @@ export async function executeStrategyAction() {
         chainId: 84532,
         decimals: 6
       },
-      envelopeType: EnvelopeType.LIP_TEXT, // Correct Enum Usage
-      deadline: Date.now() + 3600
+      envelopeType: EnvelopeType.LIP_TEXT,
+      deadline: Date.now() + 3600,
+      // Pass tactical parameters as simple metadata for now (or part of the text envelope)
+      parameters: {
+        targetPrice,
+        slippage
+      }
     };
 
-    console.log("🔒 Locking Funds...");
+    console.log(`🔒 Locking Funds for Price: ${targetPrice}, Slippage: ${slippage}%`);
     const success = await engine.lockFunds(intent);
 
     if (success) {
