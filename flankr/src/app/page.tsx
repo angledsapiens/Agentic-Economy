@@ -5,7 +5,7 @@ export default function Home() {
     <main>
       <Wingman />
       <div className="fixed bottom-2 right-2 text-[10px] text-zinc-800 font-mono opacity-50 pointer-events-none">
-        Build: {new Date().toISOString()} | v20.1
+        Build: {new Date().toISOString()} | v20.3
       </div>
     </main>
   );
