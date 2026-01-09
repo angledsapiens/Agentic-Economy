@@ -17,5 +17,7 @@
         }
       ]
     }
-  ]
+  ],
+  "buildCommand": "npm run vercel-build",
+  "outputDirectory": "flankr/.next"
 }
