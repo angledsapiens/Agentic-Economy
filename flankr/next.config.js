@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  distDir: '../dist_flankr',
   experimental: {
     serverComponentsExternalPackages: ['@agentic-economy/liquidity-intents-sdk-v0'],
   },
