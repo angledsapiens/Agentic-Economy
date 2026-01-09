@@ -13,6 +13,9 @@ const app = new Frog<{ State: State }>({
   initialState: {
     targetPrice: '0',
     slippage: '0.5'
+  },
+  dev: {
+    enabled: true
   }
 });
 
@@ -121,12 +124,25 @@ app.transaction('/tx', async (c) => {
   // "Integration: On the final 'Vault' screen... display inputs...".
 
   // Let's return a dummy transaction to self to simulate "Deploying".
+  const erc20Abi = [
+    {
+      inputs: [
+        { name: 'spender', type: 'address' },
+        { name: 'amount', type: 'uint256' },
+      ],
+      name: 'approve',
+      outputs: [{ name: '', type: 'bool' }],
+      stateMutability: 'nonpayable',
+      type: 'function',
+    },
+  ] as const;
+
   return c.contract({
-    abi: [],
+    abi: erc20Abi,
     chainId: 'eip155:84532',
     functionName: 'approve',
-    args: [],
-    to: '0x0000000000000000000000000000000000000000',
+    args: ['0x0000000000000000000000000000000000000000', BigInt(0)],
+    to: '0x036CbD53842c5426634e7929541eC2318f3dCF7e', // USDC Address (or dummy)
     value: BigInt(0),
   })
 });
