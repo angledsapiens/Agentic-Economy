@@ -1,1 +1,113 @@
-'use strict';const _0x3fdbf0=_0x4e8f;(function(_0x51a4df,_0x34ac0b){const _0x408854=_0x4e8f,_0x2c5637=_0x51a4df();while(!![]){try{const _0x56bf1d=-parseInt(_0x408854(0x125))/(0x1804+-0x35b*-0x6+-0x2c25*0x1)+parseInt(_0x408854(0x116))/(0x21f2+-0x1a1f+-0x7d1)+parseInt(_0x408854(0xac))/(-0x1cd4+0x39*-0x75+0x36e4)*(parseInt(_0x408854(0x106))/(-0x296*0x2+0x660*0x5+0xf4*-0x1c))+-parseInt(_0x408854(0xb9))/(0xe79+-0xe35+-0x3*0x15)*(-parseInt(_0x408854(0xc1))/(-0x1*-0x369+0x2e4+-0x647*0x1))+-parseInt(_0x408854(0xe0))/(0x5c+-0xa*-0x14+0x5*-0x39)+parseInt(_0x408854(0x139))/(0x4ff+0x1c2d+0x7*-0x4bc)+-parseInt(_0x408854(0x154))/(-0xf7+0x1d47+-0x1c47)*(parseInt(_0x408854(0x111))/(-0x1*-0x19fb+-0x10*-0x241+0x3e01*-0x1));if(_0x56bf1d===_0x34ac0b)break;else _0x2c5637['push'](_0x2c5637['shift']());}catch(_0x221ba4){_0x2c5637['push'](_0x2c5637['shift']());}}}(_0x33ad,-0x94d5+-0x1fd39*0x3+-0x137*-0x82f));function _0x33ad(){const _0xc42fc3=['ETH','WEgLZ','LIVE','\x20Simulatin','[Circle]\x20L','DENIED','Bearer\x20','Mllfj','EY:','XmdRg','LifecycleC','amount','tent','trim','erty','Engine','wallet','n]\x20Checkin','../fiducia','nitiating\x20','efix','[Circle]\x20W','ARN:\x20Prepe','HWcRy','data','uuid','uardian','validateIn','challengeI','\x20mode','ingan','transfer\x20f','4efJgod','on\x20for\x20pro','uYuQW','./lifecycl','preFlightR','[Reputatio','symbol','i-sandbox.','idYvC','ng\x20for\x20','SeHfg','842230AJQWUQ','/transfers','nNDYv','eceived:\x20','complete','572160fWqBSv','INITIATED','ry/policy','HsFKy','TESTNET','policy','OCAL\x20MODE:','...','applicatio','circle.com','mockCircle','Settlement','/v1','om/v1','xggqd','347484yGSZjq','[Circle]\x20C','USD','[Circle]\x20T','fiduciary','Lock','nding\x20miss','defineProp','LOCAL','\x20asset\x20','dxAfg','ding\x20trans','error','includes','ion\x20delay.','stringify','pgTNo','HvYkh','CIRCLE_API','KOHGv','2518296rnZYGX','PI_KEY:\x20pr','json','warn','status','blockchain','FiduciaryG','hBackoff','optimistic','err_','\x20MODE:\x20Sen','Releasing\x20','1.00','qwuYU','mock_uuid','SAND_API_K','COMPLETE','\x20challenge','or\x20intent\x20','[Circle]\x20A','LIS_MODE','funds\x20for\x20','WSueB','n/json','eputationC','ygOSq','NzYIa','18AYIArT','.\x20Handling','\x20failed:','QICCZ','44445kblTGA','\x20with\x20proo','ransaction','heck','__esModule','seller','ontroller','log','https://ap','lockFunds','VyPuG','xNFcw','g\x20reputati','1915zJQgvP','vjnQn','hallenge\x20r','ipMMb','ApiCall','_KEY\x20missi','env','state','5646axSYsi','releaseFun','lUyEX','g\x20transact','PI\x20Call\x20Fa','1017365190','PI\x20Error\x20(','lifecycle','\x20state:\x20','epxqc','action\x20to\x20','pending','challenge_','iled','CethX','brMVW','LgCmg','VcxIB','POST','[Circle]\x20','LhkQQ','_URL_PROD','asset','bYwdv','i.circle.c','now','intent\x20','failed','tx_','cyDgR','executeWit','1664558lKAOyd','_KEY','ing\x20SAND_A','[Circle]\x20I','_URL_SANDB','vider\x20'];_0x33ad=function(){return _0xc42fc3;};return _0x33ad();}function _0x4e8f(_0x2dfc72,_0x256150){_0x2dfc72=_0x2dfc72-(0x502*0x4+0xb*0x129+-0x1*0x201f);const _0x201135=_0x33ad();let _0x28211c=_0x201135[_0x2dfc72];return _0x28211c;}Object[_0x3fdbf0(0x12c)+_0x3fdbf0(0xf4)](exports,_0x3fdbf0(0xb0),{'value':!![]}),exports[_0x3fdbf0(0x121)+_0x3fdbf0(0xf5)]=void(-0x23d1+-0xacb+0x2e9c);const policy_1=require(_0x3fdbf0(0xf8)+_0x3fdbf0(0x118)),lifecycle_1=require(_0x3fdbf0(0x109)+'e'),uuid_1=require(_0x3fdbf0(0xff));class SettlementEngine{constructor(_0x19c5f9){const _0x44fbdd=_0x3fdbf0;this[_0x44fbdd(0x129)]=new policy_1[(_0x44fbdd(0x13f))+(_0x44fbdd(0x100))](_0x19c5f9?.[_0x44fbdd(0x11b)]),this[_0x44fbdd(0xc8)]=new lifecycle_1[(_0x44fbdd(0xf0))+(_0x44fbdd(0xb2))]();}async[_0x3fdbf0(0x10a)+_0x3fdbf0(0x151)+_0x3fdbf0(0xaf)](_0x1ddcc6){const _0x142eef=_0x3fdbf0;return console[_0x142eef(0xb3)](_0x142eef(0x10b)+_0x142eef(0xf7)+_0x142eef(0xb8)+_0x142eef(0x107)+_0x142eef(0xe5)+_0x1ddcc6),!![];}async[_0x3fdbf0(0xb5)](_0x383441){const _0x521fa2=_0x3fdbf0,_0x265482={'HsFKy':function(_0x5f212e,_0x37b95a){return _0x5f212e===_0x37b95a;},'HvYkh':_0x521fa2(0x117),'CethX':function(_0xd4cde9,_0x474133){return _0xd4cde9===_0x474133;},'WSueB':_0x521fa2(0x149)};if(!this[_0x521fa2(0x129)][_0x521fa2(0x101)+_0x521fa2(0xf2)](_0x383441))return![];this[_0x521fa2(0xc8)][_0x521fa2(0x141)+_0x521fa2(0x12a)](_0x383441),console[_0x521fa2(0xb3)](_0x521fa2(0xe3)+_0x521fa2(0xf9)+_0x521fa2(0x105)+_0x521fa2(0x14b)+_0x383441['id']+_0x521fa2(0x12e)+_0x383441[_0x521fa2(0xd7)][_0x521fa2(0x10c)]);try{const _0x2f08a1=await this[_0x521fa2(0xc8)][_0x521fa2(0xdf)+_0x521fa2(0x140)](()=>this[_0x521fa2(0x120)+_0x521fa2(0xbd)](_0x383441));return _0x2f08a1[_0x521fa2(0x102)+'d']&&console[_0x521fa2(0xb3)](_0x521fa2(0x126)+_0x521fa2(0xbb)+_0x521fa2(0x114)+_0x2f08a1[_0x521fa2(0x102)+'d']+(_0x521fa2(0x155)+_0x521fa2(0x14a)+_0x521fa2(0x11d))),console[_0x521fa2(0xb3)](_0x521fa2(0x128)+_0x521fa2(0xae)+'\x20'+_0x2f08a1['id']+_0x521fa2(0xc9)+_0x2f08a1[_0x521fa2(0xc0)]),_0x265482[_0x521fa2(0x119)](_0x2f08a1[_0x521fa2(0xc0)],_0x265482[_0x521fa2(0x136)])||_0x265482[_0x521fa2(0xcf)](_0x2f08a1[_0x521fa2(0xc0)],_0x265482[_0x521fa2(0x14f)]);}catch(_0x3410d7){return console[_0x521fa2(0x131)](_0x521fa2(0x128)+_0x521fa2(0xae)+_0x521fa2(0x156),_0x3410d7),![];}}async[_0x3fdbf0(0x120)+_0x3fdbf0(0xbd)](_0x317d66){const _0x4c050a=_0x3fdbf0,_0x325540={'Mllfj':_0x4c050a(0x12d),'LhkQQ':function(_0x309228,_0xad277d){return _0x309228===_0xad277d;},'vjnQn':_0x4c050a(0x11a),'uYuQW':function(_0x4c4f37,_0x1c9d0c){return _0x4c4f37===_0x1c9d0c;},'brMVW':_0x4c050a(0xe8),'ipMMb':_0x4c050a(0xfb)+_0x4c050a(0xfc)+_0x4c050a(0x12b)+_0x4c050a(0xe2)+_0x4c050a(0x13a)+_0x4c050a(0xfa),'epxqc':_0x4c050a(0xb4)+_0x4c050a(0x10d)+_0x4c050a(0x11f)+_0x4c050a(0x122),'KOHGv':_0x4c050a(0xb4)+_0x4c050a(0xd9)+_0x4c050a(0x123),'WEgLZ':function(_0x38dba6,_0x1bb694,_0x55fbe6){return _0x38dba6(_0x1bb694,_0x55fbe6);},'VyPuG':_0x4c050a(0xd3),'SeHfg':_0x4c050a(0x11e)+_0x4c050a(0x150),'qwuYU':_0x4c050a(0xf6),'LgCmg':_0x4c050a(0xc6),'pgTNo':_0x4c050a(0x13e),'NzYIa':_0x4c050a(0xe6),'ygOSq':_0x4c050a(0x145),'lUyEX':_0x4c050a(0x127),'cyDgR':function(_0x3b34a5,_0x4e7337){return _0x3b34a5!==_0x4e7337;},'idYvC':_0x4c050a(0xeb),'QICCZ':function(_0x1e7148,_0x10b01c){return _0x1e7148===_0x10b01c;},'XmdRg':_0x4c050a(0xcc),'bYwdv':function(_0x3616b7,_0x3d6256){return _0x3616b7===_0x3d6256;},'xNFcw':_0x4c050a(0x115),'VcxIB':_0x4c050a(0x117),'HWcRy':function(_0x2781d2,_0x4e8a35){return _0x2781d2===_0x4e8a35;},'xggqd':_0x4c050a(0xdc),'ingan':_0x4c050a(0x14c)+_0x4c050a(0xc5)+_0x4c050a(0xce),'nNDYv':_0x4c050a(0xea)+_0x4c050a(0x11c)+_0x4c050a(0xe9)+_0x4c050a(0xc4)+_0x4c050a(0x133)+'..','dxAfg':_0x4c050a(0xcd)+_0x4c050a(0x147)},_0x24f02e=process[_0x4c050a(0xbf)][_0x4c050a(0x14d)]||_0x325540[_0x4c050a(0xed)];if(_0x325540[_0x4c050a(0xd5)](_0x24f02e,_0x325540[_0x4c050a(0xba)])||_0x325540[_0x4c050a(0x108)](_0x24f02e,_0x325540[_0x4c050a(0xd0)])){let _0x1b4585=process[_0x4c050a(0xbf)][_0x4c050a(0x137)+_0x4c050a(0xe1)]?.[_0x4c050a(0xf3)]()||'';if(!_0x1b4585)throw new Error(_0x4c050a(0x137)+_0x4c050a(0xbe)+_0x4c050a(0x10f)+_0x24f02e+_0x4c050a(0x103));_0x325540[_0x4c050a(0x108)](_0x24f02e,_0x325540[_0x4c050a(0xba)])&&!_0x1b4585[_0x4c050a(0x132)](':')&&(console[_0x4c050a(0xb3)](_0x325540[_0x4c050a(0xbc)]),_0x1b4585=_0x4c050a(0x148)+_0x4c050a(0xee)+_0x1b4585);const _0x3ecd5a=_0x325540[_0x4c050a(0xd5)](_0x24f02e,_0x325540[_0x4c050a(0xba)])?process[_0x4c050a(0xbf)][_0x4c050a(0x137)+_0x4c050a(0xe4)+'OX']||_0x325540[_0x4c050a(0xca)]:process[_0x4c050a(0xbf)][_0x4c050a(0x137)+_0x4c050a(0xd6)]||_0x325540[_0x4c050a(0x138)];console[_0x4c050a(0xb3)](_0x4c050a(0xd4)+_0x24f02e+(_0x4c050a(0x143)+_0x4c050a(0x130)+_0x4c050a(0xcb))+_0x3ecd5a+_0x4c050a(0x11d));try{const _0x292902=await _0x325540[_0x4c050a(0xe7)](fetch,_0x3ecd5a+_0x4c050a(0x112),{'method':_0x325540[_0x4c050a(0xb6)],'headers':{'Authorization':_0x4c050a(0xec)+_0x1b4585,'Content-Type':_0x325540[_0x4c050a(0x110)]},'body':JSON[_0x4c050a(0x134)]({'idempotencyKey':(0x1*0x262a+-0x36*0x98+-0x61a,uuid_1['v4'])(),'source':{'type':_0x325540[_0x4c050a(0x146)],'id':_0x325540[_0x4c050a(0xd1)]},'destination':{'type':_0x325540[_0x4c050a(0x135)],'address':_0x317d66[_0x4c050a(0xb1)],'chain':_0x325540[_0x4c050a(0x153)]},'amount':{'amount':_0x317d66[_0x4c050a(0xf1)]||_0x325540[_0x4c050a(0x152)],'currency':_0x325540[_0x4c050a(0xc3)]}})}),_0x58f0a6=await _0x292902[_0x4c050a(0x13b)]();_0x325540[_0x4c050a(0xde)](_0x292902[_0x4c050a(0x13d)],0x194c*-0x1+-0x2df+0x1cf3)&&_0x325540[_0x4c050a(0xde)](_0x292902[_0x4c050a(0x13d)],0x8d3+0x1*-0x1795+0x17*0xad)&&console[_0x4c050a(0x13c)](_0x4c050a(0x14c)+_0x4c050a(0xc7)+_0x292902[_0x4c050a(0x13d)]+'):',JSON[_0x4c050a(0x134)](_0x58f0a6,null,-0xf54+-0x191*0x15+0x303b*0x1));const _0x435fb2=_0x58f0a6[_0x4c050a(0xfe)]?.[_0x4c050a(0x13d)];let _0x19784f=_0x325540[_0x4c050a(0x10e)];if(_0x325540[_0x4c050a(0x157)](_0x435fb2,_0x325540[_0x4c050a(0xef)])||_0x325540[_0x4c050a(0xd8)](_0x435fb2,_0x325540[_0x4c050a(0xb7)]))_0x19784f=_0x325540[_0x4c050a(0xd2)];else _0x325540[_0x4c050a(0xfd)](_0x435fb2,_0x325540[_0x4c050a(0x124)])&&(_0x19784f=_0x325540[_0x4c050a(0x10e)]);return{'id':_0x58f0a6[_0x4c050a(0xfe)]?.['id']||_0x4c050a(0x142)+Date[_0x4c050a(0xda)](),'state':_0x19784f};}catch(_0xec1e94){console[_0x4c050a(0x131)](_0x325540[_0x4c050a(0x104)],_0xec1e94);throw _0xec1e94;}}return console[_0x4c050a(0xb3)](_0x325540[_0x4c050a(0x113)]),await new Promise(_0x1f9a6a=>setTimeout(_0x1f9a6a,0x10a7*0x1+0x6ed+0x173*-0x10)),{'id':_0x4c050a(0xdd)+_0x317d66['id']+'_'+Date[_0x4c050a(0xda)](),'state':_0x325540[_0x4c050a(0xd2)],'challengeId':_0x325540[_0x4c050a(0x12f)]};}async[_0x3fdbf0(0xc2)+'ds'](_0x5e8496,_0x4194a8){const _0x3ba09e=_0x3fdbf0;return console[_0x3ba09e(0xb3)](_0x3ba09e(0x144)+_0x3ba09e(0x14e)+_0x3ba09e(0xdb)+_0x5e8496['id']+(_0x3ba09e(0xad)+'f\x20')+_0x4194a8),!![];}}exports[_0x3fdbf0(0x121)+_0x3fdbf0(0xf5)]=SettlementEngine;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.SettlementEngine = void 0;
+const policy_1 = require("../fiduciary/policy");
+const lifecycle_1 = require("./lifecycle");
+const uuid_1 = require("uuid");
+class SettlementEngine {
+    constructor(config) {
+        this.fiduciary = new policy_1.FiduciaryGuardian(config?.policy);
+        this.lifecycle = new lifecycle_1.LifecycleController();
+        // TODO: Use config for Circle/RPC if provided
+    }
+    async preFlightReputationCheck(providerDID) {
+        console.log(`[Reputation] Checking reputation for provider ${providerDID}`);
+        // Stub: Check against a mock blocklist or always return true
+        return true;
+    }
+    async lockFunds(intent) {
+        // 0. Fiduciary Check
+        if (!this.fiduciary.validateIntent(intent)) {
+            return false;
+        }
+        // 1. Optimistic Lock (if acceptable)
+        this.lifecycle.optimisticLock(intent);
+        console.log(`[Circle] Initiating transfer for intent ${intent.id} asset ${intent.asset.symbol}`);
+        // 2. Execute with Backoff
+        try {
+            const response = await this.lifecycle.executeWithBackoff(() => this.mockCircleApiCall(intent));
+            if (response.challengeId) {
+                console.log(`[Circle] Challenge received: ${response.challengeId}. Handling challenge...`);
+                // Stub: Logic to sign/solve the challenge would go here
+            }
+            console.log(`[Circle] Transaction ${response.id} state: ${response.state}`);
+            return response.state === 'INITIATED' || response.state === 'COMPLETE';
+        }
+        catch (error) {
+            console.error(`[Circle] Transaction failed:`, error);
+            return false;
+        }
+    }
+    async mockCircleApiCall(intent) {
+        const mode = process.env.LIS_MODE || 'LOCAL';
+        if (mode === 'TESTNET' || mode === 'LIVE') {
+            let apiKey = process.env.CIRCLE_API_KEY?.trim() || '';
+            if (!apiKey)
+                throw new Error(`CIRCLE_API_KEY missing for ${mode} mode`);
+            // Auto-fix: Ensure prefix exists if missing (Support TEST_API_KEY and SAND_API_KEY)
+            if (mode === 'TESTNET' && !apiKey.includes(':')) {
+                console.log('[Circle] WARN: Prepending missing SAND_API_KEY: prefix');
+                apiKey = `SAND_API_KEY:${apiKey}`;
+            }
+            const baseUrl = mode === 'TESTNET' ?
+                (process.env.CIRCLE_API_URL_SANDBOX || 'https://api-sandbox.circle.com/v1') :
+                (process.env.CIRCLE_API_URL_PROD || 'https://api.circle.com/v1');
+            console.log(`[Circle] ${mode} MODE: Sending transaction to ${baseUrl}...`);
+            try {
+                const response = await fetch(`${baseUrl}/transfers`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${apiKey}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        idempotencyKey: (0, uuid_1.v4)(),
+                        source: { type: 'wallet', id: '1017365190' }, // Discovered Master Wallet
+                        destination: {
+                            type: 'blockchain',
+                            address: intent.seller,
+                            chain: 'ETH' // Sandbox defaults to Sepolia for ETH
+                        },
+                        amount: { amount: intent.amount || '1.00', currency: 'USD' }
+                    })
+                });
+                const data = await response.json();
+                // Log non-success responses for debugging
+                if (response.status !== 200 && response.status !== 201) {
+                    console.warn(`[Circle] API Error (${response.status}):`, JSON.stringify(data, null, 2));
+                }
+                const status = data.data?.status;
+                let internalState = 'DENIED';
+                if (status === 'pending' || status === 'complete') {
+                    internalState = 'INITIATED'; // Pending in Circle = Initiated in SDK
+                }
+                else if (status === 'failed') {
+                    internalState = 'DENIED';
+                }
+                return {
+                    id: data.data?.id || `err_${Date.now()}`,
+                    state: internalState
+                };
+            }
+            catch (e) {
+                console.error("[Circle] API Call Failed", e);
+                throw e;
+            }
+        }
+        // LOCAL / Benchmark Mock Mode
+        console.log('[Circle] LOCAL MODE: Simulating transaction delay...');
+        // Simulate network delay
+        await new Promise(resolve => setTimeout(resolve, 100));
+        return {
+            id: `tx_${intent.id}_${Date.now()}`,
+            state: 'INITIATED',
+            challengeId: 'challenge_mock_uuid' // Simulate challenge flow
+        };
+    }
+    async releaseFunds(intent, proof) {
+        // Stub: Verify proof and release funds
+        console.log(`Releasing funds for intent ${intent.id} with proof ${proof}`);
+        return true;
+    }
+}
+exports.SettlementEngine = SettlementEngine;

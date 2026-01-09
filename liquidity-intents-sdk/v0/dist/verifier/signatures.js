@@ -1,1 +1,55 @@
-'use strict';function _0x5ce2(_0x4f728e,_0x56e5d0){_0x4f728e=_0x4f728e-(0xb71+-0x1251+0x1*0x837);const _0x5971ef=_0xe29e();let _0x202ebc=_0x5971ef[_0x4f728e];return _0x202ebc;}const _0x27dc84=_0x5ce2;(function(_0x476ec3,_0xbb88d9){const _0x4c53cc=_0x5ce2,_0x502fb4=_0x476ec3();while(!![]){try{const _0x1be68d=-parseInt(_0x4c53cc(0x18b))/(-0x8e6+-0x92*-0x25+-0xc33)*(-parseInt(_0x4c53cc(0x160))/(0x20ff+-0x15db+-0x26*0x4b))+-parseInt(_0x4c53cc(0x176))/(0x1*-0x2187+-0x21*0x102+0x14*0x357)+parseInt(_0x4c53cc(0x19e))/(0x1109*0x2+-0x3e7*0x1+0x1e27*-0x1)+-parseInt(_0x4c53cc(0x173))/(-0x1a15+-0x25*0xc5+-0x3*-0x1231)+parseInt(_0x4c53cc(0x16e))/(-0x16fb+0xb72*0x1+-0xb8f*-0x1)*(parseInt(_0x4c53cc(0x18e))/(-0x142*-0x13+0x21*0x25+-0x1ca4))+parseInt(_0x4c53cc(0x17f))/(0x1*-0x1c4e+0x126d+0x9e9*0x1)+parseInt(_0x4c53cc(0x15f))/(0x10cc+-0x1d91+0x12a*0xb)*(-parseInt(_0x4c53cc(0x175))/(0xca6*-0x1+0x3*-0x709+0x21cb));if(_0x1be68d===_0xbb88d9)break;else _0x502fb4['push'](_0x502fb4['shift']());}catch(_0x557b6c){_0x502fb4['push'](_0x502fb4['shift']());}}}(_0xe29e,-0x25009*0x1+-0x3f0c4+-0x9d9*-0x15e));Object[_0x27dc84(0x197)+_0x27dc84(0x1a0)](exports,_0x27dc84(0x183),{'value':!![]}),exports[_0x27dc84(0x178)+_0x27dc84(0x184)]=void(0x1*-0x1bf5+-0xe3b+-0x2a30*-0x1);const ethers_1=require(_0x27dc84(0x17d)),env_1=require(_0x27dc84(0x169)+_0x27dc84(0x163));function _0xe29e(){const _0x5750af=['AIN_ID','asset','uGBYe','chainId','seller','symbol','shake','defineProp','AssetProfi','toLowerCas','DEFAULT_CH','uint8','very','verifyType','2584860kZscgc','xBatw','erty','oNkMV','uint256','Signature\x20','lHsSt','decimals','WZyHJ','AgenticEco','envelopeTy','162EqEOhO','2mClXTI','BguUI','yVjrW','env','yjYGG','feedbackAu','error','signature','ZySSC','../config/','0x00000000','verifyDeli','ZDIlq','nomy','3444018crcUrF','rpEtU','0000000000','XaGRA','verifyHand','1756990LtAVnj','deadline','227700UvwYrI','2829198htnzmT','KmSel','SignatureV','BXvVL','buyer','wrfZx','amount','ethers','nthCa','3222296zDijvU','meiIp','dUIOZ','type','__esModule','erifier','address','on\x20failed:','string','sLXoz','verificati','HGoqr','553864xhytaE','dData','TwtYj','7tVvpMF','bool'];_0xe29e=function(){return _0x5750af;};return _0xe29e();}class SignatureVerifier{[_0x27dc84(0x172)+_0x27dc84(0x196)](_0x141816,_0x59e7ff,_0x5c25e3=![]){const _0x2b5ccf=_0x27dc84,_0x4422dc={'xBatw':_0x2b5ccf(0x15d)+_0x2b5ccf(0x16d),'yjYGG':_0x2b5ccf(0x16a)+_0x2b5ccf(0x170)+_0x2b5ccf(0x170)+_0x2b5ccf(0x170)+'00','yVjrW':_0x2b5ccf(0x182),'ZDIlq':_0x2b5ccf(0x187),'WZyHJ':_0x2b5ccf(0x193),'XaGRA':_0x2b5ccf(0x158),'BXvVL':_0x2b5ccf(0x185),'lHsSt':_0x2b5ccf(0x15b),'HGoqr':_0x2b5ccf(0x19b),'BguUI':_0x2b5ccf(0x195),'nthCa':_0x2b5ccf(0x17a),'uGBYe':_0x2b5ccf(0x194),'oNkMV':_0x2b5ccf(0x191),'dUIOZ':_0x2b5ccf(0x198)+'le','rpEtU':_0x2b5ccf(0x17c),'KmSel':_0x2b5ccf(0x15e)+'pe','wrfZx':_0x2b5ccf(0x174),'meiIp':_0x2b5ccf(0x165)+'th','TwtYj':_0x2b5ccf(0x18f),'sLXoz':function(_0x2d3142,_0x105a41){return _0x2d3142===_0x105a41;},'ZySSC':_0x2b5ccf(0x159)+_0x2b5ccf(0x189)+_0x2b5ccf(0x186)},_0x3cca72={'name':_0x4422dc[_0x2b5ccf(0x19f)],'version':'1','chainId':env_1[_0x2b5ccf(0x19a)+_0x2b5ccf(0x190)],'verifyingContract':_0x4422dc[_0x2b5ccf(0x164)]},_0x5a991f={'AssetProfile':[{'name':_0x4422dc[_0x2b5ccf(0x162)],'type':_0x4422dc[_0x2b5ccf(0x16c)]},{'name':_0x4422dc[_0x2b5ccf(0x15c)],'type':_0x4422dc[_0x2b5ccf(0x171)]},{'name':_0x4422dc[_0x2b5ccf(0x179)],'type':_0x4422dc[_0x2b5ccf(0x179)]},{'name':_0x4422dc[_0x2b5ccf(0x15a)],'type':_0x4422dc[_0x2b5ccf(0x18a)]},{'name':_0x4422dc[_0x2b5ccf(0x161)],'type':_0x4422dc[_0x2b5ccf(0x16c)]}],'LiquidityIntent':[{'name':'id','type':_0x4422dc[_0x2b5ccf(0x16c)]},{'name':_0x4422dc[_0x2b5ccf(0x17e)],'type':_0x4422dc[_0x2b5ccf(0x179)]},{'name':_0x4422dc[_0x2b5ccf(0x192)],'type':_0x4422dc[_0x2b5ccf(0x179)]},{'name':_0x4422dc[_0x2b5ccf(0x157)],'type':_0x4422dc[_0x2b5ccf(0x181)]},{'name':_0x4422dc[_0x2b5ccf(0x16f)],'type':_0x4422dc[_0x2b5ccf(0x171)]},{'name':_0x4422dc[_0x2b5ccf(0x177)],'type':_0x4422dc[_0x2b5ccf(0x16c)]},{'name':_0x4422dc[_0x2b5ccf(0x17b)],'type':_0x4422dc[_0x2b5ccf(0x171)]},{'name':_0x4422dc[_0x2b5ccf(0x180)],'type':_0x4422dc[_0x2b5ccf(0x18d)]}]},_0x48d22f={..._0x141816,'asset':{..._0x141816[_0x2b5ccf(0x191)],'address':_0x141816[_0x2b5ccf(0x191)][_0x2b5ccf(0x185)]||_0x4422dc[_0x2b5ccf(0x164)]},'feedbackAuth':_0x5c25e3};try{const _0x56366d=(0x22ac+0x24+0x8b4*-0x4,ethers_1[_0x2b5ccf(0x19d)+_0x2b5ccf(0x18c)])(_0x3cca72,_0x5a991f,_0x48d22f,_0x59e7ff[_0x2b5ccf(0x167)]);return _0x4422dc[_0x2b5ccf(0x188)](_0x56366d[_0x2b5ccf(0x199)+'e'](),_0x141816[_0x2b5ccf(0x194)][_0x2b5ccf(0x199)+'e']());}catch(_0x3424d1){return console[_0x2b5ccf(0x166)](_0x4422dc[_0x2b5ccf(0x168)],_0x3424d1),![];}}[_0x27dc84(0x16b)+_0x27dc84(0x19c)](_0x5c1417,_0x22acba){return!![];}}exports[_0x27dc84(0x178)+_0x27dc84(0x184)]=SignatureVerifier;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.SignatureVerifier = void 0;
+const ethers_1 = require("ethers");
+const env_1 = require("../config/env");
+class SignatureVerifier {
+    verifyHandshake(intent, commitment, feedbackAuth = false) {
+        const domain = {
+            name: 'AgenticEconomy',
+            version: '1',
+            chainId: env_1.DEFAULT_CHAIN_ID,
+            verifyingContract: '0x0000000000000000000000000000000000000000'
+        };
+        const types = {
+            AssetProfile: [
+                { name: 'type', type: 'string' },
+                { name: 'chainId', type: 'uint256' },
+                { name: 'address', type: 'address' },
+                { name: 'decimals', type: 'uint8' },
+                { name: 'symbol', type: 'string' }
+            ],
+            LiquidityIntent: [
+                { name: 'id', type: 'string' },
+                { name: 'buyer', type: 'address' },
+                { name: 'seller', type: 'address' },
+                { name: 'asset', type: 'AssetProfile' },
+                { name: 'amount', type: 'uint256' },
+                { name: 'envelopeType', type: 'string' },
+                { name: 'deadline', type: 'uint256' },
+                { name: 'feedbackAuth', type: 'bool' }
+            ]
+        };
+        const value = {
+            ...intent,
+            asset: {
+                ...intent.asset,
+                address: intent.asset.address || '0x0000000000000000000000000000000000000000'
+            },
+            feedbackAuth
+        };
+        try {
+            const recoveredAddress = (0, ethers_1.verifyTypedData)(domain, types, value, commitment.signature);
+            return recoveredAddress.toLowerCase() === intent.seller.toLowerCase();
+        }
+        catch (error) {
+            console.error("Signature verification failed:", error);
+            return false;
+        }
+    }
+    verifyDelivery(intent, deliveryProof) {
+        // Stub: Verify the final delivery signature
+        return true;
+    }
+}
+exports.SignatureVerifier = SignatureVerifier;

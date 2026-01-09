@@ -1,1 +1,51 @@
-'use strict';const _0xfcc3ad=_0x13e4;function _0x13e4(_0x3f9897,_0x48968){_0x3f9897=_0x3f9897-(-0x8b*-0x7+0x1e*-0x9+0x2*-0xb1);const _0x40c181=_0x58f8();let _0x31ebb7=_0x40c181[_0x3f9897];return _0x31ebb7;}(function(_0x1b0272,_0x3e19a0){const _0x3a49a=_0x13e4,_0x5a2dd0=_0x1b0272();while(!![]){try{const _0x35bed7=-parseInt(_0x3a49a(0x16a))/(0x1064+0x1232+-0x2295)*(parseInt(_0x3a49a(0x182))/(-0x7d3+0x2*0x11fb+-0x1c21))+-parseInt(_0x3a49a(0x16b))/(0x1db9+0x2155+-0x3f0b*0x1)+-parseInt(_0x3a49a(0x184))/(-0x14*-0xda+-0xbe8+-0x51c)+-parseInt(_0x3a49a(0x167))/(-0x990+-0x1*-0x160f+-0xc7a)+parseInt(_0x3a49a(0x196))/(0x4a*-0x7f+-0xc09+0x9c1*0x5)+-parseInt(_0x3a49a(0x17e))/(-0x10dd*0x1+0x17c3+-0x6df)*(parseInt(_0x3a49a(0x19c))/(-0xe49*0x2+-0xe32+0xa6*0x42))+parseInt(_0x3a49a(0x187))/(0x18ac+-0x1958+0xb5*0x1);if(_0x35bed7===_0x3e19a0)break;else _0x5a2dd0['push'](_0x5a2dd0['shift']());}catch(_0xf9e2e4){_0x5a2dd0['push'](_0x5a2dd0['shift']());}}}(_0x58f8,0x683cb+-0x196e15+-0x3*-0xacb76));Object[_0xfcc3ad(0x198)+_0xfcc3ad(0x174)](exports,_0xfcc3ad(0x162),{'value':!![]}),exports[_0xfcc3ad(0x18f)+_0xfcc3ad(0x17d)]=void(0x1*-0xac5+-0x2c*-0x15+-0x1*-0x729);function _0x58f8(){const _0x2eb1ba=['DEFAULT_CH','deadline','asset','decimals','__esModule','nomy','buyer','ata','string','7339720EOSCzD','bool','signIntent','130089DEDeTS','4536681VOGOMC','envelopeTy','chainId','address','amount','WoEkC','PKdwA','symbol','../config/','erty','0000000000','rxPps','AIN_ID','TqIRi','DDRESS','AssetProfi','iHQaV','VERIFYING_','igner','5873Kqcmgb','FwuRw','ARcQc','ethers','10QpFofF','yhicg','1850636RssCRZ','AgenticEco','rhYSE','55843704WfZDAj','wgwuX','RdQyf','wallet','NApgn','getAddress','dJOlD','env','HandshakeS','KwwTk','tNUSS','0x00000000','signTypedD','uint8','moOJn','575472huiDtM','seller','defineProp','Wallet','CONTRACT_A','uint256','12632baQMQb','dAslB','qntni','type','JiEMB','feedbackAu'];_0x58f8=function(){return _0x2eb1ba;};return _0x58f8();}const ethers_1=require(_0xfcc3ad(0x181)),env_1=require(_0xfcc3ad(0x173)+_0xfcc3ad(0x18e));class HandshakeSigner{constructor(_0x4d97e3){const _0x504be3=_0xfcc3ad;this[_0x504be3(0x18a)]=new ethers_1[(_0x504be3(0x199))](_0x4d97e3);}async[_0xfcc3ad(0x169)](_0x187599,_0x49d285=![]){const _0x2d0b90=_0xfcc3ad,_0x23814e={'yhicg':_0x2d0b90(0x185)+_0x2d0b90(0x163),'tNUSS':_0x2d0b90(0x19f),'qntni':_0x2d0b90(0x166),'wgwuX':_0x2d0b90(0x16d),'moOJn':_0x2d0b90(0x19b),'FwuRw':_0x2d0b90(0x16e),'iHQaV':_0x2d0b90(0x161),'NApgn':_0x2d0b90(0x194),'ARcQc':_0x2d0b90(0x172),'KwwTk':_0x2d0b90(0x164),'dAslB':_0x2d0b90(0x197),'rhYSE':_0x2d0b90(0x160),'dJOlD':_0x2d0b90(0x17a)+'le','RdQyf':_0x2d0b90(0x16f),'rxPps':_0x2d0b90(0x16c)+'pe','WoEkC':_0x2d0b90(0x15f),'TqIRi':_0x2d0b90(0x15d)+'th','PKdwA':_0x2d0b90(0x168),'JiEMB':_0x2d0b90(0x192)+_0x2d0b90(0x175)+_0x2d0b90(0x175)+_0x2d0b90(0x175)+'00'},_0x257dd3={'name':_0x23814e[_0x2d0b90(0x183)],'version':'1','chainId':env_1[_0x2d0b90(0x15e)+_0x2d0b90(0x177)],'verifyingContract':env_1[_0x2d0b90(0x17c)+_0x2d0b90(0x19a)+_0x2d0b90(0x179)]},_0xae1595={'AssetProfile':[{'name':_0x23814e[_0x2d0b90(0x191)],'type':_0x23814e[_0x2d0b90(0x19e)]},{'name':_0x23814e[_0x2d0b90(0x188)],'type':_0x23814e[_0x2d0b90(0x195)]},{'name':_0x23814e[_0x2d0b90(0x17f)],'type':_0x23814e[_0x2d0b90(0x17f)]},{'name':_0x23814e[_0x2d0b90(0x17b)],'type':_0x23814e[_0x2d0b90(0x18b)]},{'name':_0x23814e[_0x2d0b90(0x180)],'type':_0x23814e[_0x2d0b90(0x19e)]}],'LiquidityIntent':[{'name':'id','type':_0x23814e[_0x2d0b90(0x19e)]},{'name':_0x23814e[_0x2d0b90(0x190)],'type':_0x23814e[_0x2d0b90(0x17f)]},{'name':_0x23814e[_0x2d0b90(0x19d)],'type':_0x23814e[_0x2d0b90(0x17f)]},{'name':_0x23814e[_0x2d0b90(0x186)],'type':_0x23814e[_0x2d0b90(0x18d)]},{'name':_0x23814e[_0x2d0b90(0x189)],'type':_0x23814e[_0x2d0b90(0x195)]},{'name':_0x23814e[_0x2d0b90(0x176)],'type':_0x23814e[_0x2d0b90(0x19e)]},{'name':_0x23814e[_0x2d0b90(0x170)],'type':_0x23814e[_0x2d0b90(0x195)]},{'name':_0x23814e[_0x2d0b90(0x178)],'type':_0x23814e[_0x2d0b90(0x171)]}]},_0x1f89ae={..._0x187599,'asset':{..._0x187599[_0x2d0b90(0x160)],'address':_0x187599[_0x2d0b90(0x160)][_0x2d0b90(0x16e)]||_0x23814e[_0x2d0b90(0x1a0)]},'feedbackAuth':_0x49d285};return this[_0x2d0b90(0x18a)][_0x2d0b90(0x193)+_0x2d0b90(0x165)](_0x257dd3,_0xae1595,_0x1f89ae);}[_0xfcc3ad(0x18c)](){const _0x14a520=_0xfcc3ad;return this[_0x14a520(0x18a)][_0x14a520(0x16e)];}}exports[_0xfcc3ad(0x18f)+_0xfcc3ad(0x17d)]=HandshakeSigner;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.HandshakeSigner = void 0;
+const ethers_1 = require("ethers");
+const env_1 = require("../config/env");
+class HandshakeSigner {
+    constructor(privateKey) {
+        this.wallet = new ethers_1.Wallet(privateKey);
+    }
+    async signIntent(intent, feedbackAuth = false) {
+        const domain = {
+            name: 'AgenticEconomy',
+            version: '1',
+            chainId: env_1.DEFAULT_CHAIN_ID, // TODO: Make dynamic based on intent.asset.chainId
+            verifyingContract: env_1.VERIFYING_CONTRACT_ADDRESS
+        };
+        const types = {
+            AssetProfile: [
+                { name: 'type', type: 'string' },
+                { name: 'chainId', type: 'uint256' },
+                { name: 'address', type: 'address' },
+                { name: 'decimals', type: 'uint8' },
+                { name: 'symbol', type: 'string' }
+            ],
+            LiquidityIntent: [
+                { name: 'id', type: 'string' },
+                { name: 'buyer', type: 'address' },
+                { name: 'seller', type: 'address' },
+                { name: 'asset', type: 'AssetProfile' },
+                { name: 'amount', type: 'uint256' },
+                { name: 'envelopeType', type: 'string' },
+                { name: 'deadline', type: 'uint256' },
+                { name: 'feedbackAuth', type: 'bool' }
+            ]
+        };
+        // Sanitize values for EIP-712
+        const value = {
+            ...intent,
+            asset: {
+                ...intent.asset,
+                address: intent.asset.address || '0x0000000000000000000000000000000000000000'
+            },
+            feedbackAuth
+        };
+        return this.wallet.signTypedData(domain, types, value);
+    }
+    getAddress() {
+        return this.wallet.address;
+    }
+}
+exports.HandshakeSigner = HandshakeSigner;

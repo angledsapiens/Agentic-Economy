@@ -1,1 +1,35 @@
-'use strict';function _0x26c8(){var _0x1589d2=['bufdT','e/signer','/signature','1958810JIfQDc','defineProp','y/policy','ent','nt/engine','y/resolver','__createBi','./settleme','SotTi','call','2871nCTkEi','shfov','nt/vault','3808056HKfmmk','./core/ass','./audit/re','/attestor','__esModule','/schema','./discover','./verifier','231961maKSWn','e/commitme','nding','writable','HJQpr','__exportSt','ceipt','stants','135252IoFQkZ','3615498lpioMc','porter','OobIa','./config/e','670LAdEYA','nt/lifecyc','3394415PZCcfF','./fiduciar','hasOwnProp','configurab','-resolver','lMWKF','./audit/ex','ets','./core/con','prototype','4JmdGyR','getOwnProp','ptor','gMIiq','./core/int','create','./handshak','get','ertyDescri','default','erty','2616UygJns','y/contract'];_0x26c8=function(){return _0x1589d2;};return _0x26c8();}var _0x4df7b3=_0x59d5;(function(_0x3be065,_0xa58b9){var _0x1cc001=_0x59d5,_0x11fe2e=_0x3be065();while(!![]){try{var _0x5c1c8b=-parseInt(_0x1cc001(0x166))/(0x1cb*0x3+0x2619+-0x2b79*0x1)*(-parseInt(_0x1cc001(0x17f))/(0x1*0xb13+0x217d+-0x2c8e))+parseInt(_0x1cc001(0x15b))/(-0x155e+0x127e+0x1*0x2e3)*(parseInt(_0x1cc001(0x18a))/(-0x23d7+-0x17ce+0x3ba9))+parseInt(_0x1cc001(0x175))/(-0xa*0x14b+-0x1*0x1cb5+0x1*0x29a8)+-parseInt(_0x1cc001(0x16f))/(-0x5e*0x41+-0x1a29+0x320d)+-parseInt(_0x1cc001(0x151))/(-0x2638+-0x22c7+-0x1*-0x4906)+parseInt(_0x1cc001(0x15e))/(0x1506+0x1dd1+-0x32cf)+-parseInt(_0x1cc001(0x16e))/(0x2*0xc42+0x295*-0x6+-0x8fd)*(parseInt(_0x1cc001(0x173))/(-0x1*0x1b59+0xeb8*-0x2+0x45f*0xd));if(_0x5c1c8b===_0xa58b9)break;else _0x11fe2e['push'](_0x11fe2e['shift']());}catch(_0x5b757c){_0x11fe2e['push'](_0x11fe2e['shift']());}}}(_0x26c8,-0xa*-0x7a05+0x1762d*-0x3+0x50a9e));var __createBinding=this&&this[_0x4df7b3(0x157)+_0x4df7b3(0x168)]||(Object[_0x4df7b3(0x184)]?function(_0x14e8b2,_0x21803f,_0x307a62,_0x4d1e5e){var _0x578194=_0x4df7b3,_0x587b29={'gMIiq':function(_0x32d400,_0xe291eb){return _0x32d400===_0xe291eb;},'bufdT':function(_0x2fcf0b,_0x34e5c4){return _0x2fcf0b in _0x34e5c4;},'OobIa':_0x578194(0x186)};if(_0x587b29[_0x578194(0x182)](_0x4d1e5e,undefined))_0x4d1e5e=_0x307a62;var _0x1e3bc8=Object[_0x578194(0x180)+_0x578194(0x187)+_0x578194(0x181)](_0x21803f,_0x307a62);(!_0x1e3bc8||(_0x587b29[_0x578194(0x14e)](_0x587b29[_0x578194(0x171)],_0x1e3bc8)?!_0x21803f[_0x578194(0x162)]:_0x1e3bc8[_0x578194(0x169)]||_0x1e3bc8[_0x578194(0x178)+'le']))&&(_0x1e3bc8={'enumerable':!![],'get':function(){return _0x21803f[_0x307a62];}}),Object[_0x578194(0x152)+_0x578194(0x189)](_0x14e8b2,_0x4d1e5e,_0x1e3bc8);}:function(_0x5f5505,_0x1d2a94,_0x31855c,_0xa207c2){var _0x5f1220=_0x4df7b3,_0x4637dd={'HJQpr':function(_0x49a838,_0x8875d0){return _0x49a838===_0x8875d0;}};if(_0x4637dd[_0x5f1220(0x16a)](_0xa207c2,undefined))_0xa207c2=_0x31855c;_0x5f5505[_0xa207c2]=_0x1d2a94[_0x31855c];}),__exportStar=this&&this[_0x4df7b3(0x16b)+'ar']||function(_0x2f06b0,_0x5b6fd3){var _0x724033=_0x4df7b3,_0x115c56={'shfov':function(_0xdb232f,_0x3bce5f){return _0xdb232f!==_0x3bce5f;},'SotTi':_0x724033(0x188),'lMWKF':function(_0xa6ffa8,_0x3e825f,_0x144b5e,_0x48a8b7){return _0xa6ffa8(_0x3e825f,_0x144b5e,_0x48a8b7);}};for(var _0x29e1e9 in _0x2f06b0)if(_0x115c56[_0x724033(0x15c)](_0x29e1e9,_0x115c56[_0x724033(0x159)])&&!Object[_0x724033(0x17e)][_0x724033(0x177)+_0x724033(0x189)][_0x724033(0x15a)](_0x5b6fd3,_0x29e1e9))_0x115c56[_0x724033(0x17a)](__createBinding,_0x5b6fd3,_0x2f06b0,_0x29e1e9);};function _0x59d5(_0x3d0ac5,_0x1aa3d1){_0x3d0ac5=_0x3d0ac5-(0x1d22+-0x14bd*0x1+0x5*-0x16b);var _0x1840a6=_0x26c8();var _0x252c77=_0x1840a6[_0x3d0ac5];return _0x252c77;}Object[_0x4df7b3(0x152)+_0x4df7b3(0x189)](exports,_0x4df7b3(0x162),{'value':!![]}),__exportStar(require(_0x4df7b3(0x183)+_0x4df7b3(0x154)),exports),__exportStar(require(_0x4df7b3(0x15f)+_0x4df7b3(0x17c)),exports),__exportStar(require(_0x4df7b3(0x17d)+_0x4df7b3(0x16d)),exports),__exportStar(require(_0x4df7b3(0x185)+_0x4df7b3(0x14f)),exports),__exportStar(require(_0x4df7b3(0x185)+_0x4df7b3(0x167)+'nt'),exports),__exportStar(require(_0x4df7b3(0x158)+_0x4df7b3(0x155)),exports),__exportStar(require(_0x4df7b3(0x158)+_0x4df7b3(0x174)+'le'),exports),__exportStar(require(_0x4df7b3(0x158)+_0x4df7b3(0x15d)),exports),__exportStar(require(_0x4df7b3(0x165)+_0x4df7b3(0x161)),exports),__exportStar(require(_0x4df7b3(0x165)+_0x4df7b3(0x163)),exports),__exportStar(require(_0x4df7b3(0x165)+_0x4df7b3(0x150)+'s'),exports),__exportStar(require(_0x4df7b3(0x164)+_0x4df7b3(0x156)),exports),__exportStar(require(_0x4df7b3(0x164)+_0x4df7b3(0x18b)+_0x4df7b3(0x179)),exports),__exportStar(require(_0x4df7b3(0x160)+_0x4df7b3(0x16c)),exports),__exportStar(require(_0x4df7b3(0x17b)+_0x4df7b3(0x170)),exports),__exportStar(require(_0x4df7b3(0x172)+'nv'),exports),__exportStar(require(_0x4df7b3(0x176)+_0x4df7b3(0x153)),exports);
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+__exportStar(require("./core/intent"), exports);
+__exportStar(require("./core/assets"), exports);
+__exportStar(require("./core/constants"), exports);
+__exportStar(require("./handshake/signer"), exports);
+__exportStar(require("./handshake/commitment"), exports);
+__exportStar(require("./settlement/engine"), exports);
+__exportStar(require("./settlement/lifecycle"), exports);
+__exportStar(require("./settlement/vault"), exports);
+__exportStar(require("./verifier/attestor"), exports);
+__exportStar(require("./verifier/schema"), exports);
+__exportStar(require("./verifier/signatures"), exports);
+__exportStar(require("./discovery/resolver"), exports);
+__exportStar(require("./discovery/contract-resolver"), exports);
+__exportStar(require("./audit/receipt"), exports);
+__exportStar(require("./audit/exporter"), exports);
+__exportStar(require("./config/env"), exports);
+__exportStar(require("./fiduciary/policy"), exports);
+// Server is likely a standalone entry point, but we can export the app if needed
+// export * from './server';

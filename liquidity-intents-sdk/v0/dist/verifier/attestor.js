@@ -1,1 +1,53 @@
-'use strict';const _0x537888=_0x2257;(function(_0x4626a5,_0x1f79e2){const _0x19da35=_0x2257,_0x5b6d9c=_0x4626a5();while(!![]){try{const _0x2ba256=parseInt(_0x19da35(0x152))/(-0x1327+0x1*0x43f+0xee9)*(parseInt(_0x19da35(0x156))/(-0xdce+0x1f3e+-0x116e))+-parseInt(_0x19da35(0x183))/(-0x55*0x5+0x176f+0x15c3*-0x1)*(parseInt(_0x19da35(0x18e))/(-0x1*-0x52c+-0x2004+0x1adc))+parseInt(_0x19da35(0x17f))/(0xcd4*-0x1+0xe05+-0x12c*0x1)+parseInt(_0x19da35(0x14a))/(0x1*-0x9a9+0x5*-0x209+-0x13dc*-0x1)*(parseInt(_0x19da35(0x14d))/(0x1*0x939+-0x2*0x1210+0x1aee))+parseInt(_0x19da35(0x148))/(-0x4*0x678+-0xabd+0x24a5)*(parseInt(_0x19da35(0x199))/(0x1f*0x17+0x12fc+-0x1*0x15bc))+-parseInt(_0x19da35(0x176))/(0xe1b*0x1+-0x1*0x132f+-0x106*-0x5)+-parseInt(_0x19da35(0x175))/(-0xc1b+0xedf+-0x2b9);if(_0x2ba256===_0x1f79e2)break;else _0x5b6d9c['push'](_0x5b6d9c['shift']());}catch(_0x145ffe){_0x5b6d9c['push'](_0x5b6d9c['shift']());}}}(_0x5baf,-0x40319*-0x1+0x91f11*0x2+-0xda*0xd0a));function _0x2257(_0x2a6b0b,_0xd98771){_0x2a6b0b=_0x2a6b0b-(-0x3*0x7be+0x1*0x1d27+-0x4a5);const _0x406ac3=_0x5baf();let _0x1120de=_0x406ac3[_0x2a6b0b];return _0x1120de;}Object[_0x537888(0x194)+_0x537888(0x195)](exports,_0x537888(0x14e),{'value':!![]}),exports[_0x537888(0x19c)]=void(0xd58*0x1+-0xb*0x223+-0x3*-0x363);function _0x5baf(){const _0xe38953=['eas-sdk','1052jHyUts','LIS_MODE','error','string','wait','EAS_CONTRA','defineProp','erty','MYFKB','ethers','status','909jJOOqv','\x20MODE:\x20Pus','\x20attestati','Attestor','LIVE','TESTNET','attestatio','_SEPOLIA','ed\x20to\x20push','_MAINNET','bytes32\x20in','der','...','36256hXteaq','LOCAL','12534ciMykJ','zGLlk','mPuHL','3794Xziljx','__esModule','0000000000','tTVGG','encodeData','22xwmDIL','ring\x20statu','https://se','[EAS]\x20Fail','104018IIeUYN','vider','[EAS]\x20','0x_mock_at','000000','signer','SchemaEnco','Wallet','neqZM','log','.org','EAS','env','eAttestati','0x00000000','[EAS]\x20New\x20','station\x20fo','bytes32','now','0x01234567','n\x20recorded','attest','testation_','890123','eas','tentId,\x20st','JfMKM','L\x20MODE:\x20Lo','CT_ADDRESS','hing\x20attes','@ethereum-','4882141MYxavA','7454660ymJcBR','connect','JaLbo','tation\x20to\x20','gging\x20atte','polia.base','n-service/','on:','Qggdm','344135jItJmI','8901234567','udwgx','../config/','10071wlhBCF','MagKD','pushOutcom','intentId','htqKD','JsonRpcPro','[EAS]\x20LOCA','seller','KdxZA','toLowerCas'];_0x5baf=function(){return _0xe38953;};return _0x5baf();}const eas_sdk_1=require(_0x537888(0x174)+_0x537888(0x19f)+_0x537888(0x17c)+_0x537888(0x18d)),ethers_1=require(_0x537888(0x197)),env_1=require(_0x537888(0x182)+_0x537888(0x162));class Attestor{constructor(_0x20b838=_0x537888(0x169)+_0x537888(0x180)+_0x537888(0x180)+_0x537888(0x180)+_0x537888(0x180)+_0x537888(0x180)+_0x537888(0x16d)){const _0x2d6050=_0x537888,_0x2c88c0={'mPuHL':_0x2d6050(0x154)+_0x2d6050(0x17b)+_0x2d6050(0x160)};this[_0x2d6050(0x16e)]=new eas_sdk_1[(_0x2d6050(0x161))](env_1[_0x2d6050(0x193)+_0x2d6050(0x172)+_0x2d6050(0x1a0)]);const _0x5617c5=new ethers_1[(_0x2d6050(0x197))][(_0x2d6050(0x188))+(_0x2d6050(0x157))](_0x2c88c0[_0x2d6050(0x14c)]);this[_0x2d6050(0x15b)]=new ethers_1[(_0x2d6050(0x197))][(_0x2d6050(0x15d))](_0x20b838,_0x5617c5),this[_0x2d6050(0x16e)][_0x2d6050(0x177)](this[_0x2d6050(0x15b)]);}async[_0x537888(0x185)+_0x537888(0x163)+'on'](_0x5b7a7b,_0x3904c3){const _0xa07693=_0x537888,_0x290ec3={'tTVGG':_0xa07693(0x149),'KdxZA':function(_0x577a8a,_0x28f394){return _0x577a8a===_0x28f394;},'MYFKB':_0xa07693(0x19e),'htqKD':function(_0x241931,_0x2d10cd){return _0x241931===_0x2d10cd;},'udwgx':_0xa07693(0x19d),'JfMKM':_0xa07693(0x1a3)+_0xa07693(0x16f)+_0xa07693(0x153)+'s','Qggdm':_0xa07693(0x186),'zGLlk':_0xa07693(0x167),'neqZM':_0xa07693(0x198),'JaLbo':_0xa07693(0x191),'MagKD':_0xa07693(0x164)+_0xa07693(0x14f)+_0xa07693(0x14f)+_0xa07693(0x14f)+_0xa07693(0x14f)+_0xa07693(0x14f)+_0xa07693(0x15a)},_0x30f337=process[_0xa07693(0x162)][_0xa07693(0x18f)]||_0x290ec3[_0xa07693(0x150)];if(_0x290ec3[_0xa07693(0x18b)](_0x30f337,_0x290ec3[_0xa07693(0x196)])||_0x290ec3[_0xa07693(0x187)](_0x30f337,_0x290ec3[_0xa07693(0x181)])){const _0x3187e7=_0x290ec3[_0xa07693(0x187)](_0x30f337,_0x290ec3[_0xa07693(0x181)])?env_1[_0xa07693(0x193)+_0xa07693(0x172)+_0xa07693(0x1a2)]:env_1[_0xa07693(0x193)+_0xa07693(0x172)+_0xa07693(0x1a0)];this[_0xa07693(0x16e)]=new eas_sdk_1[(_0xa07693(0x161))](_0x3187e7),this[_0xa07693(0x16e)][_0xa07693(0x177)](this[_0xa07693(0x15b)]);try{console[_0xa07693(0x15f)](_0xa07693(0x158)+_0x30f337+(_0xa07693(0x19a)+_0xa07693(0x173)+_0xa07693(0x179))+_0x3187e7+_0xa07693(0x1a5));const _0x27258a=new eas_sdk_1[(_0xa07693(0x15c))+(_0xa07693(0x1a4))](_0x290ec3[_0xa07693(0x170)]),_0x27b175=_0x27258a[_0xa07693(0x151)]([{'name':_0x290ec3[_0xa07693(0x17e)],'value':ethers_1[_0xa07693(0x197)]['id'](_0x5b7a7b['id']),'type':_0x290ec3[_0xa07693(0x14b)]},{'name':_0x290ec3[_0xa07693(0x15e)],'value':_0x3904c3,'type':_0x290ec3[_0xa07693(0x178)]}]),_0x55e0d8=await this[_0xa07693(0x16e)][_0xa07693(0x16b)]({'schema':_0x290ec3[_0xa07693(0x184)],'data':{'recipient':_0x5b7a7b[_0xa07693(0x18a)],'expirationTime':0x0n,'revocable':!![],'data':_0x27b175}}),_0x4aa370=await _0x55e0d8[_0xa07693(0x192)]();return console[_0xa07693(0x15f)](_0xa07693(0x165)+_0xa07693(0x19f)+_0xa07693(0x16a)+':\x20'+_0x4aa370),_0x4aa370;}catch(_0x4ecffb){console[_0xa07693(0x190)](_0xa07693(0x155)+_0xa07693(0x1a1)+_0xa07693(0x19b)+_0xa07693(0x17d),_0x4ecffb);throw _0x4ecffb;}}else return console[_0xa07693(0x15f)](_0xa07693(0x189)+_0xa07693(0x171)+_0xa07693(0x17a)+_0xa07693(0x166)+'r\x20'+_0x5b7a7b['id']+':\x20'+_0x3904c3),_0xa07693(0x159)+_0xa07693(0x16c)+_0x3904c3[_0xa07693(0x18c)+'e']()+'_'+Date[_0xa07693(0x168)]();}}exports[_0x537888(0x19c)]=Attestor;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Attestor = void 0;
+const eas_sdk_1 = require("@ethereum-attestation-service/eas-sdk");
+const ethers_1 = require("ethers");
+const env_1 = require("../config/env");
+class Attestor {
+    constructor(privateKey = "0x0123456789012345678901234567890123456789012345678901234567890123") {
+        // Default to Sepolia for init, though address depends on mode
+        this.eas = new eas_sdk_1.EAS(env_1.EAS_CONTRACT_ADDRESS_SEPOLIA);
+        const provider = new ethers_1.ethers.JsonRpcProvider("https://sepolia.base.org");
+        this.signer = new ethers_1.ethers.Wallet(privateKey, provider);
+        this.eas.connect(this.signer);
+    }
+    async pushOutcomeAttestation(intent, status) {
+        const mode = process.env.LIS_MODE || 'LOCAL';
+        if (mode === 'TESTNET' || mode === 'LIVE') {
+            const contractAddress = mode === 'LIVE' ? env_1.EAS_CONTRACT_ADDRESS_MAINNET : env_1.EAS_CONTRACT_ADDRESS_SEPOLIA;
+            // Re-connect EAS to correct contract if needed (for now assume similar ABI/SDK handling)
+            this.eas = new eas_sdk_1.EAS(contractAddress);
+            this.eas.connect(this.signer);
+            try {
+                console.log(`[EAS] ${mode} MODE: Pushing attestation to ${contractAddress}...`);
+                const schemaEncoder = new eas_sdk_1.SchemaEncoder("bytes32 intentId, string status");
+                const encodedData = schemaEncoder.encodeData([
+                    { name: "intentId", value: ethers_1.ethers.id(intent.id), type: "bytes32" },
+                    { name: "status", value: status, type: "string" }
+                ]);
+                const tx = await this.eas.attest({
+                    schema: "0x0000000000000000000000000000000000000000000000000000000000000000", // TODO: Register Schema
+                    data: {
+                        recipient: intent.seller, // Attest to the Seller's performance
+                        expirationTime: 0n,
+                        revocable: true,
+                        data: encodedData,
+                    },
+                });
+                const newAttestationUID = await tx.wait();
+                console.log(`[EAS] New attestation recorded: ${newAttestationUID}`);
+                return newAttestationUID;
+            }
+            catch (error) {
+                console.error(`[EAS] Failed to push attestation:`, error);
+                throw error;
+            }
+        }
+        else {
+            console.log(`[EAS] LOCAL MODE: Logging attestation for ${intent.id}: ${status}`);
+            return `0x_mock_attestation_${status.toLowerCase()}_${Date.now()}`;
+        }
+    }
+}
+exports.Attestor = Attestor;

@@ -1,1 +1,42 @@
-'use strict';const _0x22c626=_0x148d;(function(_0xbbbe43,_0x5390f0){const _0x4ba83d=_0x148d,_0x441acc=_0xbbbe43();while(!![]){try{const _0xceaa7=-parseInt(_0x4ba83d(0x114))/(-0x1822+-0x1099+-0x3*-0xd94)*(parseInt(_0x4ba83d(0x137))/(-0xe4a+-0xd80+-0x6*-0x4a2))+-parseInt(_0x4ba83d(0x11d))/(-0x1*-0x1f9d+-0xc4+0x1ed6*-0x1)*(parseInt(_0x4ba83d(0xfd))/(-0xe24*-0x2+-0x1d26+0xe2))+parseInt(_0x4ba83d(0x10b))/(-0xdf9+0x1*0x11ef+-0x3f1)+-parseInt(_0x4ba83d(0x12c))/(-0x9d4+0x1*-0xd52+0x172c*0x1)*(parseInt(_0x4ba83d(0x123))/(-0x60a+-0x11*0xe5+0x1546))+-parseInt(_0x4ba83d(0x118))/(-0x25af+-0xa89*0x2+-0x3ac9*-0x1)*(-parseInt(_0x4ba83d(0x130))/(0x6*-0x55c+-0x7bb*0x3+0x3762))+parseInt(_0x4ba83d(0x126))/(0x1e9f*-0x1+-0x12f2+0x319b)+parseInt(_0x4ba83d(0x149))/(0x3f5+0x2012+-0x23fc)*(parseInt(_0x4ba83d(0x128))/(-0x2c6+-0x29*0x2e+-0x146*-0x8));if(_0xceaa7===_0x5390f0)break;else _0x441acc['push'](_0x441acc['shift']());}catch(_0x4cfa9b){_0x441acc['push'](_0x441acc['shift']());}}}(_0x47f8,0xfb47c+0x28*0x749f+-0x1566eb*0x1));function _0x47f8(){const _0x5b4f5b=['JsonRpcPro','tRegistere','__esModule','2644520pHGYAp','defineProp','provider','memory\x20_ca','function\x20r','vider','ethers','ring\x20capab','56\x20tokenId','1xBSNyZ','ents:','iNruu','dress','208vulOZb','6\x20minPrice','Contract','returns\x20(t','minPrice','60246LCdloj','formatUnit','ent','indexed\x20ag','Failed\x20to\x20','blic\x20view\x20','7zIUPwk','ublic','toString','6239920jURaXl','uple(addre','27897708JlMcPt','mory\x20_capa','Wallet','g\x20capabili','460434NlvdYg','Capability','function\x20g','wait','66564gkFFdF','ility,\x20uin','map','etAgentsBy','event\x20Agen','ty,\x20uint25','registerAg','3215330KOwazB','on\x20tx\x20sent','erty','solver','nt(string\x20','t256\x20minPr',')[])','bility)\x20pu','getAgentsB','capability','pability,\x20','yCapabilit','error','ent,\x20strin','tokenId)','ess','tokenId','Registrati','11oQljkv','egisterAge','hash','wei','inPrice)\x20p','register','resolve\x20ag','ss\x20walletA','d(address\x20','232JrxGGK','ddress,\x20st','log','walletAddr','uint256\x20_m',',\x20uint256\x20','(string\x20me','registryAd','ContractRe','ice,\x20uint2','getAgents'];_0x47f8=function(){return _0x5b4f5b;};return _0x47f8();}Object[_0x22c626(0x10c)+_0x22c626(0x139)](exports,_0x22c626(0x10a),{'value':!![]}),exports[_0x22c626(0x105)+_0x22c626(0x13a)]=void(-0x3*0x1f1+0x256d+-0x329*0xa);const ethers_1=require(_0x22c626(0x111)),REGISTRY_ABI=[_0x22c626(0x10f)+_0x22c626(0xf5)+_0x22c626(0x13b)+_0x22c626(0x10e)+_0x22c626(0x141)+_0x22c626(0x101)+_0x22c626(0xf8)+_0x22c626(0x124),_0x22c626(0x12e)+_0x22c626(0x133)+_0x22c626(0x12d)+_0x22c626(0x103)+_0x22c626(0x129)+_0x22c626(0x13e)+_0x22c626(0x122)+_0x22c626(0x11b)+_0x22c626(0x127)+_0x22c626(0xfb)+_0x22c626(0xfe)+_0x22c626(0x112)+_0x22c626(0x131)+_0x22c626(0x13c)+_0x22c626(0x106)+_0x22c626(0x113)+_0x22c626(0x13d),_0x22c626(0x134)+_0x22c626(0x109)+_0x22c626(0xfc)+_0x22c626(0x120)+_0x22c626(0x144)+_0x22c626(0x12b)+_0x22c626(0x135)+_0x22c626(0x119)+_0x22c626(0x102)+_0x22c626(0x145)];class ContractResolver{constructor(_0x381e30,_0x4eee4e){const _0x4e139e=_0x22c626;this[_0x4e139e(0x10d)]=new ethers_1[(_0x4e139e(0x111))][(_0x4e139e(0x108))+(_0x4e139e(0x110))](_0x381e30),this[_0x4e139e(0x104)+_0x4e139e(0x117)]=_0x4eee4e;}async[_0x22c626(0x107)](_0x5d19c2){const _0x2c649a=_0x22c626,_0x4a7548={'iNruu':_0x2c649a(0x121)+_0x2c649a(0xfa)+_0x2c649a(0x115)},_0x316c34=new ethers_1[(_0x2c649a(0x111))][(_0x2c649a(0x11a))](this[_0x2c649a(0x104)+_0x2c649a(0x117)],REGISTRY_ABI,this[_0x2c649a(0x10d)]);try{const _0x35cfca=await _0x316c34[_0x2c649a(0x13f)+_0x2c649a(0x142)+'y'](_0x5d19c2);return _0x35cfca[_0x2c649a(0x132)](_0x3b2593=>({'walletAddress':_0x3b2593[_0x2c649a(0x100)+_0x2c649a(0x146)],'capability':_0x3b2593[_0x2c649a(0x140)],'minPrice':ethers_1[_0x2c649a(0x111)][_0x2c649a(0x11e)+'s'](_0x3b2593[_0x2c649a(0x11c)],_0x2c649a(0xf7)),'tokenId':_0x3b2593[_0x2c649a(0x147)][_0x2c649a(0x125)]()}));}catch(_0x257319){return console[_0x2c649a(0x143)](_0x4a7548[_0x2c649a(0x116)],_0x257319),[];}}async[_0x22c626(0xf9)](_0xc91a5,_0x48630f,_0x273155){const _0x452f3a=_0x22c626,_0x56ef7a=new ethers_1[(_0x452f3a(0x111))][(_0x452f3a(0x12a))](_0xc91a5,this[_0x452f3a(0x10d)]),_0x1bdab0=new ethers_1[(_0x452f3a(0x111))][(_0x452f3a(0x11a))](this[_0x452f3a(0x104)+_0x452f3a(0x117)],REGISTRY_ABI,_0x56ef7a),_0x39f783=await _0x1bdab0[_0x452f3a(0x136)+_0x452f3a(0x11f)](_0x48630f,_0x273155);return console[_0x452f3a(0xff)](_0x452f3a(0x148)+_0x452f3a(0x138)+':\x20'+_0x39f783[_0x452f3a(0xf6)]),await _0x39f783[_0x452f3a(0x12f)](),_0x39f783[_0x452f3a(0xf6)];}}function _0x148d(_0x546a29,_0x3f9160){_0x546a29=_0x546a29-(-0x943*0x2+-0x3*-0x7c3+-0x3ce);const _0xd47c98=_0x47f8();let _0x31aaab=_0xd47c98[_0x546a29];return _0x31aaab;}exports[_0x22c626(0x105)+_0x22c626(0x13a)]=ContractResolver;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ContractResolver = void 0;
+const ethers_1 = require("ethers");
+// import { AgentRegistry__factory } from '../playground/typechain-types'; // Placeholder for TypeChain
+// For now, we'll inline the ABI for simplicity until compilation is set up
+const REGISTRY_ABI = [
+    "function registerAgent(string memory _capability, uint256 _minPrice) public",
+    "function getAgentsByCapability(string memory _capability) public view returns (tuple(address walletAddress, string capability, uint256 minPrice, uint256 tokenId)[])",
+    "event AgentRegistered(address indexed agent, string capability, uint256 minPrice, uint256 tokenId)"
+];
+class ContractResolver {
+    constructor(rpcUrl, registryAddress) {
+        this.provider = new ethers_1.ethers.JsonRpcProvider(rpcUrl);
+        this.registryAddress = registryAddress;
+    }
+    async getAgents(capability) {
+        const contract = new ethers_1.ethers.Contract(this.registryAddress, REGISTRY_ABI, this.provider);
+        try {
+            const agents = await contract.getAgentsByCapability(capability);
+            return agents.map((a) => ({
+                walletAddress: a.walletAddress,
+                capability: a.capability,
+                minPrice: ethers_1.ethers.formatUnits(a.minPrice, "wei"),
+                tokenId: a.tokenId.toString()
+            }));
+        }
+        catch (error) {
+            console.error("Failed to resolve agents:", error);
+            return [];
+        }
+    }
+    async register(signerPrivateKey, capability, minPriceWei) {
+        const wallet = new ethers_1.ethers.Wallet(signerPrivateKey, this.provider);
+        const contract = new ethers_1.ethers.Contract(this.registryAddress, REGISTRY_ABI, wallet);
+        const tx = await contract.registerAgent(capability, minPriceWei);
+        console.log(`Registration tx sent: ${tx.hash}`);
+        await tx.wait();
+        return tx.hash;
+    }
+}
+exports.ContractResolver = ContractResolver;

@@ -1,1 +1,91 @@
-'use strict';const _0x59b57f=_0x3f5a;(function(_0x4c3648,_0x1289fb){const _0x8732d4=_0x3f5a,_0x47523b=_0x4c3648();while(!![]){try{const _0x3723f4=-parseInt(_0x8732d4(0x169))/(0x1aa8+0x2c9+-0x1d70)+parseInt(_0x8732d4(0x122))/(0x1*-0xed8+0x1e6c+-0xf92*0x1)*(-parseInt(_0x8732d4(0x12d))/(0x6e9+0x1502+-0x1be8))+-parseInt(_0x8732d4(0x12f))/(0x1*0xf0d+-0x27e*0xd+0x115d)*(parseInt(_0x8732d4(0x170))/(-0x13fd+0x7*-0x421+0x1*0x30e9))+-parseInt(_0x8732d4(0x11f))/(-0x182a+0x1*-0xa8b+0x22bb)*(-parseInt(_0x8732d4(0x114))/(-0x1215+0x1961+-0x745))+parseInt(_0x8732d4(0x146))/(0x13*0x16a+-0x554+-0x1582)*(parseInt(_0x8732d4(0x125))/(-0x1f9e+-0x5c*-0x53+0x1d3))+parseInt(_0x8732d4(0x123))/(-0x22b7+-0x7*-0x1b7+0xe*0x1a0)+-parseInt(_0x8732d4(0x148))/(-0x1e46+0x1*-0x17ed+0x83*0x6a)*(-parseInt(_0x8732d4(0x10b))/(0x1dd9+0x1*0x20a+-0x1fd7));if(_0x3723f4===_0x1289fb)break;else _0x47523b['push'](_0x47523b['shift']());}catch(_0x42eac7){_0x47523b['push'](_0x47523b['shift']());}}}(_0x1bb5,0x39434+-0x1*-0xacbda+-0x348bd));function _0x3f5a(_0x1f90e7,_0x230d74){_0x1f90e7=_0x1f90e7-(0x1708+0x1*-0x1b59+0x55b);const _0x3095ec=_0x1bb5();let _0xa5b535=_0x3095ec[_0x1f90e7];return _0xa5b535;}var __createBinding=this&&this[_0x59b57f(0x149)+_0x59b57f(0x124)]||(Object[_0x59b57f(0x175)]?function(_0x3e8555,_0x46981d,_0x387c96,_0x3a206e){const _0x360a82=_0x59b57f,_0x28471e={'jPJmC':function(_0x37a70b,_0x263958){return _0x37a70b===_0x263958;},'YRcCW':function(_0x20e931,_0x3c523c){return _0x20e931 in _0x3c523c;},'ThfYP':_0x360a82(0x12b)};if(_0x28471e[_0x360a82(0x163)](_0x3a206e,undefined))_0x3a206e=_0x387c96;var _0x95c68c=Object[_0x360a82(0x127)+_0x360a82(0x14b)+_0x360a82(0x130)](_0x46981d,_0x387c96);(!_0x95c68c||(_0x28471e[_0x360a82(0x142)](_0x28471e[_0x360a82(0x16d)],_0x95c68c)?!_0x46981d[_0x360a82(0x11d)]:_0x95c68c[_0x360a82(0x111)]||_0x95c68c[_0x360a82(0x156)+'le']))&&(_0x95c68c={'enumerable':!![],'get':function(){return _0x46981d[_0x387c96];}}),Object[_0x360a82(0x168)+_0x360a82(0x162)](_0x3e8555,_0x3a206e,_0x95c68c);}:function(_0x385a2b,_0x5abca8,_0x139008,_0x23415){const _0x3d679e=_0x59b57f,_0x346c56={'swJjb':function(_0x3167a7,_0x38a6a7){return _0x3167a7===_0x38a6a7;}};if(_0x346c56[_0x3d679e(0x14f)](_0x23415,undefined))_0x23415=_0x139008;_0x385a2b[_0x23415]=_0x5abca8[_0x139008];}),__setModuleDefault=this&&this[_0x59b57f(0x13c)+_0x59b57f(0x16f)]||(Object[_0x59b57f(0x175)]?function(_0x353912,_0x5a735f){const _0x5cde7c=_0x59b57f,_0x74d6ca={'ZfMcG':_0x5cde7c(0x13b)};Object[_0x5cde7c(0x168)+_0x5cde7c(0x162)](_0x353912,_0x74d6ca[_0x5cde7c(0x10c)],{'enumerable':!![],'value':_0x5a735f});}:function(_0x5c866c,_0x1847d9){const _0x350252=_0x59b57f,_0x2e2fac={'uJpWj':_0x350252(0x13b)};_0x5c866c[_0x2e2fac[_0x350252(0x132)]]=_0x1847d9;}),__importStar=this&&this[_0x59b57f(0x165)+'ar']||(function(){const _0x32281d=_0x59b57f,_0x706e2f={'qRfVM':function(_0x51dfce,_0x393709){return _0x51dfce(_0x393709);},'ypkGH':_0x32281d(0x15a),'Odmmn':function(_0x246de6,_0x133f3a,_0x216404){return _0x246de6(_0x133f3a,_0x216404);},'hzeGO':function(_0x21610a,_0xa16c15){return _0x21610a!=_0xa16c15;},'gczlY':function(_0x2f513d,_0x302f07){return _0x2f513d(_0x302f07);},'rJJpQ':function(_0x5ed8d5,_0x3117e3){return _0x5ed8d5<_0x3117e3;},'rXWzz':function(_0x492f8c,_0x560a6c){return _0x492f8c!==_0x560a6c;},'zwNsO':_0x32281d(0x13b),'RmZZO':function(_0x14a79e,_0x194e14,_0x1b084f,_0x3a0dbe){return _0x14a79e(_0x194e14,_0x1b084f,_0x3a0dbe);}};var _0x2125fc=function(_0x29fe2d){const _0x416417=_0x32281d;return _0x2125fc=Object[_0x416417(0x127)+_0x416417(0x172)]||function(_0x3721de){const _0x2beb6b=_0x416417;var _0x56e4af=[];for(var _0x2491d0 in _0x3721de)if(Object[_0x2beb6b(0x11c)][_0x2beb6b(0x115)+_0x2beb6b(0x162)][_0x2beb6b(0x16a)](_0x3721de,_0x2491d0))_0x56e4af[_0x56e4af[_0x2beb6b(0x144)]]=_0x2491d0;return _0x56e4af;},_0x706e2f[_0x416417(0x15e)](_0x2125fc,_0x29fe2d);};return function(_0x220e2f){const _0x1a134a=_0x32281d,_0x595aba=_0x706e2f[_0x1a134a(0x147)][_0x1a134a(0x167)]('|');let _0x2e43f0=0x2*0x12fb+-0x149b*0x1+0x3*-0x5c9;while(!![]){switch(_0x595aba[_0x2e43f0++]){case'0':_0x706e2f[_0x1a134a(0x13f)](__setModuleDefault,_0x2cc7c5,_0x220e2f);continue;case'1':return _0x2cc7c5;case'2':if(_0x706e2f[_0x1a134a(0x155)](_0x220e2f,null)){for(var _0x539240=_0x706e2f[_0x1a134a(0x141)](_0x2125fc,_0x220e2f),_0x387c1f=-0x6f8+0xf02+-0x62*0x15;_0x706e2f[_0x1a134a(0x11b)](_0x387c1f,_0x539240[_0x1a134a(0x144)]);_0x387c1f++)if(_0x706e2f[_0x1a134a(0x14a)](_0x539240[_0x387c1f],_0x706e2f[_0x1a134a(0x136)]))_0x706e2f[_0x1a134a(0x11e)](__createBinding,_0x2cc7c5,_0x220e2f,_0x539240[_0x387c1f]);}continue;case'3':if(_0x220e2f&&_0x220e2f[_0x1a134a(0x11d)])return _0x220e2f;continue;case'4':var _0x2cc7c5={};continue;}break;}};}());Object[_0x59b57f(0x168)+_0x59b57f(0x162)](exports,_0x59b57f(0x11d),{'value':!![]});function _0x1bb5(){const _0x27fd9d=['defineProp','571870sToIhu','call','utf8','getObfusca','ThfYP','execSync','eDefault','5KIZIOq','ensureDirS','ertyNames','lete.\x20Obfu','TypeScript','create','statSync','es\x20in\x20dist','Obfuscated','endsWith','n...','writeFileS','1668504KlRCKz','ZfMcG','scated\x20fil','.js','join','Building\x20d','writable','exit','muphj','3011610zSJHin','hasOwnProp','istributio','bin/tsc','ypescript/','pt\x20files..','Compiling\x20','rJJpQ','prototype','__esModule','RmZZO','18Aappvn','removeSync','ync','3486qxqQjW','6920910iuXlSE','nding','249309NVZBSV','error','getOwnProp','QgVCu','javascript','../../dist','get','Build\x20comp','2181VDKQxp','\x22\x20\x22','1217564WHJcmO','ptor','Obfuscatin','uJpWj','resolve','../../node','JrRts','zwNsO','...','Compilatio','oCOYt','MdTHo','default','__setModul','readFileSy','obfuscate','Odmmn','g\x20JavaScri','gczlY','YRcCW','BCCZR','length','child_proc','176VxSsCx','ypkGH','22uYwjFI','__createBi','rXWzz','ertyDescri','MrBVf','pIQQG','ess','swJjb','tedCode','inherit','eOteq','fs-extra','execPath','hzeGO','configurab','existsSync','log','_modules/t','3|4|2|0|1','path','readdirSyn','zmmnE','qRfVM','n\x20failed:','../../','EYTyx','erty','jPJmC','isDirector','__importSt','-obfuscato','split'];_0x1bb5=function(){return _0x27fd9d;};return _0x1bb5();}const fs=__importStar(require(_0x59b57f(0x153))),path=__importStar(require(_0x59b57f(0x15b))),child_process_1=require(_0x59b57f(0x145)+_0x59b57f(0x14e)),JavaScriptObfuscator=require(_0x59b57f(0x129)+_0x59b57f(0x166)+'r'),DIST_DIR=path[_0x59b57f(0x133)](__dirname,_0x59b57f(0x12a)),SRC_DIR=path[_0x59b57f(0x133)](__dirname,'..');async function build(){const _0x537161=_0x59b57f,_0x4e6de5={'JrRts':function(_0x45573b,_0x26d393){return _0x45573b(_0x26d393);},'zmmnE':_0x537161(0x10e),'BCCZR':_0x537161(0x16b),'MrBVf':_0x537161(0x110)+_0x537161(0x116)+_0x537161(0x17a),'pIQQG':_0x537161(0x11a)+_0x537161(0x174)+_0x537161(0x137),'muphj':_0x537161(0x134)+_0x537161(0x159)+_0x537161(0x118)+_0x537161(0x117),'QgVCu':_0x537161(0x151),'eOteq':_0x537161(0x160),'EYTyx':_0x537161(0x138)+_0x537161(0x15f),'MdTHo':_0x537161(0x131)+_0x537161(0x140)+_0x537161(0x119)+'.','oCOYt':_0x537161(0x12c)+_0x537161(0x173)+_0x537161(0x10d)+_0x537161(0x177)+'/'};console[_0x537161(0x158)](_0x4e6de5[_0x537161(0x14c)]);fs[_0x537161(0x157)](DIST_DIR)&&fs[_0x537161(0x120)](DIST_DIR);fs[_0x537161(0x171)+_0x537161(0x121)](DIST_DIR),console[_0x537161(0x158)](_0x4e6de5[_0x537161(0x14d)]);const _0x5ed63c=path[_0x537161(0x133)](__dirname,_0x4e6de5[_0x537161(0x113)]),_0x112e5e=process[_0x537161(0x154)];try{(-0x4fa+-0x1b82+-0x4a4*-0x7,child_process_1[_0x537161(0x16e)])('\x22'+_0x112e5e+_0x537161(0x12e)+_0x5ed63c+'\x22',{'stdio':_0x4e6de5[_0x537161(0x128)],'cwd':path[_0x537161(0x133)](__dirname,_0x4e6de5[_0x537161(0x152)])});}catch(_0x1517e8){console[_0x537161(0x126)](_0x4e6de5[_0x537161(0x161)],_0x1517e8),process[_0x537161(0x112)](-0x1ca8+0x1*-0xbbc+-0x1b*-0x17f);}console[_0x537161(0x158)](_0x4e6de5[_0x537161(0x13a)]);const _0x8d48ba=_0x2d9a4f=>{const _0x40ebfd=_0x537161,_0xc22fc5=fs[_0x40ebfd(0x15c)+'c'](_0x2d9a4f);for(const _0xe41e55 of _0xc22fc5){const _0x381c63=path[_0x40ebfd(0x10f)](_0x2d9a4f,_0xe41e55),_0x20a1d3=fs[_0x40ebfd(0x176)](_0x381c63);if(_0x20a1d3[_0x40ebfd(0x164)+'y']())_0x4e6de5[_0x40ebfd(0x135)](_0x8d48ba,_0x381c63);else{if(_0xe41e55[_0x40ebfd(0x179)](_0x4e6de5[_0x40ebfd(0x15d)])){const _0x33168c=fs[_0x40ebfd(0x13d)+'nc'](_0x381c63,_0x4e6de5[_0x40ebfd(0x143)]),_0x2ef91f=JavaScriptObfuscator[_0x40ebfd(0x13e)](_0x33168c,{'compact':!![],'controlFlowFlattening':!![],'controlFlowFlatteningThreshold':0x1,'numbersToExpressions':!![],'simplify':!![],'stringArrayShuffle':!![],'splitStrings':!![],'stringArrayThreshold':0x1});fs[_0x40ebfd(0x10a)+_0x40ebfd(0x121)](_0x381c63,_0x2ef91f[_0x40ebfd(0x16c)+_0x40ebfd(0x150)]()),console[_0x40ebfd(0x158)](_0x40ebfd(0x178)+':\x20'+_0x381c63);}}}};_0x4e6de5[_0x537161(0x135)](_0x8d48ba,DIST_DIR),console[_0x537161(0x158)](_0x4e6de5[_0x537161(0x139)]);}build();
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+const fs = __importStar(require("fs-extra"));
+const path = __importStar(require("path"));
+const child_process_1 = require("child_process");
+const JavaScriptObfuscator = require('javascript-obfuscator');
+const DIST_DIR = path.resolve(__dirname, '../../dist');
+const SRC_DIR = path.resolve(__dirname, '..');
+async function build() {
+    console.log('Building distribution...');
+    // 1. Clean dist
+    if (fs.existsSync(DIST_DIR)) {
+        fs.removeSync(DIST_DIR);
+    }
+    fs.ensureDirSync(DIST_DIR);
+    // 2. Compile TypeScript
+    console.log('Compiling TypeScript...');
+    const tscJsPath = path.resolve(__dirname, '../../node_modules/typescript/bin/tsc');
+    const nodePath = process.execPath;
+    try {
+        (0, child_process_1.execSync)(`"${nodePath}" "${tscJsPath}"`, { stdio: 'inherit', cwd: path.resolve(__dirname, '../../') });
+    }
+    catch (e) {
+        console.error('Compilation failed:', e);
+        process.exit(1);
+    }
+    // 3. Obfuscate JS files
+    console.log('Obfuscating JavaScript files...');
+    const processDirectory = (dir) => {
+        const files = fs.readdirSync(dir);
+        for (const file of files) {
+            const filePath = path.join(dir, file);
+            const stat = fs.statSync(filePath);
+            if (stat.isDirectory()) {
+                processDirectory(filePath);
+            }
+            else if (file.endsWith('.js')) {
+                const sourceCode = fs.readFileSync(filePath, 'utf8');
+                const obfuscationResult = JavaScriptObfuscator.obfuscate(sourceCode, {
+                    compact: true,
+                    controlFlowFlattening: true,
+                    controlFlowFlatteningThreshold: 1,
+                    numbersToExpressions: true,
+                    simplify: true,
+                    stringArrayShuffle: true,
+                    splitStrings: true,
+                    stringArrayThreshold: 1
+                });
+                fs.writeFileSync(filePath, obfuscationResult.getObfuscatedCode());
+                console.log(`Obfuscated: ${filePath}`);
+            }
+        }
+    };
+    // processDirectory(DIST_DIR);
+    // console.log('Build complete. Obfuscated files in dist/');
+    console.log('Build complete. Files in dist/ (Obfuscation Disabled for Webpack Compatibility)');
+}
+build();

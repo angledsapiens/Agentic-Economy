@@ -54,8 +54,9 @@ async function build() {
     }
   };
 
-  processDirectory(DIST_DIR);
-  console.log('Build complete. Obfuscated files in dist/');
+  // processDirectory(DIST_DIR);
+  // console.log('Build complete. Obfuscated files in dist/');
+  console.log('Build complete. Files in dist/ (Obfuscation Disabled for Webpack Compatibility)');
 }
 
 build();

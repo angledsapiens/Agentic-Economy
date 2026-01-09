@@ -1,1 +1,124 @@
-'use strict';const _0x570e5d=_0x1279;(function(_0x51585b,_0x330c6c){const _0x14f2de=_0x1279,_0x39d534=_0x51585b();while(!![]){try{const _0x2e756b=-parseInt(_0x14f2de(0x20a))/(0x1cb3+-0x2*-0x8cb+-0x2e48)+-parseInt(_0x14f2de(0x1d6))/(0x33b*0x7+-0x227e+0xbe3)*(parseInt(_0x14f2de(0x243))/(-0x16f9+0x1ecb+0x1*-0x7cf))+parseInt(_0x14f2de(0x21b))/(-0x654+0x566+0x2*0x79)*(parseInt(_0x14f2de(0x21d))/(-0x1734+0x20f8+0x5*-0x1f3))+parseInt(_0x14f2de(0x240))/(-0xa3*-0x3b+0x6+0xa3*-0x3b)*(-parseInt(_0x14f2de(0x1f6))/(-0x7*0x137+0x40f+0x5*0xe5))+-parseInt(_0x14f2de(0x1e6))/(-0x1*-0xcbb+-0x23b*-0x9+-0x20c6)+parseInt(_0x14f2de(0x1fc))/(0x13e8+0x9*0x3e1+-0x36c8)+parseInt(_0x14f2de(0x224))/(-0x1*-0xff3+-0x1*-0x22de+-0x32c7);if(_0x2e756b===_0x330c6c)break;else _0x39d534['push'](_0x39d534['shift']());}catch(_0x55166a){_0x39d534['push'](_0x39d534['shift']());}}}(_0x1016,-0xb28a+-0xc89a7+-0x157f04*-0x1));var __importDefault=this&&this[_0x570e5d(0x232)+_0x570e5d(0x1cc)]||function(_0x539b8c){const _0x3a7dd5=_0x570e5d;return _0x539b8c&&_0x539b8c[_0x3a7dd5(0x231)]?_0x539b8c:{'default':_0x539b8c};};function _0x1279(_0x489737,_0x44acf8){_0x489737=_0x489737-(0x26d0+0x743+-0x2c58);const _0x940e57=_0x1016();let _0x298baa=_0x940e57[_0x489737];return _0x298baa;}Object[_0x570e5d(0x1e1)+_0x570e5d(0x1d3)](exports,_0x570e5d(0x231),{'value':!![]});const dotenv_1=__importDefault(require(_0x570e5d(0x1f1)));dotenv_1[_0x570e5d(0x236)][_0x570e5d(0x202)]();const express_1=__importDefault(require(_0x570e5d(0x23c))),cors_1=__importDefault(require(_0x570e5d(0x23e))),fs_1=__importDefault(require('fs')),path_1=__importDefault(require(_0x570e5d(0x205))),engine_1=require(_0x570e5d(0x20c)+_0x570e5d(0x214)),resolver_1=require(_0x570e5d(0x218)+_0x570e5d(0x1d0)),constants_1=require(_0x570e5d(0x215)+_0x570e5d(0x1c5)),USDC_ASSET={'type':_0x570e5d(0x22b),'address':_0x570e5d(0x22e)+_0x570e5d(0x241)+_0x570e5d(0x206)+_0x570e5d(0x1e9)+'13','chainId':0x2105,'decimals':0x6,'symbol':_0x570e5d(0x247)},app=(-0x31a+-0x8a*-0x35+-0x1978,express_1[_0x570e5d(0x236)])(),PORT=0x1276+-0xb9*0x19+0xb53;function _0x1016(){const _0x3da55d=['CrUQY','zRTnf','n\x20http://l','floor','failed','defineProp','VATE_KEY','did:pkh:','REGISTRY_A','vider','4360592bPqlLz','parse','0xBuyer...','1b54bdA029','pcGzF','tRbKn','json','MjElQ','readFileSy','rver','1000','dotenv','cking\x20stat','Failed\x20to\x20','[Init]\x20Che','EnvelopeTy','9380qJfXMN','Discovery\x20','pt\x20from\x20Se','random','/config','.org','2199285kquJDM','Capability','checkAndFu','Resolver','use','LIS_MODE','config','query','\x20running\x20o','path','4c7C32D4f7','dQDyk','ucet','../Policy.','72145OCXhpC','Settlement','./settleme','1000\x20USDC','polia.base','\x20for\x20','iring\x20','lockFunds','DPscy','save\x20polic','nt/engine','./core/con','IA_RPC','rcpt_','./discover','GsyTT','Mode:\x20','62704iHzIIy','PbNWk','5OVfZIZ','AJUjv','resolve','zkdFw','Wallet','LOCAL','...','27142990oIipHO','EMwQC','\x20units...','JsonRpcPro','findAgents','kfjma','JyPYj','ERC20','VERIFIED','message','0x833589fC','[Server]\x20H','env','__esModule','__importDe','replace','Mock\x20Recei','read\x20polic','default','capability','body','status','utf-8','get','express','ard\x20Server','cors','stringify','4314SFCORj','D6eDb6E08f','s\x20for\x20','6RIvzVt','CnlaV','ync','map','USDC','./playgrou','1000000','LIG\x20Dashbo','uJeJQ','writeFileS','listen','/hire','ocalhost:','/audits','KqMfb','stants','now','nd/auto-fa','\x20Failed','DDRESS','https://se','nzPQa','fault','/agents','Registry:\x20','BASE_SEPOL','y/resolver','ethers','post','erty','Engine','log','852266nCJXJy','AutoFaucet','intent-','address','SELLER_PRI','LIP_TEXT'];_0x1016=function(){return _0x3da55d;};return _0x1016();}app[_0x570e5d(0x200)]((-0x601*0x5+0x4ee+-0x1*-0x1917,cors_1[_0x570e5d(0x236)])()),app[_0x570e5d(0x200)](express_1[_0x570e5d(0x236)][_0x570e5d(0x1ec)]());const settlement=new engine_1[(_0x570e5d(0x20b))+(_0x570e5d(0x1d4))](),resolver=new resolver_1[(_0x570e5d(0x1fd))+(_0x570e5d(0x1ff))](process[_0x570e5d(0x230)][_0x570e5d(0x1cf)+_0x570e5d(0x216)]||_0x570e5d(0x1ca)+_0x570e5d(0x20e)+_0x570e5d(0x1fb),process[_0x570e5d(0x230)][_0x570e5d(0x1e4)+_0x570e5d(0x1c9)]);app[_0x570e5d(0x23b)](_0x570e5d(0x1cd),async(_0x16d357,_0x165a5e)=>{const _0x5ce2bd=_0x570e5d,_0x34949e={'MjElQ':_0x5ce2bd(0x1db),'kfjma':_0x5ce2bd(0x1f7)+_0x5ce2bd(0x1e0)},_0x3a7859=_0x16d357[_0x5ce2bd(0x203)][_0x5ce2bd(0x237)]||_0x34949e[_0x5ce2bd(0x1ed)];try{const _0xbdbce4=await resolver[_0x5ce2bd(0x228)](_0x3a7859),_0xbc0444=_0xbdbce4[_0x5ce2bd(0x246)](_0x4d3349=>({'did':_0x4d3349,'capabilities':[_0x3a7859],'reputation':Math[_0x5ce2bd(0x1df)](Math[_0x5ce2bd(0x1f9)]()*(-0x3*-0x812+-0x1*0xb51+0xcd1*-0x1))+(0x2573*-0x1+-0xf6b+0x6*0x8dd),'minPrice':_0x5ce2bd(0x1f0)}));_0x165a5e[_0x5ce2bd(0x1ec)](_0xbc0444);}catch(_0x43cb31){_0x165a5e[_0x5ce2bd(0x239)](0x949*0x4+0x5*0x1b1+0x2ba5*-0x1)[_0x5ce2bd(0x1ec)]({'error':_0x34949e[_0x5ce2bd(0x229)]});}}),app[_0x570e5d(0x1d2)](_0x570e5d(0x1c1),async(_0x22822d,_0x14b68d)=>{const _0x293e85=_0x570e5d,_0x59dbb9={'zkdFw':_0x293e85(0x1e8),'JyPYj':_0x293e85(0x1e3),'CrUQY':function(_0x1deb3b,_0x1fdc82){return _0x1deb3b||_0x1fdc82;},'DPscy':_0x293e85(0x1bc),'zRTnf':function(_0x42c8f0,_0x5e9870){return _0x42c8f0+_0x5e9870;},'KqMfb':_0x293e85(0x20b)+_0x293e85(0x1c8)},{sellerDid:_0x1661a1,amount:_0x295616}=_0x22822d[_0x293e85(0x238)];console[_0x293e85(0x1d5)](_0x293e85(0x22f)+_0x293e85(0x210)+_0x1661a1+_0x293e85(0x20f)+_0x295616+_0x293e85(0x226));const _0x4e270a={'id':_0x293e85(0x1d8)+Date[_0x293e85(0x1c6)](),'buyer':_0x59dbb9[_0x293e85(0x220)],'seller':_0x1661a1[_0x293e85(0x233)](_0x59dbb9[_0x293e85(0x22a)],''),'asset':USDC_ASSET,'amount':_0x59dbb9[_0x293e85(0x1dc)](_0x295616,_0x59dbb9[_0x293e85(0x212)]),'envelopeType':constants_1[_0x293e85(0x1f5)+'pe'][_0x293e85(0x1db)],'deadline':_0x59dbb9[_0x293e85(0x1dd)](Date[_0x293e85(0x1c6)](),-0x2*-0x108e7d+-0xe0*0x736a+0x7ace46)};try{const _0x1846a1=await settlement[_0x293e85(0x211)](_0x4e270a);_0x1846a1?_0x14b68d[_0x293e85(0x1ec)]({'success':!![],'intentId':_0x4e270a['id']}):_0x14b68d[_0x293e85(0x239)](0x1111*0x1+0x21c+-0x5df*0x3)[_0x293e85(0x1ec)]({'success':![],'error':_0x59dbb9[_0x293e85(0x1c4)]});}catch(_0x38f5f){_0x14b68d[_0x293e85(0x239)](0x38*-0x2e+-0x1*0x26d1+0x4d*0xa9)[_0x293e85(0x1ec)]({'success':![],'error':_0x38f5f[_0x293e85(0x22d)]});}}),app[_0x570e5d(0x23b)](_0x570e5d(0x1fa),(_0xa38635,_0x5e4890)=>{const _0x18ef60=_0x570e5d,_0x46bd98={'dQDyk':_0x18ef60(0x209)+_0x18ef60(0x1ec),'tRbKn':_0x18ef60(0x23a),'EMwQC':_0x18ef60(0x1f3)+_0x18ef60(0x235)+'y'};try{const _0x2a0a98=path_1[_0x18ef60(0x236)][_0x18ef60(0x21f)](__dirname,_0x46bd98[_0x18ef60(0x207)]),_0x306911=fs_1[_0x18ef60(0x236)][_0x18ef60(0x1ee)+'nc'](_0x2a0a98,_0x46bd98[_0x18ef60(0x1eb)]);_0x5e4890[_0x18ef60(0x1ec)](JSON[_0x18ef60(0x1e7)](_0x306911));}catch(_0x112b80){_0x5e4890[_0x18ef60(0x239)](0x26df+0x12a0+0xf1*-0x3b)[_0x18ef60(0x1ec)]({'error':_0x46bd98[_0x18ef60(0x225)]});}}),app[_0x570e5d(0x1d2)](_0x570e5d(0x1fa),(_0x5f1818,_0x4923c4)=>{const _0x58ea89=_0x570e5d,_0x316938={'CnlaV':_0x58ea89(0x209)+_0x58ea89(0x1ec),'AJUjv':_0x58ea89(0x1f3)+_0x58ea89(0x213)+'y'};try{const _0x99c032=path_1[_0x58ea89(0x236)][_0x58ea89(0x21f)](__dirname,_0x316938[_0x58ea89(0x244)]);fs_1[_0x58ea89(0x236)][_0x58ea89(0x1bf)+_0x58ea89(0x245)](_0x99c032,JSON[_0x58ea89(0x23f)](_0x5f1818[_0x58ea89(0x238)],null,0xd17+0xbeb+0x280*-0xa)),_0x4923c4[_0x58ea89(0x1ec)]({'success':!![]});}catch(_0x3a4a95){_0x4923c4[_0x58ea89(0x239)](0x2a*-0x20+-0x18e9+0x1*0x201d)[_0x58ea89(0x1ec)]({'error':_0x316938[_0x58ea89(0x21e)]});}}),app[_0x570e5d(0x23b)](_0x570e5d(0x1c3),(_0x585c4b,_0xd8d6c)=>{const _0x596e33=_0x570e5d,_0x20b835={'uJeJQ':_0x596e33(0x234)+_0x596e33(0x1f8)+_0x596e33(0x1ef),'GsyTT':_0x596e33(0x20d),'pcGzF':_0x596e33(0x22c)};_0xd8d6c[_0x596e33(0x1ec)]([{'id':_0x596e33(0x217)+Date[_0x596e33(0x1c6)](),'description':_0x20b835[_0x596e33(0x1be)],'timestamp':Date[_0x596e33(0x1c6)](),'amount':_0x20b835[_0x596e33(0x219)],'status':_0x20b835[_0x596e33(0x1ea)]}]);});const auto_faucet_1=require(_0x570e5d(0x1bb)+_0x570e5d(0x1c7)+_0x570e5d(0x208)),ethers_1=require(_0x570e5d(0x1d1));app[_0x570e5d(0x1c0)](PORT,async()=>{const _0x1fe34d=_0x570e5d,_0x13ef57={'nzPQa':_0x1fe34d(0x222),'PbNWk':function(_0x4d0683,_0x33dc48){return _0x4d0683!==_0x33dc48;}};console[_0x1fe34d(0x1d5)](_0x1fe34d(0x1bd)+_0x1fe34d(0x23d)+_0x1fe34d(0x204)+_0x1fe34d(0x1de)+_0x1fe34d(0x1c2)+PORT),console[_0x1fe34d(0x1d5)](_0x1fe34d(0x21a)+(process[_0x1fe34d(0x230)][_0x1fe34d(0x201)]||_0x13ef57[_0x1fe34d(0x1cb)])),console[_0x1fe34d(0x1d5)](_0x1fe34d(0x1ce)+process[_0x1fe34d(0x230)][_0x1fe34d(0x1e4)+_0x1fe34d(0x1c9)]);if(_0x13ef57[_0x1fe34d(0x21c)](process[_0x1fe34d(0x230)][_0x1fe34d(0x201)],_0x13ef57[_0x1fe34d(0x1cb)])){const _0x240fdf=new ethers_1[(_0x1fe34d(0x1d1))][(_0x1fe34d(0x227))+(_0x1fe34d(0x1e5))](process[_0x1fe34d(0x230)][_0x1fe34d(0x1cf)+_0x1fe34d(0x216)]);if(process[_0x1fe34d(0x230)][_0x1fe34d(0x1da)+_0x1fe34d(0x1e2)]){const _0x51f5a8=new ethers_1[(_0x1fe34d(0x1d1))][(_0x1fe34d(0x221))](process[_0x1fe34d(0x230)][_0x1fe34d(0x1da)+_0x1fe34d(0x1e2)],_0x240fdf);console[_0x1fe34d(0x1d5)](_0x1fe34d(0x1f4)+_0x1fe34d(0x1f2)+_0x1fe34d(0x242)+_0x51f5a8[_0x1fe34d(0x1d9)]+_0x1fe34d(0x223)),await auto_faucet_1[_0x1fe34d(0x1d7)][_0x1fe34d(0x1fe)+'nd'](_0x51f5a8[_0x1fe34d(0x1d9)],_0x240fdf);}}});
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config(); // Load .env before imports
+const express_1 = __importDefault(require("express"));
+const cors_1 = __importDefault(require("cors"));
+const fs_1 = __importDefault(require("fs"));
+const path_1 = __importDefault(require("path"));
+const engine_1 = require("./settlement/engine");
+const resolver_1 = require("./discovery/resolver");
+const constants_1 = require("./core/constants");
+// Mock USDC Asset if not exported
+const USDC_ASSET = {
+    type: 'ERC20',
+    address: '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913', // Base USDC
+    chainId: 8453,
+    decimals: 6,
+    symbol: 'USDC'
+};
+const app = (0, express_1.default)();
+const PORT = 3000;
+app.use((0, cors_1.default)());
+app.use(express_1.default.json());
+// Initialize SDK Components
+const settlement = new engine_1.SettlementEngine();
+const resolver = new resolver_1.CapabilityResolver(process.env.BASE_SEPOLIA_RPC || 'https://sepolia.base.org', process.env.REGISTRY_ADDRESS // Optional: Set in .env if deployed
+);
+// --- Endpoints ---
+// 1. Discovery: Get Agents
+app.get('/agents', async (req, res) => {
+    const capability = req.query.capability || 'LIP_TEXT';
+    try {
+        const dids = await resolver.findAgents(capability);
+        // Mocking reputation/minPrice since Resolver currently returns strings
+        const enriched = dids.map(did => ({
+            did,
+            capabilities: [capability],
+            reputation: Math.floor(Math.random() * 20) + 80, // Mock 80-100
+            minPrice: '1000'
+        }));
+        res.json(enriched);
+    }
+    catch (e) {
+        res.status(500).json({ error: 'Discovery failed' });
+    }
+});
+// 2. Hire: Trigger Settlement
+app.post('/hire', async (req, res) => {
+    const { sellerDid, amount } = req.body;
+    console.log(`[Server] Hiring ${sellerDid} for ${amount} units...`);
+    const intent = {
+        id: `intent-${Date.now()}`,
+        buyer: '0xBuyer...', // Mock Buyer
+        seller: sellerDid.replace('did:pkh:', ''), // Extract address
+        asset: USDC_ASSET,
+        amount: amount || '1000000',
+        envelopeType: constants_1.EnvelopeType.LIP_TEXT,
+        deadline: Date.now() + 3600000
+    };
+    try {
+        const result = await settlement.lockFunds(intent);
+        if (result) {
+            res.json({ success: true, intentId: intent.id });
+        }
+        else {
+            res.status(400).json({ success: false, error: 'Settlement Failed' });
+        }
+    }
+    catch (e) {
+        res.status(500).json({ success: false, error: e.message });
+    }
+});
+// 3. Config: Read Policy
+app.get('/config', (req, res) => {
+    try {
+        const p = path_1.default.resolve(__dirname, '../Policy.json');
+        const data = fs_1.default.readFileSync(p, 'utf-8');
+        res.json(JSON.parse(data));
+    }
+    catch (e) {
+        res.status(500).json({ error: 'Failed to read policy' });
+    }
+});
+// 4. Config: Write Policy
+app.post('/config', (req, res) => {
+    try {
+        const p = path_1.default.resolve(__dirname, '../Policy.json');
+        fs_1.default.writeFileSync(p, JSON.stringify(req.body, null, 2));
+        // Reload policy in Fiduciary (requires restart or notify logic, assuming simple restart for now)
+        res.json({ success: true });
+    }
+    catch (e) {
+        res.status(500).json({ error: 'Failed to save policy' });
+    }
+});
+// 5. Audits: Read Receipts (Mock for now, or scan dir)
+app.get('/audits', (req, res) => {
+    // TODO: scan local audit directory if implemented
+    res.json([
+        { id: `rcpt_${Date.now()}`, description: 'Mock Receipt from Server', timestamp: Date.now(), amount: '1000 USDC', status: 'VERIFIED' }
+    ]);
+});
+// ... imports
+const auto_faucet_1 = require("./playground/auto-faucet");
+const ethers_1 = require("ethers");
+// ... existing code ...
+app.listen(PORT, async () => {
+    console.log(`LIG Dashboard Server running on http://localhost:${PORT}`);
+    console.log(`Mode: ${process.env.LIS_MODE || 'LOCAL'}`);
+    console.log(`Registry: ${process.env.REGISTRY_ADDRESS}`);
+    // Automated Initialization
+    if (process.env.LIS_MODE !== 'LOCAL') {
+        const provider = new ethers_1.ethers.JsonRpcProvider(process.env.BASE_SEPOLIA_RPC);
+        // Assuming single wallet from env or derived
+        if (process.env.SELLER_PRIVATE_KEY) {
+            const wallet = new ethers_1.ethers.Wallet(process.env.SELLER_PRIVATE_KEY, provider);
+            console.log(`[Init] Checking stats for ${wallet.address}...`);
+            await auto_faucet_1.AutoFaucet.checkAndFund(wallet.address, provider);
+        }
+    }
+});
