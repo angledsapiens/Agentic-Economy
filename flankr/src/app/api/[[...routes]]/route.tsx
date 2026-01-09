@@ -125,7 +125,7 @@ app.transaction('/tx', async (c) => {
     functionName: 'approve',
     args: [],
     to: '0x0000000000000000000000000000000000000000',
-    value: 0n,
+    value: BigInt(0),
   })
 });
 
