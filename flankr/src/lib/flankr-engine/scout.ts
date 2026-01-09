@@ -1,7 +1,4 @@
-import pkg from '@agentic-economy/liquidity-intents-sdk-v0';
-// @ts-ignore
-const { ContractResolver } = pkg;
-import type { ContractResolver as ContractResolverType } from '@agentic-economy/liquidity-intents-sdk-v0';
+import { ContractResolver } from '../../sdk/index';
 
 export interface TargetAgent {
   address: string;
@@ -10,7 +7,7 @@ export interface TargetAgent {
 }
 
 export class Scout {
-  private resolver: ContractResolverType;
+  private resolver: ContractResolver;
 
   constructor(rpcUrl: string, registryAddress: string) {
     // Instantiate the SDK Resolver

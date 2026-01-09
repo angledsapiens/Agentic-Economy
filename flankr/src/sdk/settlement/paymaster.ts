@@ -7,10 +7,10 @@ export class PaymasterService {
     this.paymasterUrl = paymasterUrl;
   }
 
-  async shouldSponsor(address: string, provider: ethers.Provider): Promise<boolean> {
+  async shouldSponsor(address: string, provider: ethers.providers.Provider): Promise<boolean> {
     const balance = await provider.getBalance(address);
     // Sponsor if balance is < 0.001 ETH
-    const threshold = ethers.parseEther("0.001");
+    const threshold = ethers.utils.parseEther("0.001");
     return balance < threshold;
   }
 
@@ -23,7 +23,7 @@ export class PaymasterService {
   }
 
   // Stub for "Gasless" transaction wrapping
-  async wrapTransaction(tx: ethers.TransactionRequest): Promise<any> {
+  async wrapTransaction(tx: ethers.providers.TransactionRequest): Promise<any> {
     console.log("[Paymaster] Wrapping transaction for sponsorship...");
     // Convert EOA tx to UserOperation-like structure (conceptual for v0)
     return {

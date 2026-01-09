@@ -1,6 +1,6 @@
 'use server';
 
-import { SettlementEngine, EnvelopeType } from './sdk/index';
+import { SettlementEngine, EnvelopeType } from '../sdk/index';
 import { v4 as uuidv4 } from 'uuid';
 
 // Instantiate Engine on Module Scope (Server-Side Singleton pattern recommended, but this works for POC)

@@ -8,11 +8,11 @@ const REGISTRY_ABI = [
 ];
 
 export class ContractResolver {
-  private provider: ethers.JsonRpcProvider;
+  private provider: ethers.providers.JsonRpcProvider;
   private registryAddress: string;
 
   constructor(rpcUrl: string, registryAddress: string) {
-    this.provider = new ethers.JsonRpcProvider(rpcUrl);
+    this.provider = new ethers.providers.JsonRpcProvider(rpcUrl);
     this.registryAddress = registryAddress;
   }
 
@@ -23,7 +23,7 @@ export class ContractResolver {
       return agents.map((a: any) => ({
         walletAddress: a.walletAddress,
         capability: a.capability,
-        minPrice: ethers.formatUnits(a.minPrice, "wei"),
+        minPrice: ethers.utils.formatUnits(a.minPrice, "wei"),
         tokenId: a.tokenId.toString()
       }));
     } catch (error) {

@@ -41,13 +41,13 @@ export class ReceiptGenerator {
 
     const receipt: AuditReceipt = {
       missionId: uuidv4(),
-      intentHash: ethers.id(JSON.stringify(intent)), // Simplification for v0
+      intentHash: ethers.utils.id(JSON.stringify(intent)), // Simplification for v0
       settlementTx: settlementTx,
       deliveryArtifactHash: deliveryArtifactHash,
       timestamp: Date.now()
     };
 
-    const signature = await this.signer.signTypedData(this.domain, this.types, receipt);
+    const signature = await this.signer._signTypedData(this.domain, this.types, receipt);
 
     return { receipt, signature };
   }

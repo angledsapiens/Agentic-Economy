@@ -1,5 +1,5 @@
 import { LiquidityIntent, IntentCommitment } from '../core/intent';
-import { verifyTypedData } from 'ethers';
+import { ethers } from 'ethers';
 import { DEFAULT_CHAIN_ID } from '../config/env';
 
 export class SignatureVerifier {
@@ -41,7 +41,7 @@ export class SignatureVerifier {
     };
 
     try {
-      const recoveredAddress = verifyTypedData(domain, types, value, commitment.signature);
+      const recoveredAddress = ethers.utils.verifyTypedData(domain, types, value, commitment.signature);
       return recoveredAddress.toLowerCase() === intent.seller.toLowerCase();
     } catch (error) {
       console.error("Signature verification failed:", error);

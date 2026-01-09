@@ -10,9 +10,9 @@ export class Attestor {
   constructor(privateKey: string = "0x0123456789012345678901234567890123456789012345678901234567890123") {
     // Default to Sepolia for init, though address depends on mode
     this.eas = new EAS(EAS_CONTRACT_ADDRESS_SEPOLIA);
-    const provider = new ethers.JsonRpcProvider("https://sepolia.base.org");
+    const provider = new ethers.providers.JsonRpcProvider("https://sepolia.base.org");
     this.signer = new ethers.Wallet(privateKey, provider);
-    this.eas.connect(this.signer);
+    this.eas.connect(this.signer as any);
   }
 
   async pushOutcomeAttestation(intent: LiquidityIntent, status: 'SUCCESS' | 'FAILURE'): Promise<string> {
@@ -22,13 +22,13 @@ export class Attestor {
       const contractAddress = mode === 'LIVE' ? EAS_CONTRACT_ADDRESS_MAINNET : EAS_CONTRACT_ADDRESS_SEPOLIA;
       // Re-connect EAS to correct contract if needed (for now assume similar ABI/SDK handling)
       this.eas = new EAS(contractAddress);
-      this.eas.connect(this.signer);
+      this.eas.connect(this.signer as any);
 
       try {
         console.log(`[EAS] ${mode} MODE: Pushing attestation to ${contractAddress}...`);
         const schemaEncoder = new SchemaEncoder("bytes32 intentId, string status");
         const encodedData = schemaEncoder.encodeData([
-          { name: "intentId", value: ethers.id(intent.id), type: "bytes32" },
+          { name: "intentId", value: ethers.utils.id(intent.id), type: "bytes32" },
           { name: "status", value: status, type: "string" }
         ]);
 

@@ -47,7 +47,7 @@ export class HandshakeSigner {
       feedbackAuth
     };
 
-    return this.wallet.signTypedData(domain, types, value);
+    return this.wallet._signTypedData(domain, types, value);
   }
 
   getAddress(): string {

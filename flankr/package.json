@@ -10,16 +10,21 @@
     "test:import": "ts-node src/test-import.ts"
   },
   "dependencies": {
+    "@ethereum-attestation-service/eas-sdk": "^1.5.0",
+    "dotenv": "^17.2.3",
+    "ethers": "^5.7.2",
     "frog": "^0.18.3",
     "hono": "^4.11.3",
     "next": "14.1.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "uuid": "^13.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/uuid": "^10.0.0",
     "autoprefixer": "^10.0.1",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",

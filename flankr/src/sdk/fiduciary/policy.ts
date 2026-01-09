@@ -1,5 +1,5 @@
 import { LiquidityIntent } from '../core/intent';
-import { formatUnits } from 'ethers';
+// import { formatUnits } from 'ethers'; // Unused
 // import policy from '../../Policy.json'; // Importing JSON directly requires resolveJsonModule
 const policy = require('../../Policy.json');
 
