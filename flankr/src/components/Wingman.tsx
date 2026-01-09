@@ -42,17 +42,42 @@ export const Wingman = () => {
 
         {/* Footer Actions */}
         <div className="mt-4 flex gap-2">
-          <button
-            onClick={handleDeploy}
-            disabled={loading}
-            className={`flex-1 ${loading ? 'bg-zinc-700' : 'bg-white hover:bg-zinc-200'} text-black font-bold py-3 rounded-lg transition-colors uppercase text-sm tracking-widest`}
-          >
-            {loading ? 'deploying...' : 'Deploy Asset'}
-          </button>
-          <button className="flex-1 bg-zinc-900 text-white font-bold py-3 rounded-lg border border-zinc-800 hover:bg-zinc-800 transition-colors uppercase text-sm tracking-widest">
-            Scan
-          </button>
+          {status === "DEPLOYED" ? (
+            <a
+              href={`https://warpcast.com/~/compose?text=${encodeURIComponent("Just flanked a launch with 0.1% slippage using @flankr. Tactical execution powered by Liquidity Intents SDK. 🛡️⚓")}`}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => console.log('[Analytics] Share on Warpcast Clicked')}
+              className="flex-1 bg-purple-600 text-white font-bold py-3 rounded-lg hover:bg-purple-500 transition-colors uppercase text-sm tracking-widest text-center flex items-center justify-center"
+            >
+              Share on Warpcast 📢
+            </a>
+          ) : (
+            <>
+              <button
+                onClick={handleDeploy}
+                disabled={loading}
+                className={`flex-1 ${loading ? 'bg-zinc-700' : 'bg-white hover:bg-zinc-200'} text-black font-bold py-3 rounded-lg transition-colors uppercase text-sm tracking-widest`}
+              >
+                {loading ? 'deploying...' : 'Deploy Asset'}
+              </button>
+              <button className="flex-1 bg-zinc-900 text-white font-bold py-3 rounded-lg border border-zinc-800 hover:bg-zinc-800 transition-colors uppercase text-sm tracking-widest">
+                Scan
+              </button>
+            </>
+          )}
         </div>
+      </div>
+      <div className="mt-8 text-center">
+        <a
+          href="https://github.com/angledsapiens/Agentic-Economy"
+          target="_blank"
+          rel="noreferrer"
+          onClick={() => console.log('[Analytics] Powered By LIS Clicked')}
+          className="text-zinc-600 text-xs hover:text-zinc-400 transition-colors"
+        >
+          Powered by Liquidity Intents SDK 🛡️
+        </a>
       </div>
     </div>
   );
