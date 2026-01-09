@@ -1,4 +1,3 @@
-```
 import { fetch } from 'undici';
 
 const BASE_URL = 'https://flankr.vercel.app/api';
@@ -10,7 +9,7 @@ async function verifyFlow() {
     // 1. Initial State
     console.log('1️⃣ Fetching Initial Frame...');
     const res1 = await fetch(BASE_URL);
-    if (!res1.ok) throw new Error(`Init failed: ${ res1.status } `);
+    if (!res1.ok) throw new Error(`Init failed: ${res1.status}`);
     const html1 = await res1.text();
     if (!html1.includes('Enter Guard')) throw new Error('Missing "Enter Guard" button');
     console.log('✅ Initial Frame Valid');
@@ -29,4 +28,3 @@ async function verifyFlow() {
 }
 
 verifyFlow();
-```
