@@ -7,3 +7,4 @@ node_modules
 !.vscode/tasks.json
 !.env.test
 flankr/
+liquidity-intents-sdk/v0/src/
