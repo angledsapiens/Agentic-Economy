@@ -1,0 +1,11 @@
+export declare const VERIFYING_CONTRACT_ADDRESS: string;
+export declare const DEFAULT_CHAIN_ID: number;
+export declare const EXAMPLE_SELLER_PRIVATE_KEY: string;
+export declare const EXAMPLE_BUYER_ADDRESS: string;
+export declare const EXAMPLE_PROVIDER_DID: string;
+export declare const LIS_MODE: 'LOCAL' | 'TESTNET' | 'LIVE';
+export declare const CIRCLE_API_KEY: string;
+export declare const CIRCLE_API_URL_SANDBOX = "https://api-sandbox.circle.com/v1";
+export declare const CIRCLE_API_URL_PROD = "https://api.circle.com/v1";
+export declare const EAS_CONTRACT_ADDRESS_SEPOLIA = "0x4200000000000000000000000000000000000021";
+export declare const EAS_CONTRACT_ADDRESS_MAINNET = "0x4200000000000000000000000000000000000021";

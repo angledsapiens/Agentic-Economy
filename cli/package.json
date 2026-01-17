@@ -1,0 +1,27 @@
+{
+  "name": "lis-cli",
+  "version": "1.0.0",
+  "description": "Dev Tools CLI for Agentic Commerce",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^11.1.0",
+    "dotenv": "^16.3.1",
+    "ethers": "^6.10.0",
+    "figlet": "^1.7.0",
+    "inquirer": "^8.2.6",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/figlet": "^1.5.8",
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^20.11.5",
+    "@types/uuid": "^9.0.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
