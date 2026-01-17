@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-mono);
+}
+
+/* Custom Utility Classes */
+@utility card {
+  @apply border border-gray-800 bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm;
+}
+
+@utility label {
+  @apply text-xs uppercase tracking-wider text-gray-500 mb-1;
+}
+
+@utility value {
+  @apply text-xl font-bold;
+}

@@ -1,4 +1,0 @@
-packages:
-  - 'liquidity-intents-sdk/*'
-  - 'ide-treasury'
-  - 'flankr'

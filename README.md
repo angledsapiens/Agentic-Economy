@@ -1,106 +1,82 @@
-# Agentic Economy: The Autonomous Settlement Layer
+# Agentic Commerce Utils (ARC Hackathon SF)
 
-![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg) ![Network: Base](https://img.shields.io/badge/Network-Base%20Sepolia-blueviolet) ![Standard: ERC-8004](https://img.shields.io/badge/Standard-ERC--8004-orange) ![Standard: x402](https://img.shields.io/badge/Standard-x402-yellow)
+> **Fiduciary Rails for the Autonomous Economy.**
 
-> **[!IMPORTANT] Mission**
-> To unblock the Agentic Economy by building the standard fiduciary rails for autonomous machine commerce.
->
-> *The LIS SDK is distributed as a compiled, high-performance binary/library to ensure protocol integrity and security.*
-
-**The Project**: Agentic Economy is the developer’s toolkit for building and deploying financially autonomous AI agents. At its core is the **Liquidity Intents SDK (LIS)**—a protocol that provides the "Vascular System" for agents to discover, negotiate, and settle payments securely within human-defined guardrails.
-
-**Current Status**: We have completed the **v0 Discovery Phase**, featuring an ERC-8004 compliant on-chain registry (the "Yellow Pages"), EIP-712 cryptographic handshakes, and production-ready audit logs. Our local playground is live, enabling sub-second autonomous settlement using Circle’s programmable USDC on the Base Sepolia testnet.
-
-**Where We Are Going**: We are evolving into the **v1 Agentic Marketplace**, introducing decentralized trust through staked reputation (slashing), cross-chain intent settlement via Circle CCTP, and cryptographic proof-of-work verification to enable a truly global, trustless machine economy.
+This repository contains the **Liquidity Intents SDK (LIS) v1** and associated surfaces developed for the **ARC Hackathon SF**.
+It demonstrates a complete end-to-end stack for distinct AI agents to discover each other, negotiate services, and settle payments autonomously on the **ARC Testnet**.
 
 ---
 
-## 🏗️ The Problem: The "Credit Wall"
+## 🏗️ Architecture
 
-As AI agents evolve into autonomous economic actors, they face a fundamental bottleneck: the **Credit Wall**. While agents can plan and execute complex workflows, they lack the native infrastructure to negotiate, authorize, and settle payments for the tools and services they require.
-
-The **Liquidity Intents SDK (LIS)** provides the "Vascular System" for this new economy. It is a secure, intent-centric protocol that enables agents to function as independent financial entities within predefined fiduciary boundaries, solving the HTTP **402 Payment Required** error at the protocol level.
-
-## 🔄 The Protocol Lifecycle
-
-LIS standardizes high-frequency agent interaction through a **Commit-Verify-Settle** architecture.
+The project is organized into three distinct layers, each mapping to a hackathon track or core function:
 
 ```mermaid
-sequenceDiagram
-    participant Buyer
-    participant Registry
-    participant Seller
-    participant SDK as LIS Protocol
-    participant Circle
+graph TD
+    User((User/Judge))
+    CLI[Dev Tools CLI]
+    App[Commerce Dashboard]
+    Core[LIS v1 Core]
+    ARC[ARC Testnet]
 
-    Buyer->>Registry: 1. Resolve Capability (ERC-8004)
-    Registry-->>Buyer: AgentID & Metadata
-    Buyer->>Seller: 2. Broadcast Intent (EIP-712)
-    Seller->>SDK: 3. Sign Commitment
-    SDK->>Circle: 4. Lock Funds (Smart Intent Lock)
-    Seller->>Buyer: 5. Deliver Work & Signature
-    Buyer->>SDK: 6. Verify Artifact
-    SDK->>Circle: 7. Atomic Settlement
-    SDK->>EAS: 8. Record Reputation (Attestation)
+    User --> CLI
+    User --> App
+    CLI --> Core
+    App --> Core
+    Core --> ARC
 ```
 
-## 🛠️ The Protocol Stack
+### 1. [Core Infrastructure](/aiconomy-arc-hackathon-sf)
+The **Brain**. A TypeScript SDK implementing the "Liquidity Intents" standard.
+-   **Role**: Handles Fiduciary Policy, ERC-8004 Discovery, and x402 Micropayments.
+-   **Chain**: ARC Testnet.
 
-LIS is built on top of battle-tested Web3 primitives to ensure maximum security and interoperability.
+### 2. [Dev Tools CLI](/cli)
+The **Hands**. A developer-facing command line tool.
+-   **Track**: *Dev Tools*.
+-   **Purpose**: Allows developers to "Go to Market" with an agent in < 5 minutes.
+-   **Key Features**: Profile Init, Policy Config, One-Click Publishing.
 
-| Layer | Component | Function |
-| :--- | :--- | :--- |
-| **Identity** | **ERC-8004** | Portable, NFT-based AgentIDs for trustless discovery. |
-| **Messaging** | **EIP-712** | Structured, machine-readable "Intents" for transparent negotiation. |
-| **Liquidity** | **Circle SDK** | Smart Intent Locks (Escrow) for programmable USDC settlement. |
-| **Reputation** | **EAS** | On-chain attestations to track agent reliability globally. |
-| **Compliance** | **Zk-Receipts** | Non-repudiable JSON-LD artifacts for automated accounting. |
+### 3. [Autonomous Commerce App](/app)
+The **Face**. A read-only observer dashboard.
+-   **Track**: *Autonomous Commerce*.
+-   **Purpose**: providing a "Mission Control" view for judges to verify agent autonomy.
+-   **Key Features**: Real-time Treasury visualization, Activity Logs, Identity Verification.
 
 ---
 
-## ⚡ Getting Started
+## 🚀 Quick Start
 
-This repository is a Monorepo containing the core protocol and reference implementations.
+### Prerequisites
+-   Node.js 18+
+-   npm
 
-### Workspaces
-
-*   **[Liquidity Intents SDK v0](./liquidity-intents-sdk/v0)**: Core protocol for agent-to-agent commerce and settlement.
-*   **[IDE Treasury](./ide-treasury)**: Proof-of-concept implementations and treasury management tools.
-    <br>[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/agentic-economy/monorepo)
-
-### One-Click Deployment
-
-Start the full stack (SDK Node + Playground UI) instantly using Docker Compose.
-
-**1. Configure Environment**
+### 1. Setup
 ```bash
-# Copy example env if you haven't already
-cp liquidity-intents-sdk/v0/.env.example liquidity-intents-sdk/v0/.env
-# Edit .env to add your keys (CIRCLE_API_KEY, SELLER_PRIVATE_KEY) if running in TESTNET
+# Install dependencies for all workspaces
+npm install
 ```
 
-**2. Launch**
+### 2. Run the CLI Tour
 ```bash
-docker-compose up --build
+cd cli
+npm install
+npm run dev -- --help
 ```
 
-**What you get:**
-*   **SDK Node**: `http://localhost:3000/agents`
-*   **Playground UI**: `http://localhost:5173`
+### 3. Launch the Commerce Dashboard
+```bash
+cd app
+npm install
+npm run dev
+# Open http://localhost:3000
+```
 
 ---
 
-### Manual / Headless Mode
-To run *only* the SDK in isolation:
-```bash
-cd liquidity-intents-sdk/v0
-docker build -t lis-sdk:v0 .
+## 🧪 Provenance Note
 
-# Example: Testnet Mode
-docker run -p 3000:3000 \
-  -e LIS_MODE=TESTNET \
-  -e CIRCLE_API_KEY="YOUR_KEY" \
-  -e SELLER_PRIVATE_KEY="YOUR_KEY" \
-  -e BASE_SEPOLIA_RPC="https://sepolia.base.org" \
-  lis-sdk:v0
-```
+All work in this repository was authored during **ARC Hackathon SF**.
+Intermediate commits were consolidated for clarity. The folder structure reflects the final submission state, separating Core logic from the UI/CLI surfaces.
+
+**Legacy Artifacts**: Older v0 experiments have been moved to `archive/` to maintain a clean submission root.

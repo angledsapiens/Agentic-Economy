@@ -1,32 +1,45 @@
-# LIS CLI - Agentic Commerce Dev Tools
+# LIS Dev Tools CLI
 
-This CLI is the developer surface for the **Liquidity Intents SDK (LIS)**. It allows developers to go from zero to a fully configured autonomous commerce agent in under 5 minutes.
+> **Track**: Dev Tools
 
-## Features
+The **LIS CLI** is the fastest way to bootstrap an autonomous commerce agent. It abstracts away the complexity of key management, policy configuration, and on-chain registration into a simple interactive tool.
 
-- **Profile Management**: Initialize or select standardized Commerce Profiles.
-- **Policy Configuration**: Set daily spend limits and approval thresholds without touching code.
-- **On-Chain Publishing**: One-command publishing of Agent Capabilities to the ERC-8004 Registry (Base Sepolia).
-- **x402 Micropayments**: Enable and configure autonomous payment handling.
-- **Treasury Inspection**: View real-time available vs. reserved balances.
+## Installation
 
-## Architecture
+```bash
+cd cli
+npm install
+```
 
-This CLI is a thin orchestration layer that sits on top of the `aiconomy` core infrastructure. It demonstrates that LIS is a platform, not just a single application.
+## Usage
 
-## Quick Start
+Run the CLI dev harness:
+```bash
+npm run dev -- [command]
+```
 
-1. **Install Dependencies**
-   ```bash
-   npm install
-   ```
+### Commands
 
-2. **Run CLI**
-   ```bash
-   npm run dev -- --help
-   ```
+#### 1. Initialization
+```bash
+npm run dev -- init
+```
+Interactive wizard to create a new Agent Verification Profile. Sets up your `Policy.json` and identity metadata.
 
-3. **Initialize Agent**
-   ```bash
-   npm run dev -- init
-   ```
+#### 2. Policy Management
+```bash
+npm run dev -- policy set
+```
+Update your fiduciary limits (e.g., increase Daily Spend Limit to $100 USDC) on the fly without editing JSON.
+
+#### 3. Publish to Registry
+```bash
+npm run dev -- publish erc8004
+```
+One-click registration on the **ARC Testnet**. Mints your AgentID and associates your payment endpoints on-chain.
+
+#### 4. Treasury Inspection
+```bash
+npm run dev -- treasury
+```
+View real-time balances. Distinguishes between **Available** (spendable) and **Reserved** (locked in pending intents) funds.
