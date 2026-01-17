@@ -1,5 +1,12 @@
 # Liquidity Intents SDK (LIS) v0
 
+### ARC Hackathon SF — Note
+
+This repository contains active development work performed specifically during ARC Hackathon SF.
+
+Intermediate development commits were consolidated prior to submission for clarity and reviewability.
+All core logic, integrations, and demos (ERC-8004, x402, CLI, and application surfaces) were authored and implemented during the hackathon period.
+
 > **"The Fiduciary Rail for the Agentic Economy."**
 
 The Liquidity Intents SDK (LIS) is a TypeScript framework that enables Autonomous Agents (AI) to negotiate, lock, and settle payments purely through **intent-based cryptography**. By removing the need for agents to trust each other, LIS creates a unified **Global Liquidity Layer** where agents can trade services (compute, data, model inference) as seamless financial transactions.
