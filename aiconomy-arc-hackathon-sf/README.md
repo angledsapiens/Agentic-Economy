@@ -1,101 +1,22 @@
-# Liquidity Intents SDK (LIS) v0
+# Liquidity Intents SDK (LIS) v1 Core
 
-### ARC Hackathon SF — Note
+The **LIS Core** (`aiconomy-arc-hackathon-sf`) is the fiduciary runtime for Autonomous Agents. It allows AI models to hold wallets and spend money *safely* by enforcing deterministic policies before any transaction hits the chain.
 
-This repository contains active development work performed specifically during ARC Hackathon SF.
+## Features
 
-Intermediate development commits were consolidated prior to submission for clarity and reviewability.
-All core logic, integrations, and demos (ERC-8004, x402, CLI, and application surfaces) were authored and implemented during the hackathon period.
+-   **Intents-Based Architecture**: Agents sign "Intents" (I want to buy X for Y), not raw transactions.
+-   **Fiduciary Guardian**: A purely deterministic logic layer that approves/rejects intents based on a `Policy.json` (Daily Limits, Whitelists).
+-   **ARC Testnet Native**: Pre-configured ensuring low-cost, fast settlement for agent-to-agent swarms.
+-   **x402 Support**: Native implementation of the HTTP 402 Payment Required standard for machine-negotiated API access.
 
-> **"The Fiduciary Rail for the Agentic Economy."**
+## Usage
 
-The Liquidity Intents SDK (LIS) is a TypeScript framework that enables Autonomous Agents (AI) to negotiate, lock, and settle payments purely through **intent-based cryptography**. By removing the need for agents to trust each other, LIS creates a unified **Global Liquidity Layer** where agents can trade services (compute, data, model inference) as seamless financial transactions.
+This core library is consumed by the **CLI** and **Commerce App**. It is not intended to be run standalone by the end-user, but exports the `TreasuryManager`, `Guardian`, and `SettlementProvider` classes.
 
----
-
-## The A2A Lifecycle
-
-LIS governs the lifecycle of an **Agent-to-Agent (A2A)** transaction through 5 discrete stages:
-
-```mermaid
-sequenceDiagram
-    participant Buyer
-    participant Registry
-    participant Seller
-    participant SDK as LIS Protocol
-    participant Circle
-
-    Buyer->>Registry: 1. Resolve Capability (ERC-8004)
-    Registry-->>Buyer: AgentID & Metadata
-    Buyer->>Seller: 2. Broadcast Intent (EIP-712)
-    Seller->>SDK: 3. Sign Commitment
-    SDK->>Circle: 4. Lock Funds (Smart Intent Lock)
-    Seller->>Buyer: 5. Deliver Work & Signature
-    Buyer->>SDK: 6. Verify Artifact
-    SDK->>Circle: 7. Atomic Settlement
-    SDK->>EAS: 8. Record Reputation (Attestation)
-```
-
-1.  **Discovery**: Buyer queries the "Yellow Pages" Registry (ERC-8004) to find agents with specific capabilities (e.g., `LIP_TEXT` for LLM inference).
-2.  **Intent**: Buyer signs a **Liquidity Intent** (EIP-712), cryptographically committing funds to a specific task ID.
-3.  **Lock**: Seller verifies the Intent and countersigns, effectively locking the deal.
-4.  **Delivery**: Seller performs the requested work (off-chain).
-5.  **Settle**: Upon verifying the work, the funds are released. In v0, this is an optimistic settlement via Circle API or Base Smart Contract.
-
----
-
-## One-Click Setup
-
-Get a fully functional, funded, and registered agent running on Base Sepolia in under 60 seconds.
-
-### Prerequisites
-*   Docker Desktop
-*   Node.js v18+
-
-### Quick Start
-
-### Quick Start
-
-**Note**: This SDK is distributed as a compiled binary (`dist/`) for security. Source code is not required.
-
-**1. Build the Image**
-```bash
-cd liquidity-intents-sdk/v0
-docker build -t lis-sdk:v0 .
-```
-
-**2. Run (Local Mode)**
-```bash
-docker run -p 3000:3000 lis-sdk:v0
-```
-
-**3. Run (Testnet Mode)**
-```bash
-docker run -p 3000:3000 \
-  -e LIS_MODE=TESTNET \
-  -e CIRCLE_API_KEY="YOUR_API_KEY" \
-  -e SELLER_PRIVATE_KEY="YOUR_KEY" \
-  -e BASE_SEPOLIA_RPC="https://sepolia.base.org" \
-  lis-sdk:v0
-```
-
-**What this does:**
-*   Generates a secure `.env` file.
-*   Spins up the **SDK Node** and **Playground UI** via Docker.
-*   **Auto-Funds** your new agent wallet using the Circle Faucet.
-*   **Registers** your agent on the Base Sepolia Registry (Gas Sponsored).
-*   Launches the Dashboard at `http://localhost:5173`.
-
----
-
-## Key Features
-
-*   **Fiduciary Guardian**: Configurable spending policies (`Policy.json`) ensure agents never exceed budget caps.
-*   **Audit Layer**: Generates cryptographically signed, accountant-ready receipts (JSON-LD/XML) for every transaction.
-*   **Tri-Mode Architecture**:
-    *   `LOCAL`: Zero-config mock mode for rapid testing.
-    *   `TESTNET`: Base Sepolia & Circle Sandbox.
-    *   `LIVE`: Base Mainnet & Circle Production.
+### Configuration
+The runtime state is governed by:
+-   `Policy.json`: Fiduciary limits.
+-   `.env`: Private keys and RPC endpoints (ARC Testnet).
 
 ## License
 MIT

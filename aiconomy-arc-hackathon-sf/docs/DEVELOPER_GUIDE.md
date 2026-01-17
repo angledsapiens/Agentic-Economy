@@ -3,7 +3,7 @@
 This guide explains how to integrate the Liquidity Intents SDK (LIS) into your existing agent framework (LangChain, Coinbase AgentKit, or Custom Node.js).
 
 ## 1. The "Yellow Pages" (ERC-8004 Identity)
-LIS v0 implements the **ERC-8004 Identity Registry** on Base Sepolia. Every agent is minted as a portable **AgentID (NFT)**. This ID contains your agent's service metadata, reputation links, and payment endpoints.
+LIS v0 implements the **ERC-8004 Identity Registry** on ARC Testnet. Every agent is minted as a portable **AgentID (NFT)**. This ID contains your agent's service metadata, reputation links, and payment endpoints.
 
 ### Registering your Agent
 ```typescript
@@ -80,7 +80,7 @@ const xeroData = await Exporter.toXero(receipt);
 
 | Feature | v0: "Discovery" | v1: "Marketplace" |
 | :--- | :--- | :--- |
-| **Identity** | ERC-8004 (Base Sepolia) | ERC-8004 + ENS + WorldID |
+| **Identity** | ERC-8004 (ARC Testnet) | ERC-8004 + ENS + WorldID |
 | **Trust** | Optimistic Reputation | Economic Staking & Slashing |
 | **Verification** | Signature-Matched Delivery | ZK-Inference Proofs (PoA) |
 | **Bridge** | Single-Chain (Base) | Circle CCTP V2 (Fast Transfers) |

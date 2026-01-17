@@ -11,6 +11,7 @@ import { ContractResolver } from './discovery/contract-resolver';
 import { LiquidityIntent } from './core/intent';
 import { EnvelopeType } from './core/constants';
 import { DEFAULT_CHAIN_ID } from './config/env';
+import { InterpretedIntent, IntentType } from './core/interpretation';
 
 // Mock USDC Asset if not exported
 const USDC_ASSET = {
@@ -59,20 +60,34 @@ app.post('/hire', async (req, res) => {
   const { sellerDid, amount } = req.body;
   console.log(`[Server] Hiring ${sellerDid} for ${amount} units...`);
 
-  const intent: LiquidityIntent = {
-    id: `intent-${Date.now()}`,
-    buyer: '0xBuyer...', // Mock Buyer
-    seller: sellerDid.replace('did:pkh:', ''), // Extract address
-    asset: USDC_ASSET,
-    amount: amount || '1000000',
-    envelopeType: EnvelopeType.LIP_TEXT,
-    deadline: Date.now() + 3600000
+  // Create Interpreted Intent (Mocking the Interpreter step)
+  const interpretedIntent: InterpretedIntent = {
+    type: IntentType.BUY,
+    counterparty: sellerDid.replace('did:pkh:', ''),
+    reasoning: 'Direct Hire via Dashboard',
+    subject: {
+      name: 'LIP_TEXT_GEN',
+      description: 'Human-initiated service request'
+    },
+    settlement: {
+      asset: 'USDC',
+      amount: amount || '1000000'
+    },
+    metadata: {
+      templateType: 'BUY_SERVICE',
+      serviceName: 'Dashboard Service',
+      sellerDID: sellerDid,
+      maxPrice: amount || '1000000',
+      description: 'Manual hire from dashboard'
+    }
   };
 
+  const intent: any = { id: `intent-${Date.now()}` }; // Legacy ID for response
+
   try {
-    const result = await settlement.lockFunds(intent);
+    const result = await settlement.reserve(interpretedIntent);
     if (result) {
-      res.json({ success: true, intentId: intent.id });
+      res.json({ success: true, intentId: intent.id, reservationId: result });
     } else {
       res.status(400).json({ success: false, error: 'Settlement Failed' });
     }
