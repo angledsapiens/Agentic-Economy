@@ -1,32 +1,24 @@
 import { Command } from 'commander';
 import { ProfileStore } from '../../../aiconomy-arc-hackathon-sf/src/persistence/store';
 import { CommerceProfile, ProfileStatus } from '../../../aiconomy-arc-hackathon-sf/src/core/profile';
-import { header, success, info, input, select } from '../lib/prompts';
+import { header, success, info, input, confirm } from '../lib/prompts';
 import { v4 as uuidv4 } from 'uuid';
 
 export const initCommand = new Command('init')
-  .description('Initialize or select a Commerce Profile')
+  .description('Initialize Commerce Profile')
   .action(async () => {
     header('Initialize LIS Agent');
 
     const store = new ProfileStore('profiles.json');
-    await store.load();
+    const existing = await store.load();
 
-    const existingIds = await store.getAllIds();
-
-    let action = 'CREATE';
-    if (existingIds.length > 0) {
-      action = await select('What would you like to do?', [
-        'CREATE New Profile',
-        ...existingIds.map(id => `SELECT ${id}`)
-      ]);
-    }
-
-    if (action.startsWith('SELECT')) {
-      const id = action.split(' ')[1];
-      const profile = await store.get(id);
-      success(`Selected Profile: ${profile?.name} (${profile?.id})`);
-      return;
+    if (existing) {
+      info(`Found existing profile: ${existing.name} (${existing.id})`);
+      const overwrite = await confirm('Do you want to overwrite this profile?');
+      if (!overwrite) {
+        success('Using existing profile.');
+        return;
+      }
     }
 
     // CREATE Flow

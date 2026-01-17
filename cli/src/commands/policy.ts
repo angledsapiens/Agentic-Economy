@@ -1,6 +1,6 @@
 import { Command } from 'commander';
 import { PolicyStore } from '../../../aiconomy-arc-hackathon-sf/src/persistence/store';
-import { CommercePolicy } from '../../../aiconomy-arc-hackathon-sf/src/core/profile'; // Policy is defined here in v1
+import { CommercePolicy } from '../../../aiconomy-arc-hackathon-sf/src/core/profile';
 import { header, success, input } from '../lib/prompts';
 
 export const policyCommand = new Command('policy')
@@ -11,17 +11,12 @@ export const policyCommand = new Command('policy')
     header('Configure Commerce Policy');
 
     const store = new PolicyStore('policies.json');
-    await store.load();
-
-    // In a real CLI we would select the policy ID.
-    // For Sprint 6A (MVP) we edit the 'default-policy'.
-    const policyId = 'default-policy';
-    let policy = await store.get(policyId);
+    let policy = await store.load();
 
     if (!policy) {
       // Create Default if missing
       policy = {
-        id: policyId,
+        id: 'default-policy',
         version: '1.0.0',
         name: 'Standard Limits',
         globalLimit: '10000000', // 10 USDC
