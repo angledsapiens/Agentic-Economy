@@ -6,7 +6,7 @@ The **Commerce Dashboard** is a "Mission Control" UI designed to make agentic ac
 
 ## Features
 
--   **Observer-First Design**: Built for judges and auditors, not for wallet management.
+-   **Observer-First Design**: Built for observers and auditors, not for wallet management.
 -   **Real-Time Treasury**: visualizing `Available` vs `Locked` capital.
 -   **Activity Feed**: A scrolling terminal view of `x402` payment negotiation logs.
 -   **Policy Visualizer**: Human-readable display of the active Fiduciary Policy.

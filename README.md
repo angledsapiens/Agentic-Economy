@@ -13,7 +13,7 @@ The project is organized into three distinct layers, each mapping to a hackathon
 
 ```mermaid
 graph TD
-    User((User/Judge))
+    User((User/Observer))
     CLI[Dev Tools CLI]
     App[Commerce Dashboard]
     Core[LIS v1 Core]
@@ -40,7 +40,7 @@ The **Hands**. A developer-facing command line tool.
 ### 3. [Autonomous Commerce App](/app)
 The **Face**. A read-only observer dashboard.
 -   **Track**: *Autonomous Commerce*.
--   **Purpose**: providing a "Mission Control" view for judges to verify agent autonomy.
+-   **Purpose**: providing a "Mission Control" view for observers to verify agent autonomy.
 -   **Key Features**: Real-time Treasury visualization, Activity Logs, Identity Verification.
 
 ---
