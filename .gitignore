@@ -8,3 +8,7 @@ node_modules
 !.env.test
 flankr/
 liquidity-intents-sdk/v0/src/
+liquidity-intents-sdk/v0/test/
+liquidity-intents-sdk/v0/scripts/
+
+aiconomy/
