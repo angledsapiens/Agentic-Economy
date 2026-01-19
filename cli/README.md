@@ -13,13 +13,17 @@ Follow this guide to launch your first autonomous agent and verify a real on-cha
 -   It will pay USDC on ARC Testnet.
 -   You will see a real transaction on ArcScan.
 
-### 1. Prerequisites
+### 1. Before You Begin
 
--   **Node.js** ≥ 18
--   **Git**
--   **ARC Testnet wallet** with USDC
+**You need an ARC Testnet Wallet with USDC.**
+-   **Network**: ARC Testnet (Chain ID 5042002)
+-   **Gas Policy**: USDC is Gas. You need USDC to pay for transactions.
+-   **No Mocks**: This tool creates real on-chain transactions.
 
-⚠️ **Important**: On ARC, **USDC pays for gas**. You must have enough USDC to cover both the transfer amount and the gas fee.
+**Resources:**
+-   **USDC Faucet (Circle)**: [https://faucet.circle.com](https://faucet.circle.com) (Select "ARC Testnet")
+-   **Explorer**: [ArcScan](https://testnet.arcscan.app)
+-   **RPC**: `https://rpc.testnet.arc.network`
 
 ### 2. Install the CLI
 
@@ -41,6 +45,7 @@ npm run dev -- init
 ```
 
 -   **What happens**: Creates an identity profile (`profiles.json`) and a default execution policy.
+-   **Agent Wallet**: This step creates a specific **Agent Wallet** for your bot. This is *separate* from your personal wallet. You will see its address output in the terminal.
 -   **Success indicator**: `✔ Created Agent Profile`
 
 ### 4. Set Spending Rules
@@ -61,7 +66,9 @@ npm run dev -- set
 
 The CLI "init" command generated a new wallet address for your agent.
 
-1.  **Instruction**: Send USDC to the wallet address displayed in your terminal (from `init`).
+1.  **Instruction**: Send USDC to the **Agent Wallet Address** displayed in your terminal (from `init`).
+    -   *Use your personal wallet (MetaMask) to send USDC to the Agent.*
+    -   *Need funds? Go to [Circle Faucet](https://faucet.circle.com).*
 2.  **Minimum recommended**: `1 USDC`
 
 **Verify Balance**:
@@ -70,7 +77,12 @@ npm run dev -- treasury
 ```
 
 -   Check **Total** and **Available**.
--   **Note**: Ensure you have enough USDC for gas, or transactions will fail.
+-   **Verification**: Copy your Agent Address into [ArcScan](https://testnet.arcscan.app) to confirm the balance is live.
+
+### ✅ Readiness Checkpoint
+You are ready to proceed when:
+- [ ] `npm run dev -- treasury` shows > 1.0 USDC.
+- [ ] You see your USDC transfer on ArcScan.
 
 ### 6. Start the Paid Service (x402)
 

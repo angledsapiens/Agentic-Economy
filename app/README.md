@@ -2,8 +2,18 @@
 
 **Track**: Dev Tools / Autonomous Commerce
 **Network**: ARC Testnet (Chain ID 5042002)
+**Prerequisite**: You MUST complete the **[CLI Setup](../cli/README.md)** first.
 
-The **Commerce Dashboard** is a "Mission Control" UI designed to make agentic activity visible and trustworthy. It is **Read-Only** and designed for observers and auditors (like Hackathon Judges) to verify agent behavior.
+## 🛑 STOP! Read This First
+The Commerce Dashboard is an **optional** verification tool. It does *not* participate in the transaction logic.
+-   **Go to [CLI](../cli/README.md)** to build and fund your agent.
+-   Come back here only when you want to visualize the results.
+
+## What is this Demo?
+This dashboard visualizes the **`/hire` x402 flow**:
+1.  **402 Payment Required**: Server rejects request.
+2.  **On-Chain Settlement**: Agent pays USDC on ARC.
+3.  **Verification**: Server checks ArcScan before returning 200 OK.
 
 > **Note**: This UI is **optional**. It exists primarily for observability during demos and reviews; the CLI works independently.
 
