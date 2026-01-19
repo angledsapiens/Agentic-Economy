@@ -1,0 +1,82 @@
+{
+  "timestamp": "2026-01-19T12:05:26.351Z",
+  "network": "ARC Testnet",
+  "chainId": 5042002,
+  "phases": {
+    "phase1": {
+      "status": "PASS",
+      "tests": {
+        "testnetMode": true,
+        "arcRPC": true,
+        "usdcContract": true,
+        "privateKey": true,
+        "networkValidation": true
+      }
+    },
+    "phase2": {
+      "status": "PASS",
+      "tests": {
+        "profileCreated": true,
+        "policySet": true,
+        "fiduciaryValidation": true
+      },
+      "profile": {
+        "id": "did:lis:e2e_test_agent",
+        "status": "ACTIVE",
+        "activePolicyId": "policy_e2e_test",
+        "identity": {
+          "displayName": "E2E Test Agent",
+          "serviceEndpoint": "http://localhost:3000",
+          "publicKey": "0x..."
+        },
+        "capabilities": [
+          {
+            "type": "PAYMENT_SETTLEMENT",
+            "provider": "ARC_USDC_NATIVE",
+            "supported": true
+          }
+        ]
+      },
+      "policy": {
+        "id": "policy_e2e_test",
+        "globalLimit": "10000000",
+        "dailyLimit": "50000000",
+        "autoApproveBelow": "1000000",
+        "requireApproval": false
+      }
+    },
+    "phase3": {
+      "status": "PARTIAL",
+      "tests": {
+        "registryDeployed": true
+      }
+    },
+    "phase4": {
+      "status": "PASS",
+      "tests": {
+        "settlementExecuted": true,
+        "txHash": "0x979288e3e8dd548160b9f8902aef0e144ea0955571c11a03dc335c9f64e7492d",
+        "arcScanLink": "https://testnet.arcscan.app/tx/0x979288e3e8dd548160b9f8902aef0e144ea0955571c11a03dc335c9f64e7492d",
+        "balanceVerified": true
+      },
+      "preBalance": "0.986191",
+      "postBalance": "0.977463",
+      "delta": "0.008728"
+    },
+    "phase5": {
+      "status": "MANUAL",
+      "note": "Requires server runtime"
+    },
+    "phase6": {
+      "status": "MANUAL",
+      "note": "Requires browser UI testing"
+    }
+  },
+  "txHashes": [
+    "0x979288e3e8dd548160b9f8902aef0e144ea0955571c11a03dc335c9f64e7492d"
+  ],
+  "arcScanLinks": [
+    "https://testnet.arcscan.app/tx/0x979288e3e8dd548160b9f8902aef0e144ea0955571c11a03dc335c9f64e7492d"
+  ],
+  "failures": []
+}

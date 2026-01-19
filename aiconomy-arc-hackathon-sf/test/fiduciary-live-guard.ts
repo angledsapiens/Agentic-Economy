@@ -25,7 +25,7 @@ describe('Fiduciary Live Guard', () => {
         symbol: "USDC",
         address: "0x...",
         type: "ERC20",
-        chainId: 84532,
+        chainId: 5042002, // ARC Testnet
         decimals: 6
       },
       envelopeType: EnvelopeType.LIP_TEXT,

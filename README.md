@@ -3,7 +3,7 @@
 > **Fiduciary Rails for the Autonomous Economy.**
 
 This repository contains the **Liquidity Intents SDK (LIS) v1** and associated surfaces developed for the **ARC Hackathon SF**.
-It demonstrates a complete end-to-end stack for distinct AI agents to discover each other, negotiate services, and settle payments autonomously on the **ARC Testnet**.
+It demonstrates a complete end-to-end stack for distinct AI agents to discover each other, negotiate services, and settle payments autonomously on the **ARC Testnet (Chain ID 5042002)**.
 
 ---
 

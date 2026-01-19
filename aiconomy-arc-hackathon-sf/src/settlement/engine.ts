@@ -1,6 +1,7 @@
 import { InterpretedIntent } from '../core/interpretation';
 import { TreasuryManager } from '../treasury/manager';
 import { CircleSettlementProvider } from './circle-provider';
+import { ARCSettlementProvider } from './arc-provider';
 
 /**
  * Settlement Engine (Facade)
@@ -14,10 +15,25 @@ export class SettlementEngine {
   private treasury: TreasuryManager;
 
   constructor(config?: any) {
-    // In a real app, providers would be injected.
-    // Here we default to Circle for Sprint 3.
-    const provider = new CircleSettlementProvider(config?.apiKey, config?.walletId);
-    this.treasury = new TreasuryManager(provider);
+    const mode = process.env.LIS_MODE || 'LOCAL';
+
+    let provider;
+
+    if (mode === 'TESTNET') {
+      // ARC Testnet: Use ARC-native provider
+      console.log('[SettlementEngine] Mode: TESTNET → Using ARCSettlementProvider');
+      provider = new ARCSettlementProvider(config?.rpcUrl, config?.privateKey);
+    } else if (mode === 'LOCAL') {
+      // LOCAL: Use Circle (mocked)
+      console.log('[SettlementEngine] Mode: LOCAL → Using CircleSettlementProvider (mocked)');
+      provider = new CircleSettlementProvider(config?.apiKey, config?.walletId);
+    } else {
+      // LIVE: Would use Circle on supported mainnet
+      console.log('[SettlementEngine] Mode: LIVE → Using CircleSettlementProvider');
+      provider = new CircleSettlementProvider(config?.apiKey, config?.walletId);
+    }
+
+    this.treasury = new TreasuryManager(provider, mode);
   }
 
   /**

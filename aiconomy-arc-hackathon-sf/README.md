@@ -6,7 +6,7 @@ The **LIS Core** (`aiconomy-arc-hackathon-sf`) is the fiduciary runtime for Auto
 
 -   **Intents-Based Architecture**: Agents sign "Intents" (I want to buy X for Y), not raw transactions.
 -   **Fiduciary Guardian**: A purely deterministic logic layer that approves/rejects intents based on a `Policy.json` (Daily Limits, Whitelists).
--   **ARC Testnet Native**: Pre-configured ensuring low-cost, fast settlement for agent-to-agent swarms.
+-   **ARC Testnet Native**: Pre-configured for **ARC Testnet (Chain ID 5042002)** ensuring low-cost, fast settlement for agent-to-agent swarms.
 -   **x402 Support**: Native implementation of the HTTP 402 Payment Required standard for machine-negotiated API access.
 
 ## Usage

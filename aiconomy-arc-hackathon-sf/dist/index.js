@@ -30,6 +30,6 @@ __exportStar(require("./discovery/contract-resolver"), exports);
 __exportStar(require("./audit/receipt"), exports);
 __exportStar(require("./audit/exporter"), exports);
 __exportStar(require("./config/env"), exports);
-__exportStar(require("./fiduciary/policy"), exports);
+// export * from './fiduciary/policy';
 // Server is likely a standalone entry point, but we can export the app if needed
 // export * from './server';

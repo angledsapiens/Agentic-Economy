@@ -20,7 +20,7 @@ export class ERC8004Registry {
 
   constructor(contractAddress?: string, rpcUrl?: string, privateKey?: string) {
     this.mode = (process.env.LIS_MODE as any) || 'LOCAL';
-    // Registry Address (Default to a known Base Sepolia deployment or 0x0)
+    // Registry Address (ARC Testnet deployment or fallback to 0x0)
     // For Sprint 4B we assume user provides via ENV or constructor
     this.contractAddress = contractAddress || process.env.REGISTRY_ADDRESS || '0x0000000000000000000000000000000000000000';
 

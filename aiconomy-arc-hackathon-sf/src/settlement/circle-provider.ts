@@ -3,7 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 /**
  * Circle Settlement Provider
- * Implements the SettlementProvider interface for Circle's Programmable Wallets.
+ * DEPRECATED for ARC Testnet (Circle does not support ARC).
+ * Only functional in LOCAL mode for development/testing.
  */
 export class CircleSettlementProvider implements SettlementProvider {
   readonly name = 'CIRCLE_USDC_BASE';
@@ -19,72 +20,32 @@ export class CircleSettlementProvider implements SettlementProvider {
 
   async getBalance(asset: string): Promise<string> {
     if (this.mode === 'LOCAL') {
-      // Mock Balance
+      // Mock Balance (LOCAL mode only)
       return '10000000000'; // 10,000 USDC
     }
 
-    // Stub for live API call
-    console.log(`[CircleProvider] Fetching balance for ${asset} (stubbed)`);
-    return '5000000000';
+    // TESTNET/LIVE: Circle does NOT support ARC Testnet
+    throw new Error(
+      `❌ Circle Provider is UNSUPPORTED on ARC Testnet (pending Circle support). ` +
+      `Use ARCSettlementProvider instead. Current mode: ${this.mode}`
+    );
   }
 
   async executeTransfer(to: string, amount: string, asset: string, memo?: string): Promise<SettlementTransferResult> {
-    console.log(`[CircleProvider] Executing transfer of ${amount} ${asset} to ${to}. Memo: ${memo}`);
-
     if (this.mode === 'LOCAL') {
+      // Mock transfer (LOCAL mode only)
+      const mockTxId = `tx_mock_${uuidv4()}`;
+      console.log(`[CircleProvider] LOCAL MODE: Mock transfer ${amount} ${asset} to ${to}. TX: ${mockTxId}`);
       return {
-        transactionId: `tx_mock_${uuidv4()}`,
+        transactionId: mockTxId,
         status: 'COMPLETED'
       };
     }
 
-    // LIVE / TESTNET Logic
-    const baseUrl = this.mode === 'TESTNET' ?
-      (process.env.CIRCLE_API_URL_SANDBOX || 'https://api-sandbox.circle.com/v1') :
-      (process.env.CIRCLE_API_URL_PROD || 'https://api.circle.com/v1');
-
-    try {
-      const response = await fetch(`${baseUrl}/transfers`, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${this.apiKey}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          idempotencyKey: uuidv4(),
-          source: { type: 'wallet', id: this.walletId },
-          destination: {
-            type: 'blockchain',
-            address: to,
-            chain: 'ETH'
-          },
-          amount: { amount: this.weiToUnit(amount), currency: 'USD' }
-        })
-      });
-
-      const data = await response.json();
-
-      if (response.status !== 200 && response.status !== 201) {
-        console.error(`[CircleProvider] API Error:`, data);
-        return { transactionId: '', status: 'FAILED' };
-      }
-
-      return {
-        transactionId: data.data?.id,
-        status: 'PENDING' // Circle transfers are async
-      };
-
-    } catch (e) {
-      console.error(`[CircleProvider] Network Error:`, e);
-      return { transactionId: '', status: 'FAILED' };
-    }
-  }
-
-  private weiToUnit(wei: string): string {
-    // Simplified Mock conversion for USDC (6 decimals)
-    // Production should use proper BigNumber math
-    const val = BigInt(wei);
-    const unit = Number(val) / 1000000;
-    return unit.toFixed(2);
+    // TESTNET/LIVE: Circle does NOT support ARC Testnet
+    throw new Error(
+      `❌ Circle Provider is UNSUPPORTED on ARC Testnet (pending Circle support). ` +
+      `Cannot execute transfer. Use ARCSettlementProvider instead.`
+    );
   }
 }

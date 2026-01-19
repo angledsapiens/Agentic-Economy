@@ -1,4 +1,37 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -11,7 +44,7 @@ const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 const engine_1 = require("./settlement/engine");
 const resolver_1 = require("./discovery/resolver");
-const constants_1 = require("./core/constants");
+const interpretation_1 = require("./core/interpretation");
 // Mock USDC Asset if not exported
 const USDC_ASSET = {
     type: 'ERC20',
@@ -21,12 +54,12 @@ const USDC_ASSET = {
     symbol: 'USDC'
 };
 const app = (0, express_1.default)();
-const PORT = 3000;
+const PORT = process.env.PORT || 3001; // 3001 to avoid conflict with Next.js app on 3000
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 // Initialize SDK Components
 const settlement = new engine_1.SettlementEngine();
-const resolver = new resolver_1.CapabilityResolver(process.env.BASE_SEPOLIA_RPC || 'https://sepolia.base.org', process.env.REGISTRY_ADDRESS // Optional: Set in .env if deployed
+const resolver = new resolver_1.CapabilityResolver(process.env.ARC_RPC_URL || 'https://rpc.testnet.arc.network', process.env.REGISTRY_ADDRESS // Optional: Set in .env if deployed
 );
 // --- Endpoints ---
 // 1. Discovery: Get Agents
@@ -47,32 +80,104 @@ app.get('/agents', async (req, res) => {
         res.status(500).json({ error: 'Discovery failed' });
     }
 });
-// 2. Hire: Trigger Settlement
-app.post('/hire', async (req, res) => {
-    const { sellerDid, amount } = req.body;
-    console.log(`[Server] Hiring ${sellerDid} for ${amount} units...`);
-    const intent = {
-        id: `intent-${Date.now()}`,
-        buyer: '0xBuyer...', // Mock Buyer
-        seller: sellerDid.replace('did:pkh:', ''), // Extract address
-        asset: USDC_ASSET,
-        amount: amount || '1000000',
-        envelopeType: constants_1.EnvelopeType.LIP_TEXT,
-        deadline: Date.now() + 3600000
+// 2. Hire: x402-Protected Commerce Endpoint
+// Supports both GET and POST for demo convenience
+const handleHireRequest = async (req, res) => {
+    const { sellerDid, amount } = req.body || {};
+    // Check for x402-proof header (simulated - in production would validate signature/tx hash)
+    const x402Proof = req.headers['x402-proof'];
+    if (x402Proof) {
+        // Happy path: proof provided, assume validated for demo
+        console.log(`[x402] Payment proof received: ${x402Proof.substring(0, 20)}...`);
+        res.status(200).json({
+            success: true,
+            message: 'Service delivered'
+        });
+        return;
+    }
+    // No proof provided - start x402 flow
+    console.log(`[x402] Payment required for hire request`);
+    // Create Interpreted Intent (Mocking the Interpreter step)
+    const interpretedIntent = {
+        type: interpretation_1.IntentType.BUY,
+        counterparty: sellerDid ? sellerDid.replace('did:pkh:', '') : '0x000',
+        reasoning: 'Direct Hire via Dashboard',
+        subject: {
+            name: 'LIP_TEXT_GEN',
+            description: 'Human-initiated service request'
+        },
+        settlement: {
+            asset: 'USDC',
+            amount: amount || '1000000' // Default 1 USDC
+        },
+        metadata: {
+            templateType: 'BUY_SERVICE',
+            serviceName: 'Dashboard Service',
+            sellerDID: sellerDid || 'unknown',
+            maxPrice: amount || '1000000',
+            description: 'Manual hire from dashboard'
+        }
     };
     try {
-        const result = await settlement.lockFunds(intent);
+        // Check Treasury balance before attempting reservation
+        const treasurySnapshot = await settlement.getBalance('USDC');
+        const treasuryBalance = treasurySnapshot.availableBalance;
+        const requiredAmount = amount || '1000000';
+        if (BigInt(treasuryBalance) < BigInt(requiredAmount)) {
+            // Insufficient funds - return protocol-correct 402 with clean autonomous log
+            console.log(`[x402] Insufficient funds — rejecting autonomously`);
+            res.status(402).json({
+                success: false,
+                error: 'Payment required',
+                reason: 'Insufficient USDC balance',
+                required: requiredAmount,
+                available: treasuryBalance
+            });
+            return;
+        }
+        // Attempt reservation
+        const result = await settlement.reserve(interpretedIntent);
         if (result) {
-            res.json({ success: true, intentId: intent.id });
+            // Reservation succeeded - return 402 with payment challenge
+            res.status(402).json({
+                success: false,
+                error: 'Payment required',
+                reason: 'Awaiting x402 proof of payment',
+                challenge: {
+                    amount: requiredAmount,
+                    asset: 'USDC',
+                    destination: sellerDid || 'seller',
+                    reservationId: result
+                }
+            });
         }
         else {
-            res.status(400).json({ success: false, error: 'Settlement Failed' });
+            // Settlement rejected by fiduciary guardian or failed
+            console.log(`[x402] Settlement rejected — rejecting autonomously`);
+            res.status(402).json({
+                success: false,
+                error: 'Payment required',
+                reason: 'Settlement validation failed',
+                required: requiredAmount,
+                available: treasuryBalance
+            });
         }
     }
     catch (e) {
-        res.status(500).json({ success: false, error: e.message });
+        // Even on error, return 402 (not 500) - this is a payment protocol endpoint
+        console.log(`[x402] Settlement error — rejecting autonomously`);
+        res.status(402).json({
+            success: false,
+            error: 'Payment required',
+            reason: e.message || 'Unable to process settlement',
+            required: amount || '1000000',
+            available: '0' // Unknown due to error
+        });
     }
-});
+};
+// Register /hire for both GET and POST
+app.get('/hire', handleHireRequest);
+app.post('/hire', handleHireRequest);
 // 3. Config: Read Policy
 app.get('/config', (req, res) => {
     try {
@@ -108,12 +213,24 @@ const auto_faucet_1 = require("./playground/auto-faucet");
 const ethers_1 = require("ethers");
 // ... existing code ...
 app.listen(PORT, async () => {
-    console.log(`LIG Dashboard Server running on http://localhost:${PORT}`);
+    console.log(`LIS Dashboard Server running on http://localhost:${PORT}`);
     console.log(`Mode: ${process.env.LIS_MODE || 'LOCAL'}`);
     console.log(`Registry: ${process.env.REGISTRY_ADDRESS}`);
+    // CRITICAL: Validate ARC Testnet connection
+    if (process.env.LIS_MODE !== 'LOCAL' && process.env.ARC_RPC_URL) {
+        const { validateARCNetwork } = await Promise.resolve().then(() => __importStar(require('./config/network-validator')));
+        try {
+            await validateARCNetwork(process.env.ARC_RPC_URL);
+        }
+        catch (error) {
+            console.error('\n🚨 STARTUP FAILED: Network validation error');
+            console.error(error.message);
+            process.exit(1);
+        }
+    }
     // Automated Initialization
     if (process.env.LIS_MODE !== 'LOCAL') {
-        const provider = new ethers_1.ethers.JsonRpcProvider(process.env.BASE_SEPOLIA_RPC);
+        const provider = new ethers_1.ethers.JsonRpcProvider(process.env.ARC_RPC_URL);
         // Assuming single wallet from env or derived
         if (process.env.SELLER_PRIVATE_KEY) {
             const wallet = new ethers_1.ethers.Wallet(process.env.SELLER_PRIVATE_KEY, provider);

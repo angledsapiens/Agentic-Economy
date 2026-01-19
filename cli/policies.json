@@ -1,0 +1,10 @@
+{
+  "id": "default-policy",
+  "version": "1.0.0",
+  "name": "Standard Limits",
+  "globalLimit": "10000000",
+  "dailyLimit": "50000000",
+  "autoApproveBelow": "1000000",
+  "requireApproval": true,
+  "minReputation": 0
+}

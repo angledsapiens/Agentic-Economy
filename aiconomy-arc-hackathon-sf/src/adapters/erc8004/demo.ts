@@ -27,7 +27,7 @@ async function runDemo() {
   // but we can pass explicitly if needed.
   const registry = new ERC8004Registry(
     process.env.REGISTRY_ADDRESS,
-    process.env.EVM_RPC_URL, // e.g. Base Sepolia RPC
+    process.env.EVM_RPC_URL, // e.g. ARC Testnet RPC
     process.env.EVM_PRIVATE_KEY
   );
 

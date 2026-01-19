@@ -30,4 +30,10 @@ export interface SettlementProvider {
    * @param memo Optional reference/intent ID
    */
   executeTransfer(to: string, amount: string, asset: string, memo?: string): Promise<SettlementTransferResult>;
+
+  /**
+   * Optional: Estimates gas cost for a transfer (for chains where gas is paid in the same asset).
+   * Returns estimated gas cost in asset's base units.
+   */
+  estimateGas?(to: string, amount: string, asset: string): Promise<string>;
 }

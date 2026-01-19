@@ -49,7 +49,7 @@ describe('TESTNET Chaos & Discovery Suite', () => {
         symbol: "USDC",
         address: "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
         type: "ERC20",
-        chainId: 84532,
+        chainId: 5042002, // ARC Testnet
         decimals: 6
       },
       envelopeType: EnvelopeType.LIP_TEXT,

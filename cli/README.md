@@ -1,6 +1,7 @@
 # LIS Dev Tools CLI
 
 > **Track**: Dev Tools
+> **Network**: ARC Testnet (Chain ID 5042002)
 
 The **LIS CLI** is the fastest way to bootstrap an autonomous commerce agent. It abstracts away the complexity of key management, policy configuration, and on-chain registration into a simple interactive tool.
 

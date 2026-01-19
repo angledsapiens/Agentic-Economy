@@ -7,9 +7,13 @@ import { policyCommand } from './commands/policy';
 import { publishCommand } from './commands/publish';
 import { x402Command } from './commands/x402';
 import { treasuryCommand } from './commands/treasury';
+import { validateSettlementMode } from './lib/settlement-safety';
 
 // Load Env
 dotenv.config();
+
+// Validate settlement configuration in TESTNET mode
+validateSettlementMode();
 
 const program = new Command();
 

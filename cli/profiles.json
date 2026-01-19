@@ -1,0 +1,14 @@
+{
+  "id": "did:lis:05079efb",
+  "name": "TTest Agent E2E",
+  "address": "0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb0",
+  "controlledBy": "user",
+  "status": "ACTIVE",
+  "capabilities": [
+    "LIP_TRADING",
+    "LIP_PAYMENTS"
+  ],
+  "activePolicyId": "default-policy",
+  "createdAt": 1768817919966,
+  "updatedAt": 1768817919966
+}

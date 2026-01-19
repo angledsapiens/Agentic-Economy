@@ -1,6 +1,7 @@
 # Autonomous Commerce Dashboard
 
 > **Track**: Autonomous Commerce
+> **Network**: ARC Testnet (Chain ID 5042002)
 
 The **Commerce Dashboard** is a "Mission Control" UI designed to make agentic activity visible and trustworthy. It connects strictly to the LIS Core in *Read-Only* mode to visualize the financial and operational state of the agent.
 

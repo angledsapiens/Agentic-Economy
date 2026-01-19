@@ -15,6 +15,7 @@ export interface Reservation {
   intentId: string;    // Reference to the originating intent
   asset: string;       // e.g. "USDC"
   amount: string;      // Reserved amount in wei
+  gasEstimate?: string; // Optional: for chains where gas is paid in same asset (e.g., ARC USDC)
   status: ReservationStatus;
   createdAt: number;
   expiresAt: number;
