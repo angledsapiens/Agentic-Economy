@@ -23,7 +23,7 @@ const USDC_ASSET = {
 };
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3001; // 3001 to avoid conflict with Next.js app on 3000
 
 app.use(cors());
 app.use(express.json());
@@ -31,7 +31,7 @@ app.use(express.json());
 // Initialize SDK Components
 const settlement = new SettlementEngine();
 const resolver = new CapabilityResolver(
-  process.env.BASE_SEPOLIA_RPC || 'https://sepolia.base.org',
+  process.env.ARC_RPC_URL || 'https://rpc.testnet.arc.network',
   process.env.REGISTRY_ADDRESS // Optional: Set in .env if deployed
 );
 
@@ -55,15 +55,31 @@ app.get('/agents', async (req, res) => {
   }
 });
 
-// 2. Hire: Trigger Settlement
-app.post('/hire', async (req, res) => {
-  const { sellerDid, amount } = req.body;
-  console.log(`[Server] Hiring ${sellerDid} for ${amount} units...`);
+// 2. Hire: x402-Protected Commerce Endpoint
+// Supports both GET and POST for demo convenience
+const handleHireRequest = async (req: express.Request, res: express.Response) => {
+  const { sellerDid, amount } = req.body || {};
+
+  // Check for x402-proof header (simulated - in production would validate signature/tx hash)
+  const x402Proof = req.headers['x402-proof'] as string;
+
+  if (x402Proof) {
+    // Happy path: proof provided, assume validated for demo
+    console.log(`[x402] Payment proof received: ${x402Proof.substring(0, 20)}...`);
+    res.status(200).json({
+      success: true,
+      message: 'Service delivered'
+    });
+    return;
+  }
+
+  // No proof provided - start x402 flow
+  console.log(`[x402] Payment required for hire request`);
 
   // Create Interpreted Intent (Mocking the Interpreter step)
   const interpretedIntent: InterpretedIntent = {
     type: IntentType.BUY,
-    counterparty: sellerDid.replace('did:pkh:', ''),
+    counterparty: sellerDid ? sellerDid.replace('did:pkh:', '') : '0x000',
     reasoning: 'Direct Hire via Dashboard',
     subject: {
       name: 'LIP_TEXT_GEN',
@@ -71,30 +87,82 @@ app.post('/hire', async (req, res) => {
     },
     settlement: {
       asset: 'USDC',
-      amount: amount || '1000000'
+      amount: amount || '1000000' // Default 1 USDC
     },
     metadata: {
       templateType: 'BUY_SERVICE',
       serviceName: 'Dashboard Service',
-      sellerDID: sellerDid,
+      sellerDID: sellerDid || 'unknown',
       maxPrice: amount || '1000000',
       description: 'Manual hire from dashboard'
     }
   };
 
-  const intent: any = { id: `intent-${Date.now()}` }; // Legacy ID for response
-
   try {
+    // Check Treasury balance before attempting reservation
+    const treasurySnapshot = await settlement.getBalance('USDC');
+    const treasuryBalance = treasurySnapshot.availableBalance;
+    const requiredAmount = amount || '1000000';
+
+    if (BigInt(treasuryBalance) < BigInt(requiredAmount)) {
+      // Insufficient funds - return protocol-correct 402 with clean autonomous log
+      console.log(`[x402] Insufficient funds — rejecting autonomously`);
+
+      res.status(402).json({
+        success: false,
+        error: 'Payment required',
+        reason: 'Insufficient USDC balance',
+        required: requiredAmount,
+        available: treasuryBalance
+      });
+      return;
+    }
+
+    // Attempt reservation
     const result = await settlement.reserve(interpretedIntent);
+
     if (result) {
-      res.json({ success: true, intentId: intent.id, reservationId: result });
+      // Reservation succeeded - return 402 with payment challenge
+      res.status(402).json({
+        success: false,
+        error: 'Payment required',
+        reason: 'Awaiting x402 proof of payment',
+        challenge: {
+          amount: requiredAmount,
+          asset: 'USDC',
+          destination: sellerDid || 'seller',
+          reservationId: result
+        }
+      });
     } else {
-      res.status(400).json({ success: false, error: 'Settlement Failed' });
+      // Settlement rejected by fiduciary guardian or failed
+      console.log(`[x402] Settlement rejected — rejecting autonomously`);
+
+      res.status(402).json({
+        success: false,
+        error: 'Payment required',
+        reason: 'Settlement validation failed',
+        required: requiredAmount,
+        available: treasuryBalance
+      });
     }
   } catch (e: any) {
-    res.status(500).json({ success: false, error: e.message });
+    // Even on error, return 402 (not 500) - this is a payment protocol endpoint
+    console.log(`[x402] Settlement error — rejecting autonomously`);
+
+    res.status(402).json({
+      success: false,
+      error: 'Payment required',
+      reason: e.message || 'Unable to process settlement',
+      required: amount || '1000000',
+      available: '0' // Unknown due to error
+    });
   }
-});
+};
+
+// Register /hire for both GET and POST
+app.get('/hire', handleHireRequest);
+app.post('/hire', handleHireRequest);
 
 // 3. Config: Read Policy
 app.get('/config', (req, res) => {
@@ -134,13 +202,25 @@ import { ethers } from 'ethers';
 // ... existing code ...
 
 app.listen(PORT, async () => {
-  console.log(`LIG Dashboard Server running on http://localhost:${PORT}`);
+  console.log(`LIS Dashboard Server running on http://localhost:${PORT}`);
   console.log(`Mode: ${process.env.LIS_MODE || 'LOCAL'}`);
   console.log(`Registry: ${process.env.REGISTRY_ADDRESS}`);
 
+  // CRITICAL: Validate ARC Testnet connection
+  if (process.env.LIS_MODE !== 'LOCAL' && process.env.ARC_RPC_URL) {
+    const { validateARCNetwork } = await import('./config/network-validator');
+    try {
+      await validateARCNetwork(process.env.ARC_RPC_URL);
+    } catch (error: any) {
+      console.error('\n🚨 STARTUP FAILED: Network validation error');
+      console.error(error.message);
+      process.exit(1);
+    }
+  }
+
   // Automated Initialization
   if (process.env.LIS_MODE !== 'LOCAL') {
-    const provider = new ethers.JsonRpcProvider(process.env.BASE_SEPOLIA_RPC);
+    const provider = new ethers.JsonRpcProvider(process.env.ARC_RPC_URL);
     // Assuming single wallet from env or derived
     if (process.env.SELLER_PRIVATE_KEY) {
       const wallet = new ethers.Wallet(process.env.SELLER_PRIVATE_KEY, provider);
