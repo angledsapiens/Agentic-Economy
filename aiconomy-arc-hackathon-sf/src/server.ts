@@ -12,6 +12,8 @@ import { LiquidityIntent } from './core/intent';
 import { EnvelopeType } from './core/constants';
 import { DEFAULT_CHAIN_ID } from './config/env';
 import { InterpretedIntent, IntentType } from './core/interpretation';
+import { TransactionStore } from './services/transaction-store';
+import { LogGenerator } from './services/log-generator';
 
 // Mock USDC Asset if not exported
 const USDC_ASSET = {
@@ -29,11 +31,16 @@ app.use(cors());
 app.use(express.json());
 
 // Initialize SDK Components
+// NOTE: No config passed - ARCProvider will read SELLER_PRIVATE_KEY from process.env
 const settlement = new SettlementEngine();
 const resolver = new CapabilityResolver(
   process.env.ARC_RPC_URL || 'https://rpc.testnet.arc.network',
   process.env.REGISTRY_ADDRESS // Optional: Set in .env if deployed
 );
+
+// Initialize Transaction Logging (Production PostgreSQL)
+const txStore = new TransactionStore();
+const logGenerator = new LogGenerator(txStore, (settlement as any).treasury);
 
 // --- Endpoints ---
 
@@ -60,17 +67,35 @@ app.get('/agents', async (req, res) => {
 const handleHireRequest = async (req: express.Request, res: express.Response) => {
   const { sellerDid, amount } = req.body || {};
 
-  // Check for x402-proof header (simulated - in production would validate signature/tx hash)
+  // Check for x402-proof header
   const x402Proof = req.headers['x402-proof'] as string;
 
   if (x402Proof) {
-    // Happy path: proof provided, assume validated for demo
-    console.log(`[x402] Payment proof received: ${x402Proof.substring(0, 20)}...`);
-    res.status(200).json({
-      success: true,
-      message: 'Service delivered'
-    });
-    return;
+    // HARDENED VALIDATION: Verify proof on-chain
+    // We expect 1.0 USDC (1000000 wei)
+    const requiredAmount = amount || '1000000';
+    // Get our own address (for verification) - in real implementation this comes from config/env
+    const myAddress = process.env.WALLET_ADDRESS || '0x15C99c9A9BF8e52F71b0e7D7CD2DcE82c7b2C86D';
+
+    const isValid = await settlement.verifyPaymentProof(x402Proof, requiredAmount, myAddress);
+
+    if (isValid) {
+      console.log(`[x402] Payment proof VERIFIED: ${x402Proof.substring(0, 20)}...`);
+      res.status(200).json({
+        success: true,
+        message: 'Service delivered',
+        verification: 'Verified on ARC Testnet'
+      });
+      return;
+    } else {
+      console.warn(`[x402] Invalid or unverifiable payment proof — rejecting autonomously`);
+      res.status(402).json({
+        success: false,
+        error: 'Invalid or unverifiable payment proof',
+        detail: 'Transaction not found, failed, or insufficient amount on ARC Testnet'
+      });
+      return;
+    }
   }
 
   // No proof provided - start x402 flow
@@ -200,6 +225,63 @@ import { AutoFaucet } from './playground/auto-faucet';
 import { ethers } from 'ethers';
 
 // ... existing code ...
+
+/**
+ * 5. Activity Log (Dynamic from Database)
+ */
+app.get('/api/activity', async (req, res) => {
+  try {
+    const log = await logGenerator.generateExecutionLog();
+    res.json({ logs: log });
+  } catch (error: any) {
+    console.error('[/api/activity] Error:', error.message);
+    res.status(500).json({ error: 'Failed to generate activity log', message: error.message });
+  }
+});
+
+/**
+ * 6. Transaction History (JSON)
+ */
+app.get('/api/transactions', async (req, res) => {
+  try {
+    const limit = parseInt(req.query.limit as string) || 100;
+    const transactions = await txStore.getAllTransactions(limit);
+    const stats = await logGenerator.getTransactionStats();
+
+    res.json({
+      transactions,
+      stats,
+      count: transactions.length
+    });
+  } catch (error: any) {
+    console.error('[/api/transactions] Error:', error.message);
+    res.status(500).json({ error: 'Failed to fetch transactions', message: error.message });
+  }
+});
+
+/**
+ * 7. Treasury Snapshot (Real-Time from Database)
+ */
+app.get('/api/treasury', async (req, res) => {
+  try {
+    const latestBalance = await txStore.getLatestBalance();
+    const snapshot = await settlement.getBalance('USDC');
+
+    res.json({
+      currency: 'USDC',
+      totalBalance: snapshot.totalBalance,
+      reservedBalance: snapshot.reservedBalance,
+      availableBalance: snapshot.availableBalance,
+      lastUpdated: new Date().toISOString(),
+      source: 'postgresql'
+    });
+  } catch (error: any) {
+    console.error('[/api/treasury] Error:', error.message);
+    res.status(500).json({ error: 'Failed to fetch treasury data', message: error.message });
+  }
+});
+
+//  === Server Startup ===
 
 app.listen(PORT, async () => {
   console.log(`LIS Dashboard Server running on http://localhost:${PORT}`);

@@ -71,4 +71,30 @@ export class SettlementEngine {
   async getBalance(asset: string) {
     return await this.treasury.getSnapshot(asset);
   }
+
+  /**
+   * Verifies an x402 payment proof if the provider supports it.
+   */
+  async verifyPaymentProof(txHash: string, requiredAmount: string, expectedRecipient: string): Promise<boolean> {
+    // Access provider via internal property (unsafe cast for facade pattern)
+    // In a real TS project we would expose provider or add verifyPaymentProof to ITreasury/Provider interface
+    // For this hackathon scope we cast.
+    const provider = (this.treasury as any)['provider'];
+
+    if (provider instanceof ARCSettlementProvider) {
+      return provider.verifyPaymentProof(
+        txHash,
+        BigInt(requiredAmount),
+        expectedRecipient
+      );
+    }
+
+    // For other providers (e.g. Circle mock in LOCAL mode), we might verify differently or allow mock
+    if (process.env.LIS_MODE !== 'TESTNET') {
+      console.log('[Settlement] LOCAL/DEV mode: Skipping strict on-chain verification');
+      return true;
+    }
+
+    return false;
+  }
 }

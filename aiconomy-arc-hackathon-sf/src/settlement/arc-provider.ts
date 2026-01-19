@@ -1,5 +1,6 @@
 import { SettlementProvider, SettlementTransferResult } from './provider';
 import { ethers } from 'ethers';
+import { TransactionStore } from '../services/transaction-store';
 
 /**
  * ARC Settlement Provider
@@ -12,6 +13,7 @@ export class ARCSettlementProvider implements SettlementProvider {
   private provider: ethers.JsonRpcProvider;
   private wallet: ethers.Wallet;
   private usdcContract: ethers.Contract;
+  private txStore: TransactionStore | null = null;
 
   // ARC Testnet USDC contract address (MUST be deployed on ARC)
   private readonly USDC_ADDRESS = process.env.ARC_USDC_CONTRACT || '0x0000000000000000000000000000000000000000';
@@ -27,6 +29,11 @@ export class ARCSettlementProvider implements SettlementProvider {
     const rpc = rpcUrl || process.env.ARC_RPC_URL || 'https://rpc.testnet.arc.network';
     const key = privateKey || process.env.SELLER_PRIVATE_KEY;
 
+    // DEBUG: Log what we're actually seeing
+    console.log(`[ARCProvider DEBUG] privateKey param: ${privateKey ? 'PROVIDED' : 'UNDEFINED'}`);
+    console.log(`[ARCProvider DEBUG] process.env.SELLER_PRIVATE_KEY: ${process.env.SELLER_PRIVATE_KEY ? 'SET' : 'UNDEFINED'}`);
+    console.log(`[ARCProvider DEBUG] Using key: ${key?.substring(0, 10)}...`);
+
     if (!key) {
       throw new Error('❌ CRITICAL: SELLER_PRIVATE_KEY required for ARC settlement');
     }
@@ -40,6 +47,18 @@ export class ARCSettlementProvider implements SettlementProvider {
     this.usdcContract = new ethers.Contract(this.USDC_ADDRESS, this.ERC20_ABI, this.wallet);
 
     console.log(`[ARCProvider] Initialized for ${this.wallet.address} on ARC Testnet`);
+
+    // Initialize transaction store (async - don't block construction)
+    this.initializeTransactionStore();
+  }
+
+  private async initializeTransactionStore() {
+    try {
+      this.txStore = new TransactionStore();
+      console.log('[ARCProvider] ✅ Transaction logging enabled');
+    } catch (error: any) {
+      console.warn('[ARCProvider] ⚠️  Transaction store disabled:', error.message);
+    }
   }
 
   async getBalance(asset: string): Promise<string> {
@@ -95,6 +114,32 @@ export class ARCSettlementProvider implements SettlementProvider {
       console.log(`  Block: ${receipt.blockNumber}`);
       console.log(`  Explorer: https://testnet.arcscan.app/tx/${tx.hash}`);
 
+      // Record transaction in database
+      if (this.txStore) {
+        try {
+          await this.txStore.recordTransaction({
+            txHash: tx.hash,
+            blockNumber: receipt.blockNumber,
+            fromAddress: this.wallet.address,
+            toAddress: to,
+            amount: amount,
+            gasUsed: receipt.gasUsed.toString(),
+            status: 'CONFIRMED',
+            network: 'ARC Testnet',
+            chainId: 5042002,
+            timestamp: new Date()
+          });
+
+          // Record balance snapshot
+          const newBalance = await this.getBalance('USDC');
+          await this.txStore.recordBalanceSnapshot(this.wallet.address, newBalance);
+
+          console.log(`[ARCProvider] ✅ Transaction recorded in database`);
+        } catch (dbError: any) {
+          console.warn(`[ARCProvider] Failed to record transaction:`, dbError.message);
+        }
+      }
+
       return {
         transactionId: tx.hash, // REAL EVM TX HASH
         status: 'COMPLETED',
@@ -139,6 +184,106 @@ export class ARCSettlementProvider implements SettlementProvider {
       const fallbackGas = '100000'; // ~0.0001 USDC
       console.warn(`[ARCProvider] Using fallback gas estimate: ${fallbackGas} wei`);
       return fallbackGas;
+    }
+  }
+
+  /**
+   * Cryptographically verifies an x402 payment proof on ARC Testnet.
+   * Enforces strict checks: status=1, to=USDC, correct recipient, correct amount.
+   */
+  async verifyPaymentProof(
+    txHash: string,
+    requiredAmount: bigint,
+    expectedRecipient: string
+  ): Promise<boolean> {
+    console.log(`[ARCProvider] Verifying x402 proof: ${txHash}`);
+
+    // 1. Structural Validation
+    if (!/^0x[a-fA-F0-9]{64}$/.test(txHash)) {
+      console.warn(`[ARCProvider] Invalid tx hash format: ${txHash}`);
+      return false;
+    }
+
+    try {
+      // 2. Fetch Transaction & Receipt
+      const [tx, receipt] = await Promise.all([
+        this.provider.getTransaction(txHash),
+        this.provider.getTransactionReceipt(txHash)
+      ]);
+
+      if (!tx || !receipt) {
+        console.warn(`[ARCProvider] Tx not found on ARC Testnet`);
+        return false;
+      }
+
+      // 3. Status Check (Must be confirmed success)
+      if (receipt.status !== 1) {
+        console.warn(`[ARCProvider] Tx failed (status=${receipt.status})`);
+        return false;
+      }
+
+      // 4. Interaction Check (Must be with USDC contract)
+      if (tx.to?.toLowerCase() !== this.USDC_ADDRESS.toLowerCase()) {
+        console.warn(`[ARCProvider] Tx interaction not with USDC contract (to=${tx.to})`);
+        return false;
+      }
+
+      // 5. Decode Input Data (transfer(to, amount))
+      const iface = new ethers.Interface(this.ERC20_ABI);
+      const decoded = iface.parseTransaction({ data: tx.data, value: tx.value });
+
+      if (decoded?.name !== 'transfer') {
+        console.warn(`[ARCProvider] Tx is not a transfer (method=${decoded?.name})`);
+        return false;
+      }
+
+      const [recipient, amount] = decoded.args;
+
+      // 6. Recipient Check
+      if (recipient.toLowerCase() !== expectedRecipient.toLowerCase()) {
+        console.warn(`[ARCProvider] Wrong recipient: ${recipient} (expected ${expectedRecipient})`);
+        return false;
+      }
+
+      // 7. Amount Check
+      if (amount < requiredAmount) {
+        console.warn(`[ARCProvider] Insufficient amount: ${amount} (required ${requiredAmount})`);
+        return false;
+      }
+
+      console.log(`[ARCProvider] ✅ Payment proof VERIFIED on-chain`);
+
+      // 8. Log to Database (User Requirement for Observer UI visibility)
+      if (this.txStore) {
+        try {
+          await this.txStore.recordTransaction({
+            txHash: tx.hash,
+            blockNumber: receipt.blockNumber,
+            fromAddress: tx.from,
+            toAddress: recipient, // The decoded recipient (us)
+            amount: amount.toString(),
+            gasUsed: receipt.gasUsed.toString(),
+            status: 'CONFIRMED',
+            network: 'ARC Testnet',
+            chainId: 5042002,
+            timestamp: new Date()
+          });
+
+          // Update balance snapshot
+          const newBalance = await this.getBalance('USDC');
+          await this.txStore.recordBalanceSnapshot(this.wallet.address, newBalance);
+
+          console.log(`[ARCProvider] ✅ Verified transaction recorded in DB`);
+        } catch (dbError: any) {
+          console.warn(`[ARCProvider] Failed to record verified transaction:`, dbError.message);
+        }
+      }
+
+      return true;
+
+    } catch (error: any) {
+      console.error(`[ARCProvider] Verification error: ${error.message}`);
+      return false;
     }
   }
 }

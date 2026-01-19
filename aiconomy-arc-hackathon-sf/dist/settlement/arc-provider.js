@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ARCSettlementProvider = void 0;
 const ethers_1 = require("ethers");
+const transaction_store_1 = require("../services/transaction-store");
 /**
  * ARC Settlement Provider
  * Implements direct ERC-20 USDC transfers on ARC Testnet via ethers.js.
@@ -10,6 +11,7 @@ const ethers_1 = require("ethers");
 class ARCSettlementProvider {
     constructor(rpcUrl, privateKey) {
         this.name = 'ARC_USDC_NATIVE';
+        this.txStore = null;
         // ARC Testnet USDC contract address (MUST be deployed on ARC)
         this.USDC_ADDRESS = process.env.ARC_USDC_CONTRACT || '0x0000000000000000000000000000000000000000';
         // Standard ERC-20 ABI (only what we need)
@@ -30,6 +32,17 @@ class ARCSettlementProvider {
         this.wallet = new ethers_1.ethers.Wallet(key, this.provider);
         this.usdcContract = new ethers_1.ethers.Contract(this.USDC_ADDRESS, this.ERC20_ABI, this.wallet);
         console.log(`[ARCProvider] Initialized for ${this.wallet.address} on ARC Testnet`);
+        // Initialize transaction store (async - don't block construction)
+        this.initializeTransactionStore();
+    }
+    async initializeTransactionStore() {
+        try {
+            this.txStore = new transaction_store_1.TransactionStore();
+            console.log('[ARCProvider] ✅ Transaction logging enabled');
+        }
+        catch (error) {
+            console.warn('[ARCProvider] ⚠️  Transaction store disabled:', error.message);
+        }
     }
     async getBalance(asset) {
         if (asset !== 'USDC') {
@@ -72,6 +85,30 @@ class ARCSettlementProvider {
             console.log(`  Tx Hash: ${tx.hash}`);
             console.log(`  Block: ${receipt.blockNumber}`);
             console.log(`  Explorer: https://testnet.arcscan.app/tx/${tx.hash}`);
+            // Record transaction in database
+            if (this.txStore) {
+                try {
+                    await this.txStore.recordTransaction({
+                        txHash: tx.hash,
+                        blockNumber: receipt.blockNumber,
+                        fromAddress: this.wallet.address,
+                        toAddress: to,
+                        amount: amount,
+                        gasUsed: receipt.gasUsed.toString(),
+                        status: 'CONFIRMED',
+                        network: 'ARC Testnet',
+                        chainId: 5042002,
+                        timestamp: new Date()
+                    });
+                    // Record balance snapshot
+                    const newBalance = await this.getBalance('USDC');
+                    await this.txStore.recordBalanceSnapshot(this.wallet.address, newBalance);
+                    console.log(`[ARCProvider] ✅ Transaction recorded in database`);
+                }
+                catch (dbError) {
+                    console.warn(`[ARCProvider] Failed to record transaction:`, dbError.message);
+                }
+            }
             return {
                 transactionId: tx.hash, // REAL EVM TX HASH
                 status: 'COMPLETED',

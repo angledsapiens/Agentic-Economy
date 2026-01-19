@@ -9,9 +9,11 @@ export declare class ARCSettlementProvider implements SettlementProvider {
     private provider;
     private wallet;
     private usdcContract;
+    private txStore;
     private readonly USDC_ADDRESS;
     private readonly ERC20_ABI;
     constructor(rpcUrl?: string, privateKey?: string);
+    private initializeTransactionStore;
     getBalance(asset: string): Promise<string>;
     executeTransfer(to: string, amount: string, asset: string, memo?: string): Promise<SettlementTransferResult>;
     /**

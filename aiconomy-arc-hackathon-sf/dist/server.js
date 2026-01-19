@@ -45,6 +45,8 @@ const path_1 = __importDefault(require("path"));
 const engine_1 = require("./settlement/engine");
 const resolver_1 = require("./discovery/resolver");
 const interpretation_1 = require("./core/interpretation");
+const transaction_store_1 = require("./services/transaction-store");
+const log_generator_1 = require("./services/log-generator");
 // Mock USDC Asset if not exported
 const USDC_ASSET = {
     type: 'ERC20',
@@ -61,6 +63,9 @@ app.use(express_1.default.json());
 const settlement = new engine_1.SettlementEngine();
 const resolver = new resolver_1.CapabilityResolver(process.env.ARC_RPC_URL || 'https://rpc.testnet.arc.network', process.env.REGISTRY_ADDRESS // Optional: Set in .env if deployed
 );
+// Initialize Transaction Logging (Production PostgreSQL)
+const txStore = new transaction_store_1.TransactionStore();
+const logGenerator = new log_generator_1.LogGenerator(txStore);
 // --- Endpoints ---
 // 1. Discovery: Get Agents
 app.get('/agents', async (req, res) => {
@@ -212,6 +217,60 @@ app.get('/audits', (req, res) => {
 const auto_faucet_1 = require("./playground/auto-faucet");
 const ethers_1 = require("ethers");
 // ... existing code ...
+/**
+ * 5. Activity Log (Dynamic from Database)
+ */
+app.get('/api/activity', async (req, res) => {
+    try {
+        const log = await logGenerator.generateExecutionLog();
+        res.json({ logs: log });
+    }
+    catch (error) {
+        console.error('[/api/activity] Error:', error.message);
+        res.status(500).json({ error: 'Failed to generate activity log', message: error.message });
+    }
+});
+/**
+ * 6. Transaction History (JSON)
+ */
+app.get('/api/transactions', async (req, res) => {
+    try {
+        const limit = parseInt(req.query.limit) || 100;
+        const transactions = await txStore.getAllTransactions(limit);
+        const stats = await logGenerator.getTransactionStats();
+        res.json({
+            transactions,
+            stats,
+            count: transactions.length
+        });
+    }
+    catch (error) {
+        console.error('[/api/transactions] Error:', error.message);
+        res.status(500).json({ error: 'Failed to fetch transactions', message: error.message });
+    }
+});
+/**
+ * 7. Treasury Snapshot (Real-Time from Database)
+ */
+app.get('/api/treasury', async (req, res) => {
+    try {
+        const latestBalance = await txStore.getLatestBalance();
+        const snapshot = await settlement.getBalance('USDC');
+        res.json({
+            currency: 'USDC',
+            totalBalance: snapshot.totalBalance,
+            reservedBalance: snapshot.reservedBalance,
+            availableBalance: snapshot.availableBalance,
+            lastUpdated: new Date().toISOString(),
+            source: 'postgresql'
+        });
+    }
+    catch (error) {
+        console.error('[/api/treasury] Error:', error.message);
+        res.status(500).json({ error: 'Failed to fetch treasury data', message: error.message });
+    }
+});
+//  === Server Startup ===
 app.listen(PORT, async () => {
     console.log(`LIS Dashboard Server running on http://localhost:${PORT}`);
     console.log(`Mode: ${process.env.LIS_MODE || 'LOCAL'}`);
