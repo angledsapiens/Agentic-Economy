@@ -5,25 +5,34 @@ export async function GET() {
     // Fetch real treasury data from LIS backend server (port 3001)
     const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3001';
 
-    // The backend doesn't have a /api/treasury endpoint, so we'll create a snapshot API endpoint
-    // For now, we'll simulate calling the backend by using the same logic
-    // In production, you'd add a proper /api/treasury endpoint to the backend server
+    // For now, we fetch the current on-chain balance and return it
+    // TODO: Add /api/treasury endpoint to backend server for direct real-time fetch
 
-    // TODO: Backend server needs /api/treasury endpoint
-    // For now, return structure that matches what the UI expects but with realistic values
+    // TEMPORARY SOLUTION: Call the backend to get real-time balance
+    // This could be improved by having the backend expose a /treasury endpoint
+    try {
+      const response = await fetch(`${backendUrl}/api/treasury`, {
+        cache: 'no-store', // Always get fresh data
+        next: { revalidate: 0 } // No caching
+      });
 
-    // Fetch from backend server's snapshot endpoint (when available)
-    // const response = await fetch(`${backendUrl}/api/treasury`, { cache: 'no-store' });
-    // const data = await response.json();
+      if (response.ok) {
+        const data = await response.json();
+        return NextResponse.json(data);
+      }
+    } catch (fetchError) {
+      console.log('[Treasury API] Backend not available, using fallback');
+    }
 
-    // TEMPORARY: Return a structure that will be populated by the backend
-    // The real implementation should fetch from the LIS server's TreasurySnapshot
+    // FALLBACK: If backend doesn't have the endpoint yet, return current known state
+    // NOTE: This should be updated whenever you verify the balance has changed
     return NextResponse.json({
       currency: 'USDC',
-      totalBalance: '977463',      // wei - real on-chain balance
-      reservedBalance: '0',         // wei - from active reservations
-      availableBalance: '977463',   // wei - totalBalance - reservedBalance
-      lastUpdated: new Date().toISOString()
+      totalBalance: '1977463',      // wei - CURRENT on-chain balance as of 2026-01-19 21:57
+      reservedBalance: '0',          // wei - from active reservations
+      availableBalance: '1977463',   // wei - totalBalance - reservedBalance
+      lastUpdated: new Date().toISOString(),
+      note: 'Manually updated to match on-chain state. Backend real-time endpoint pending.'
     });
 
   } catch (error: any) {
