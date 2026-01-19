@@ -48,16 +48,20 @@ export default function Dashboard() {
           <div className="label">Treasury ({treasury.currency})</div>
           <div className="flex justify-between items-end">
             <div>
-              <div className="text-3xl font-bold text-white">${treasury.availableBalance}</div>
+              <div className="text-3xl font-bold text-white">
+                ${(Number(treasury.availableBalance) / 1_000_000).toFixed(6)}
+              </div>
               <div className="text-xs text-gray-500">Available</div>
             </div>
             <div className="text-right">
-              <div className="text-sm text-yellow-500 font-mono">${treasury.reservedBalance}</div>
+              <div className="text-sm text-yellow-500 font-mono">
+                ${(Number(treasury.reservedBalance) / 1_000_000).toFixed(6)}
+              </div>
               <div className="text-xs text-gray-500">Locked</div>
             </div>
           </div>
           <div className="mt-4 pt-3 border-t border-gray-800 text-[10px] text-gray-600 leading-tight">
-            Source: LIS Treasury Snapshot (Local Reservation State). Settlement occurs on testnet via the configured Settlement Provider.
+            Source: Live ARC Testnet Balance (Chain ID 5042002). Real on-chain USDC balance from wallet.
           </div>
         </div>
 
