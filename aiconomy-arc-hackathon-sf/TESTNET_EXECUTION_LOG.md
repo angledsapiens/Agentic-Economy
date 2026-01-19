@@ -1,18 +1,36 @@
 # TESTNET Execution Log
 **Date**: 2026-01-19
+**Last Updated**: 2026-01-19T21:57:00+05:30
 **Network**: ARC Testnet (Chain ID 5042002)
 **Mode**: TESTNET (ARC-Native Settlement)
-**Status**: ✅ VERIFIED - REAL ON-CHAIN TRANSACTIONS
+**Status**: ✅ LIVE - REAL ON-CHAIN TRANSACTIONS
+
+## Current Wallet State
+
+**Wallet Address**: `0x15C99c9A9BF8e52F71b0e7D7CD2DcE82c7b2C86D`
+**Current Balance**: **1.977463 USDC** (1,977,463 wei)
+**ArcScan**: https://testnet.arcscan.app/address/0x15C99c9A9BF8e52F71b0e7D7CD2DcE82c7b2C86D
+**Network**: ARC Testnet (Chain ID 5042002)
+**USDC Contract**: 0x3600000000000000000000000000000000000000
+
+**Balance History**:
+- 2026-01-19 11:45: 0.986191 USDC (after Phase 2B settlement)
+- 2026-01-19 12:00: 0.977463 USDC (after E2E test - gas consumed)
+- 2026-01-19 21:57: **1.977463 USDC** (current - received +1 USDC funding)
+
+---
 
 ## Executive Summary
 All settlement transactions executed successfully on ARC Testnet with real USDC transfers. The system demonstrated full end-to-end capability from agent bootstrap through autonomous settlement with verifiable on-chain proof.
+
+Gold-standard Treasury initialization now active: the system fetches real on-chain balance at startup and maintains perfect alignment (0 wei delta) between on-chain state and Treasury snapshots.
 
 ---
 
 ## Real ARC Testnet Transactions
 
 ### Phase 2B: Initial Settlement Verification
-- **TX Hash**: `0x5eaf300cb6d87477dfd0d23f0e25eaae58dad5c2db3c9f791884b7fc69bd328`
+- **TX Hash**: `0x5eaf300c9b6d87477dfd0d23f0e25eaae58dad5c2db3c9f791884b7fc69bd328`
 - **Block**: 22,497,591
 - **Amount**: 0.5 USDC (self-transfer)
 - **Gas**: 54,550 units
@@ -31,6 +49,26 @@ All settlement transactions executed successfully on ARC Testnet with real USDC 
 
 ---
 
+## Treasury Initialization (Gold-Standard)
+
+### On-Chain Balance Verification
+- **Method**: Direct EVM query at startup (TESTNET mode)
+- **Balance Source**: `ARCSettlementProvider.getBalance('USDC')`
+- **Initialization**: `TreasuryManager.initializeFromChain()`
+- **Verification**: `scripts/verify_treasury_alignment.ts`
+- **Alignment**: ✅ **0 wei delta** (perfect match to on-chain state)
+
+**Current Treasury State**:
+```
+Total Balance:     1,977,463 wei (1.977463 USDC)
+Reserved Balance:  0 wei (0.000000 USDC)
+Available Balance: 1,977,463 wei (1.977463 USDC)
+```
+
+**ArcScan Proof**: https://testnet.arcscan.app/address/0x15C99c9A9BF8e52F71b0e7D7CD2DcE82c7b2C86D
+
+---
+
 ## Settlement Provider Verification
 
 ### ARCSettlementProvider
@@ -40,6 +78,7 @@ All settlement transactions executed successfully on ARC Testnet with real USDC 
 - **USDC Contract**: 0x3600000000000000000000000000000000000000
 - **Wallet**: 0x15C99c9A9BF8e52F71b0e7D7CD2DcE82c7b2C86D
 - **Mode**: Direct EVM transactions (no Circle API)
+- **Gas Estimation**: ✅ Enabled (accounts for USDC-as-gas-token on ARC)
 
 ### Circle Provider
 - **Status**: DISABLED for ARC Testnet
